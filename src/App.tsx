@@ -1,24 +1,24 @@
-import { useEffect } from 'react';
-import '@/App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Toaster } from './components/ui/sonner';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import MobileBottomNav from './components/MobileBottomNav';
-import WhatsAppButton from './components/WhatsAppButton';
-import Homepage from './pages/Homepage';
-import AboutPage from './pages/AboutPage';
-import DiveServicesPage from './pages/DiveServicesPage';
-import AccommodationsPage from './pages/AccommodationsPage';
-import RatesPackagesPage from './pages/RatesPackagesPage';
-import GalleryPage from './pages/GalleryPage';
-import ContactPage from './pages/ContactPage';
-import { loadFonts } from './lib/fonts';
+import { useEffect } from 'react'
+import '@/App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Toaster } from './components/ui/sonner'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import MobileBottomNav from './components/MobileBottomNav'
+import WhatsAppButton from './components/WhatsAppButton'
+import Homepage from './pages/Homepage'
+import AboutPage from './pages/AboutPage'
+import DiveServicesPage from './pages/DiveServicesPage'
+import AccommodationsPage from './pages/AccommodationsPage'
+import RatesPackagesPage from './pages/RatesPackagesPage'
+import GalleryPage from './pages/GalleryPage'
+import ContactPage from './pages/ContactPage'
+import { loadFonts } from './lib/fonts'
 
-function App(): JSX.Element {
+const App: React.FC = () => {
   useEffect(() => {
-    loadFonts();
-  }, []);
+    loadFonts()
+  }, [])
 
   return (
     <div className="App">
@@ -48,7 +48,7 @@ function App(): JSX.Element {
         <Toaster />
       </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
