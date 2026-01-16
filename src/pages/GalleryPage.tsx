@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { X } from 'lucide-react'
-import NeumorphicButton from '../components/NeumorphicButton'
-import { resortImages, galleryImages, GalleryImage } from '../data/mockData'
+import NeumorphicButton from '@/components/NeumorphicButton'
+import { resortImages, galleryImages, GalleryImage } from '@/data/mockData'
 
 type FilterType = 'all' | 'diving' | 'rooms' | 'dining' | 'spa' | 'moments'
 
