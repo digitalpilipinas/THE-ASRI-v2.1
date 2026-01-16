@@ -1,4 +1,5 @@
 // Mock data for The Asri Dive & Leisure Resort
+import { UNSPLASH_IMAGES } from './unsplashImages'
 
 export interface ResortImages {
   hero: {
@@ -51,50 +52,50 @@ export interface ResortImages {
 
 export const resortImages: ResortImages = {
   hero: {
-    homepage: "https://images.unsplash.com/photo-1570981895699-790aeb2e6a0c?w=1920&q=80",
-    about: "https://images.unsplash.com/photo-1703108783854-a3f23dbaab95?w=1920&q=80",
-    diveServices: "https://images.unsplash.com/photo-1729746402321-cc79f99964f6?w=1920&q=80",
-    accommodations: "https://images.unsplash.com/photo-1706908271751-93cf105f34c4?w=1920&q=80",
-    contact: "https://images.unsplash.com/photo-1577158364939-ac7357a2884e?w=1920&q=80",
-    gallery: "https://images.unsplash.com/photo-1699221696360-b41d820ba136?w=1920&q=80",
+    homepage: UNSPLASH_IMAGES.hero.main,
+    about: UNSPLASH_IMAGES.about.facility,
+    diveServices: UNSPLASH_IMAGES.hero.diving,
+    accommodations: UNSPLASH_IMAGES.rooms.beachfront,
+    contact: UNSPLASH_IMAGES.contact.map,
+    gallery: UNSPLASH_IMAGES.hero.resort,
   },
   resort: {
-    infinityPool: "https://images.unsplash.com/photo-1703108783854-a3f23dbaab95?w=1200&q=80",
-    beachLoungers: "https://images.unsplash.com/photo-1583602851714-571edbce0989?w=1200&q=80",
-    aerialView: "https://images.unsplash.com/photo-1729707690998-1d4c5d755c0f?w=1200&q=80",
-    sunset: "https://images.unsplash.com/photo-1699221696360-b41d820ba136?w=1200&q=80",
+    infinityPool: UNSPLASH_IMAGES.amenities.pool,
+    beachLoungers: 'https://images.unsplash.com/photo-1583602851714-571edbce0989?w=1200&q=80',
+    aerialView: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1200&q=80',
+    sunset: 'https://images.unsplash.com/photo-1589656966895-2f33e7653819?w=1200&q=80',
   },
   diving: {
-    nudibranch1: "https://images.unsplash.com/photo-1759319580664-daef28e6a754?w=800&q=80",
-    nudibranch2: "https://images.unsplash.com/photo-1759322859265-5eeac4a2cd30?w=800&q=80",
-    seahorse: "https://images.unsplash.com/photo-1761756640708-ce2cb6798661?w=800&q=80",
-    coralCanyon: "https://images.unsplash.com/photo-1628371217613-714161455f6b?w=800&q=80",
-    fishSchool: "https://images.unsplash.com/photo-1644027616320-b378fc57f78e?w=800&q=80",
-    turtle: "https://images.unsplash.com/photo-1600342709088-bb70d3371bcd?w=800&q=80",
-    diverShipwreck: "https://images.unsplash.com/photo-1729746402321-cc79f99964f6?w=800&q=80",
-    diverUnderwater: "https://images.unsplash.com/photo-1716406756834-76996f3b8dee?w=800&q=80",
+    nudibranch1: UNSPLASH_IMAGES.diving.coral,
+    nudibranch2: UNSPLASH_IMAGES.diving.underwater,
+    seahorse: UNSPLASH_IMAGES.diving.marine,
+    coralCanyon: UNSPLASH_IMAGES.diving.coral,
+    fishSchool: UNSPLASH_IMAGES.diving.underwater,
+    turtle: UNSPLASH_IMAGES.diving.marine,
+    diverShipwreck: UNSPLASH_IMAGES.diving.boat,
+    diverUnderwater: UNSPLASH_IMAGES.diving.diver,
   },
   rooms: {
-    oceanView: "https://images.unsplash.com/photo-1706908271751-93cf105f34c4?w=1200&q=80",
-    gardenView: "https://images.unsplash.com/photo-1582473788025-c058a699e488?w=1200&q=80",
-    modernBed: "https://images.unsplash.com/photo-1600671012016-e5890d87f804?w=1200&q=80",
+    oceanView: UNSPLASH_IMAGES.rooms.deluxe,
+    gardenView: UNSPLASH_IMAGES.rooms.family,
+    modernBed: UNSPLASH_IMAGES.rooms.interior,
   },
   amenities: {
-    spa: "https://images.unsplash.com/photo-1715242563833-946f4b811399?w=1200&q=80",
-    flowers: "https://images.unsplash.com/photo-1760507971904-9b0fbef6abb3?w=800&q=80",
-    massage: "https://images.unsplash.com/photo-1740748776786-74365e440be4?w=1200&q=80",
-    pool: "https://images.unsplash.com/photo-1690000437616-371abd30e3a0?w=1200&q=80",
-    restaurant: "https://images.unsplash.com/photo-1764687274813-82d3f6e422d1?w=1200&q=80",
-    beachDining: "https://images.unsplash.com/photo-1761910990269-3963ec34827a?w=1200&q=80",
+    spa: UNSPLASH_IMAGES.amenities.spa,
+    flowers: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80',
+    massage: UNSPLASH_IMAGES.amenities.spa,
+    pool: UNSPLASH_IMAGES.amenities.pool,
+    restaurant: UNSPLASH_IMAGES.amenities.restaurant,
+    beachDining: UNSPLASH_IMAGES.amenities.restaurant,
   },
   people: {
-    instructor1: "https://images.unsplash.com/photo-1563968016-9786a660a64d?w=800&q=80",
-    instructor2: "https://images.unsplash.com/photo-1645059986162-d077871822b6?w=800&q=80",
-    couple1: "https://images.unsplash.com/photo-1766735325790-5ba68348b232?w=800&q=80",
-    couple2: "https://images.unsplash.com/photo-1726252799602-b443b78a3a0b?w=800&q=80",
-    yoga1: "https://images.unsplash.com/photo-1758797315487-b3b225dff7d8?w=800&q=80",
-    yoga2: "https://images.unsplash.com/photo-1767452985135-b2b1be80113f?w=800&q=80",
-    poolActivity: "https://images.unsplash.com/photo-1707575561373-d868bc04d593?w=800&q=80",
+    instructor1: 'https://images.unsplash.com/photo-1563968016-9786a660a64d?w=800&q=80',
+    instructor2: 'https://images.unsplash.com/photo-1645059986162-d077871822b6?w=800&q=80',
+    couple1: 'https://images.unsplash.com/photo-1766735325790-5ba68348b232?w=800&q=80',
+    couple2: 'https://images.unsplash.com/photo-1726252799602-b443b78a3a0b?w=800&q=80',
+    yoga1: 'https://images.unsplash.com/photo-1758797315487-b3b225dff7d8?w=800&q=80',
+    yoga2: 'https://images.unsplash.com/photo-1767452985135-b2b1be80113f?w=800&q=80',
+    poolActivity: 'https://images.unsplash.com/photo-1707575561373-d868bc04d593?w=800&q=80',
   }
 }
 
@@ -230,22 +231,22 @@ export interface GalleryImage {
 }
 
 export const galleryImages: GalleryImage[] = [
-  { id: 1, src: resortImages.diving.nudibranch1, category: "diving", alt: "Purple nudibranch macro" },
-  { id: 2, src: resortImages.diving.nudibranch2, category: "diving", alt: "Blue nudibranch" },
-  { id: 3, src: resortImages.diving.seahorse, category: "diving", alt: "Seahorse camouflaged" },
+  { id: 1, src: resortImages.diving.nudibranch1, category: "diving", alt: "Colorful coral reef" },
+  { id: 2, src: resortImages.diving.nudibranch2, category: "diving", alt: "Underwater tropical scene" },
+  { id: 3, src: resortImages.diving.seahorse, category: "diving", alt: "Marine life" },
   { id: 4, src: resortImages.diving.coralCanyon, category: "diving", alt: "Coral canyon" },
   { id: 5, src: resortImages.diving.turtle, category: "diving", alt: "Sea turtle" },
-  { id: 6, src: resortImages.diving.diverShipwreck, category: "diving", alt: "Diver on shipwreck" },
-  { id: 7, src: resortImages.rooms.oceanView, category: "rooms", alt: "Ocean view room" },
-  { id: 8, src: resortImages.rooms.gardenView, category: "rooms", alt: "Garden view room" },
+  { id: 6, src: resortImages.diving.diverShipwreck, category: "diving", alt: "Dive boat" },
+  { id: 7, src: resortImages.rooms.oceanView, category: "rooms", alt: "Beach resort room" },
+  { id: 8, src: resortImages.rooms.gardenView, category: "rooms", alt: "Spacious family room" },
   { id: 9, src: resortImages.amenities.restaurant, category: "dining", alt: "Beachfront dining" },
-  { id: 10, src: resortImages.amenities.beachDining, category: "dining", alt: "Romantic beach dinner" },
-  { id: 11, src: resortImages.amenities.spa, category: "spa", alt: "Spa infinity pool" },
-  { id: 12, src: resortImages.amenities.massage, category: "spa", alt: "Massage treatment" },
-  { id: 13, src: resortImages.people.yoga1, category: "moments", alt: "Group yoga class" },
-  { id: 14, src: resortImages.people.couple1, category: "moments", alt: "Couple on beach" },
+  { id: 10, src: resortImages.amenities.beachDining, category: "dining", alt: "Resort restaurant" },
+  { id: 11, src: resortImages.amenities.spa, category: "spa", alt: "Spa relaxation area" },
+  { id: 12, src: resortImages.amenities.massage, category: "spa", alt: "Spa treatments" },
+  { id: 13, src: resortImages.people.yoga1, category: "moments", alt: "Yoga and wellness" },
+  { id: 14, src: resortImages.people.couple1, category: "moments", alt: "Couple enjoying resort" },
   { id: 15, src: resortImages.resort.infinityPool, category: "moments", alt: "Resort infinity pool" },
-  { id: 16, src: resortImages.resort.sunset, category: "moments", alt: "Sunset palm trees" },
+  { id: 16, src: resortImages.resort.sunset, category: "moments", alt: "Tropical sunset" },
 ]
 
 export const whatsappNumber = "+639189003644"
