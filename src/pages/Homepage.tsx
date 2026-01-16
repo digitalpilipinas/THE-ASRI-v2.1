@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Camera, Award, Sparkles, Waves, Coffee, ChevronDown } from 'lucide-react'
-import NeumorphicButton from '../components/NeumorphicButton'
-import NeumorphicCard from '../components/NeumorphicCard'
-import { resortImages, testimonials } from '../data/mockData'
+import NeumorphicButton from '@/components/NeumorphicButton'
+import NeumorphicCard from '@/components/NeumorphicCard'
+import { resortImages, testimonials } from '@/data/mockData'
 
 const Homepage: React.FC = () => {
   return (
