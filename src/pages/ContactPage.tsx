@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube, Send } from 'lucide-react'
-import NeumorphicButton from '../components/NeumorphicButton'
-import NeumorphicCard from '../components/NeumorphicCard'
-import WhatsAppButton from '../components/WhatsAppButton'
-import { Input } from '../components/ui/input'
-import { Textarea } from '../components/ui/textarea'
-import { Label } from '../components/ui/label'
-import { resortImages, contactInfo } from '../data/mockData'
+import NeumorphicButton from '@/components/NeumorphicButton'
+import NeumorphicCard from '@/components/NeumorphicCard'
+import WhatsAppButton from '@/components/WhatsAppButton'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Label } from '@/components/ui/label'
+import { resortImages, contactInfo } from '@/data/mockData'
 
 interface FormData {
   name: string
