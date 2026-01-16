@@ -1,9 +1,9 @@
 import React from 'react'
 import { Check, Star, Gift } from 'lucide-react'
-import NeumorphicButton from '../components/NeumorphicButton'
-import NeumorphicCard from '../components/NeumorphicCard'
+import NeumorphicButton from '@/components/NeumorphicButton'
+import NeumorphicCard from '@/components/NeumorphicCard'
 import { Link } from 'react-router-dom'
-import { resortImages, roomTypes } from '../data/mockData'
+import { resortImages, roomTypes } from '@/data/mockData'
 
 interface DivePackage {
   id: number
