@@ -1,8 +1,8 @@
 import React from 'react'
 import { Award, Camera, Compass, Shield, LucideIcon } from 'lucide-react'
-import NeumorphicButton from '../components/NeumorphicButton'
-import NeumorphicCard from '../components/NeumorphicCard'
-import { resortImages } from '../data/mockData'
+import NeumorphicButton from '@/components/NeumorphicButton'
+import NeumorphicCard from '@/components/NeumorphicCard'
+import { resortImages } from '@/data/mockData'
 import { Link } from 'react-router-dom'
 
 interface Course {
