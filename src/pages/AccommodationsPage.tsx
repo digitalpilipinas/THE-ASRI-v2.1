@@ -1,8 +1,8 @@
 import React from 'react'
 import { Users, Maximize, Eye, Coffee } from 'lucide-react'
-import NeumorphicButton from '../components/NeumorphicButton'
-import NeumorphicCard from '../components/NeumorphicCard'
-import { resortImages, roomTypes } from '../data/mockData'
+import NeumorphicButton from '@/components/NeumorphicButton'
+import NeumorphicCard from '@/components/NeumorphicCard'
+import { resortImages, roomTypes } from '@/data/mockData'
 import { Link } from 'react-router-dom'
 
 interface Amenity {
