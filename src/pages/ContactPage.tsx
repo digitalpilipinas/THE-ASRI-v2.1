@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube, Send } from 'lucide-react'
+import { Phone, Mail, Clock, Facebook, Instagram, Youtube, Send } from 'lucide-react'
 import NeumorphicButton from '@/components/NeumorphicButton'
 import NeumorphicCard from '@/components/NeumorphicCard'
 import WhatsAppButton from '@/components/WhatsAppButton'

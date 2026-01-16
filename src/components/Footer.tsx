@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Youtube } from 'lucide-react';
 
-const Footer = (): JSX.Element => {
+const Footer = () => {
   return (
     <footer className="bg-[#1A2332] text-[#E6EBE8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">

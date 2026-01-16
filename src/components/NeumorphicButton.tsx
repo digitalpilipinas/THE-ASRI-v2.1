@@ -18,7 +18,7 @@ const NeumorphicButton = ({
   type = 'button',
   disabled = false,
   ...props 
-}: NeumorphicButtonProps): JSX.Element => {
+}: NeumorphicButtonProps) => {
   const baseStyles = 'font-lato font-bold rounded-xl transition-all duration-300 inline-flex items-center justify-center gap-2';
   
   const sizeStyles: Record<ButtonSize, string> = {

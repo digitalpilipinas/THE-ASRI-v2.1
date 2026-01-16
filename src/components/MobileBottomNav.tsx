@@ -11,7 +11,7 @@ interface NavItem {
   isPrimary?: boolean;
 }
 
-const MobileBottomNav = (): JSX.Element => {
+const MobileBottomNav = () => {
   const location = useLocation();
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);

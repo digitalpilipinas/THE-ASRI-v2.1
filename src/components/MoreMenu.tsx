@@ -15,7 +15,7 @@ interface MenuItem {
   color: string;
 }
 
-const MoreMenu = ({ isOpen, onClose }: MoreMenuProps): JSX.Element => {
+const MoreMenu = ({ isOpen, onClose }: MoreMenuProps) => {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';

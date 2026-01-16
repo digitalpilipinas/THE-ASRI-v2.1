@@ -3,7 +3,7 @@ interface WaveDividerProps {
   color?: string;
 }
 
-const WaveDivider = ({ flip = false, color = '#F5F1E8' }: WaveDividerProps): JSX.Element => {
+const WaveDivider = ({ flip = false, color = '#F5F1E8' }: WaveDividerProps) => {
   return (
     <div className={`w-full ${flip ? 'rotate-180' : ''}`}>
       <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-12 md:h-16">

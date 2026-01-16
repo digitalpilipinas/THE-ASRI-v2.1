@@ -14,7 +14,7 @@ const NeumorphicCard = ({
   hover = true,
   padding = 'lg',
   ...props 
-}: NeumorphicCardProps): JSX.Element => {
+}: NeumorphicCardProps) => {
   const paddingStyles: Record<CardPadding, string> = {
     sm: 'p-4',
     md: 'p-6',

@@ -8,7 +8,7 @@ interface NavigationItem {
   fullName: string;
 }
 
-const Header = (): JSX.Element => {
+const Header = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const location = useLocation();
 

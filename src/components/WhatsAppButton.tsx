@@ -4,12 +4,14 @@ import { MessageCircle } from 'lucide-react';
 interface WhatsAppButtonProps {
   phoneNumber?: string;
   message?: string;
+  position?: 'fixed' | 'inline';
 }
 
 const WhatsAppButton = ({ 
   phoneNumber = '+639189003644', 
   message = "Hi! I'd like to learn more about The Asri.",
-}: WhatsAppButtonProps): JSX.Element => {
+  position = 'fixed'
+}: WhatsAppButtonProps) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [showTooltip, setShowTooltip] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -62,11 +64,14 @@ const WhatsAppButton = ({
 
   return (
     <div
-      className={`fixed z-50 transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20 pointer-events-none'}`}
-      style={{
+      className={position === 'fixed' 
+        ? `fixed z-50 transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20 pointer-events-none'}`
+        : 'relative inline-block'
+      }
+      style={position === 'fixed' ? {
         bottom: isMobile ? '96px' : '24px',
         right: '24px'
-      }}
+      } : {}}
     >
       <div className="absolute inset-0 -z-10">
         <span className="absolute inset-0 rounded-full bg-[#25D366]/30 animate-ping" style={{ animationDuration: '2s' }} />
