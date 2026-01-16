@@ -1,7 +1,7 @@
 import React from 'react'
 import { Award, Heart, Users, Leaf, Trophy, Shield, LucideIcon } from 'lucide-react'
-import NeumorphicCard from '../components/NeumorphicCard'
-import { resortImages } from '../data/mockData'
+import NeumorphicCard from '@/components/NeumorphicCard'
+import { resortImages } from '@/data/mockData'
 
 interface Value {
   icon: LucideIcon
