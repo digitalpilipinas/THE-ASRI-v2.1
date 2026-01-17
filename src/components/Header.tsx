@@ -45,12 +45,26 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo Section */}
-          <Link to="/" className="flex items-center group">
+          <Link to="/" className="flex items-center group gap-3">
             <img 
               src="/images/logo/asri-logo.svg" 
               alt="The Asri Logo" 
-              className="h-12 w-auto md:h-16 transition-transform group-hover:scale-105"
+              className="h-12 w-auto md:h-14 transition-transform group-hover:scale-105"
             />
+            <div className="flex flex-col">
+              <span className={`
+                text-lg md:text-xl font-bold font-playfair tracking-tight leading-none
+                ${isScrolled ? 'text-[#0D7070]' : 'text-white'}
+              `}>
+                THE ASRI
+              </span>
+              <span className={`
+                text-[8px] md:text-[10px] font-semibold font-lato tracking-[0.2em] leading-none mt-1
+                ${isScrolled ? 'text-[#4A5568]' : 'text-white/80'}
+              `}>
+                DIVE & LEISURE RESORT
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

@@ -7,13 +7,21 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           <div className="lg:col-span-1">
-            <div className="mb-4">
-              <Link to="/">
+            <div className="mb-6">
+              <Link to="/" className="flex items-center gap-4 group">
                 <img 
                   src="/images/logo/asri-logo.svg" 
                   alt="The Asri Logo" 
-                  className="h-24 w-auto mb-4"
+                  className="h-16 w-auto transition-transform group-hover:scale-105"
                 />
+                <div className="flex flex-col">
+                  <span className="text-xl font-bold font-playfair tracking-tight text-white">
+                    THE ASRI
+                  </span>
+                  <span className="text-[9px] font-semibold font-lato tracking-[0.2em] text-[#718096] mt-1">
+                    DIVE & LEISURE RESORT
+                  </span>
+                </div>
               </Link>
             </div>
             <p className="font-lato text-sm text-[#718096] mb-6">
