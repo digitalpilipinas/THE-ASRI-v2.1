@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import '@/App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { Toaster } from '@/components/ui/sonner'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -15,6 +15,22 @@ import GalleryPage from '@/pages/GalleryPage'
 import ContactPage from '@/pages/ContactPage'
 import { loadFonts } from '@/lib/fonts'
 
+// ScrollToTop component - scrolls to top on route change
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Scroll to top smoothly on route change
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant' // Use 'instant' to avoid scroll animation conflicts
+    });
+  }, [pathname]);
+
+  return null;
+};
+
 const App: React.FC = () => {
   useEffect(() => {
     loadFonts()
@@ -23,6 +39,9 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <BrowserRouter>
+        {/* Scroll to top on route change */}
+        <ScrollToTop />
+        
         <Header />
         
         <main className="min-h-screen">
