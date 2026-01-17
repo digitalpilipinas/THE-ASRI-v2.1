@@ -11,8 +11,8 @@ const HeroSlider = () => {
   const slides = [
     {
       image: resortImages.hero.homepage,
-      title: 'Where Macro Magic\nMeets Serenity',
-      subtitle: 'Discover world-class macro diving, luxurious accommodations, and Thai-inspired wellness in Anilao, Batangas.'
+      title: 'Where the Sea\nMeets Serenity',
+      subtitle: 'Discover world-class diving and Thai-inspired elegance in the heart of Mabini (Anilao), Batangas.'
     },
     {
       image: resortImages.diving.coralCanyon,
@@ -99,7 +99,7 @@ const HeroSlider = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/rates">
                 <NeumorphicButton variant="coral" size="lg">
-                  View Packages
+                  Plan Your Escape
                 </NeumorphicButton>
               </Link>
               <Link to="/dive-services">
