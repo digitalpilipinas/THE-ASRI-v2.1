@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="mb-6">
               <Link to="/" className="flex items-center gap-4 group">
                 <img 
-                  src="/images/logo/THE-ASRI-LOGO.svg" 
+                  src="/images/logo/asri-logo.svg" 
                   alt="The Asri Logo" 
                   className="h-16 w-auto transition-transform group-hover:scale-105"
                 />
