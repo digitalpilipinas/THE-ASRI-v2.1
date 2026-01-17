@@ -108,9 +108,6 @@ const HeroSlider = () => {
                 </NeumorphicButton>
               </Link>
             </div>
-            <p className="font-lato text-sm text-white/80 mt-6">
-              Mabini, Batangas (Anilao), Philippines
-            </p>
           </motion.div>
         </AnimatePresence>
       </div>
