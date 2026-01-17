@@ -209,7 +209,7 @@ const ContactPage: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="font-playfair font-bold text-3xl md:text-4xl text-[#1A2332] mb-4">How to Get Here</h2>
             <p className="font-lato text-lg text-[#4A5568]">
-              We are located in beautiful Mabini, Batangas (Anilao) - paradise is closer than you think.
+              We are located in beautiful Sabang, Puerto Galera - paradise is closer than you think.
             </p>
           </div>
 

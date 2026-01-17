@@ -8,12 +8,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           <div className="lg:col-span-1">
             <div className="mb-4">
-              {/* Logo path matches Header.tsx - will work once logo is uploaded to /public/images/logo/ */}
               <img 
                 src="/images/logo/asri-logo.svg" 
                 alt="The Asri Logo" 
                 className="h-16 w-auto mb-4"
-                loading="lazy"
               />
             </div>
             <h3 className="font-playfair font-bold text-2xl text-white mb-4">The Asri</h3>

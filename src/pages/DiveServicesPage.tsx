@@ -98,7 +98,7 @@ const DiveServicesPage: React.FC = () => {
               Fun Dives and Pricing
             </h2>
             <p className="font-lato text-lg text-[#4A5568]">
-              Already certified? Join us for guided dives at Anilao best sites.
+              Already certified? Join us for guided dives at Puerto Galera best sites.
             </p>
           </div>
 
