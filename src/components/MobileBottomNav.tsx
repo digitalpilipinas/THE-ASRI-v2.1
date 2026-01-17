@@ -69,7 +69,7 @@ const MobileBottomNav = () => {
     if (!isAutoRotate || prefersReducedMotion) return;
 
     const interval = setInterval(() => {
-      setCurrentBookIndex((prev) => (prev + 1) % BOOK_STATES.length);
+      setCurrentBookIndex((prev) => (prev + 1) % PREV + 1) % BOOK_STATES.length);
     }, 4000);
 
     return () => clearInterval(interval);
@@ -242,7 +242,7 @@ const MobileBottomNav = () => {
             {/* LEFT GROUP: Home, Services */}
             {leftNavItems.map(renderNavItem)}
 
-            {/* CENTER: FAB BUTTON - SOLID COLORS ONLY (NO GLOW, NO EFFECTS) */}
+            {/* CENTER: FAB BUTTON - Refined with thinner border + 3D elevation */}
             <button
               onClick={handleBookClick}
               className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group py-2"
@@ -250,14 +250,21 @@ const MobileBottomNav = () => {
             >
               {/* Elevated -mt-8 (32px up, 60px button = 47% outside border) */}
               <div className="relative -mt-8">
-                {/* Solid white border ring - NO GLOW */}
+                {/* Thinner white border ring with 3D elevation shadows */}
                 <div className="relative">
-                  {/* Solid white ring scale-125 (7.5px visible border) - NO boxShadow */}
+                  {/* Refined white ring scale-110 (3px visible border) */}
                   <div 
-                    className="absolute inset-0 bg-white rounded-full scale-125"
+                    className="absolute inset-0 bg-white rounded-full scale-110"
+                    style={{
+                      boxShadow: `
+                        0 8px 16px rgba(0, 0, 0, 0.15),
+                        0 4px 8px rgba(0, 0, 0, 0.10),
+                        0 2px 4px rgba(0, 0, 0, 0.08)
+                      `
+                    }}
                   />
                   
-                  {/* FAB 60px - SOLID COLOR ONLY (NO shadows, NO gradient, NO glow) */}
+                  {/* FAB 60px - Solid color with subtle elevation */}
                   <div
                     className="relative w-[60px] h-[60px] rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-active:scale-95"
                     style={{
