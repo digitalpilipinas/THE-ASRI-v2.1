@@ -19,8 +19,8 @@ const Homepage: React.FC = () => {
       {/* Stats Bar - Sticky */}
       <StatsBar />
 
-      {/* Experience Section - Scroll Target */}
-      <section id="experience-section" className="py-16 md:py-24 bg-[#F5F1E8]">
+      {/* Experience Section */}
+      <section className="py-16 md:py-24 bg-[#F5F1E8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="font-playfair font-bold text-3xl md:text-5xl text-[#1A2332] mb-4">
@@ -143,7 +143,7 @@ const Homepage: React.FC = () => {
                 <Award className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-playfair font-bold text-xl text-[#1A2332] mb-2">
-                PADI 5-Star Dive Resort
+                PADI 5-Star IDC Center
               </h3>
               <p className="font-lato text-sm text-[#718096]">
                 Internationally certified dive center with the highest safety and training standards.
