@@ -1,6 +1,5 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { motion, useScroll, useTransform } from 'framer-motion'
 import { Camera, Award, Sparkles, Waves, Coffee } from 'lucide-react'
 import NeumorphicButton from '@/components/NeumorphicButton'
 import NeumorphicCard from '@/components/NeumorphicCard'
@@ -12,15 +11,6 @@ import GalleryTeaser from '@/components/home/GalleryTeaser'
 import TestimonialCarousel from '@/components/home/TestimonialCarousel'
 
 const Homepage: React.FC = () => {
-  // Parallax for "Why Choose Us" section - SUBTLE movement (matching Final CTA)
-  const whyChooseRef = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: whyChooseRef,
-    offset: ["start end", "end start"]
-  })
-  // Reduced parallax movement: 20px (same as Final CTA) instead of 30px
-  const parallaxY = useTransform(scrollYProgress, [0, 1], [0, 20])
-
   return (
     <div className="min-h-screen">
       {/* Hero Section with Slider */}
@@ -135,47 +125,20 @@ const Homepage: React.FC = () => {
         </div>
       </section>
 
-      {/* Why Choose Us - OCEAN PARALLAX IMAGE (Final CTA Style) */}
-      <section
-        ref={whyChooseRef}
-        className="relative py-16 md:py-24 overflow-hidden bg-midnight-blue"
-      >
-        {/* PARALLAX BACKGROUND IMAGE - Blue Ocean (David Boca) */}
-        <motion.div
-          style={{ y: parallaxY }}
-          className="absolute inset-0 z-0"
-        >
-          <img
-            src="https://images.pexels.com/photos/5466506/pexels-photo-5466506.jpeg?auto=compress&cs=tinysrgb&w=1920"
-            alt="Underwater blue ocean view"
-            className="h-full w-full object-cover"
-          />
-        </motion.div>
-
-        {/* GRADIENT OVERLAY - 60% opacity (matches Final CTA darkness) */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0D7070]/60 via-[#0a5555]/55 to-[#1A2332]/60 z-0" />
-
-        {/* CONTENT LAYER (above all backgrounds) */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12 md:mb-16"
-          >
-            {/* WHITE TEXT with drop-shadow (Final CTA style) */}
-            <h2 className="font-playfair font-bold text-3xl md:text-5xl text-white drop-shadow-lg mb-4">
+      {/* Why Choose Us - RESTORED ORIGINAL BLUEPRINT DESIGN */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="font-playfair font-bold text-3xl md:text-5xl text-[#1A2332] mb-4">
               Why Dive with The Asri?
             </h2>
-            <p className="font-lato text-lg text-white/95 drop-shadow max-w-2xl mx-auto">
+            <p className="font-lato text-lg text-[#4A5568] max-w-2xl mx-auto">
               We are not just another dive resort. Here is what sets us apart.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {/* GLASS EFFECT CARDS - bg-white/95 backdrop-blur-sm (Final CTA style) */}
-            <NeumorphicCard padding="md" className="bg-white/95 backdrop-blur-sm flex flex-col items-center text-center">
+            <NeumorphicCard padding="md" className="flex flex-col items-center text-center">
               <div className="bg-[#0D7070] w-12 h-12 rounded-full flex items-center justify-center mb-4">
                 <Award className="w-6 h-6 text-white" />
               </div>
@@ -187,7 +150,7 @@ const Homepage: React.FC = () => {
               </p>
             </NeumorphicCard>
 
-            <NeumorphicCard padding="md" className="bg-white/95 backdrop-blur-sm flex flex-col items-center text-center">
+            <NeumorphicCard padding="md" className="flex flex-col items-center text-center">
               <div className="bg-[#FF6B6B] w-12 h-12 rounded-full flex items-center justify-center mb-4">
                 <Waves className="w-6 h-6 text-white" />
               </div>
@@ -199,7 +162,7 @@ const Homepage: React.FC = () => {
               </p>
             </NeumorphicCard>
 
-            <NeumorphicCard padding="md" className="bg-white/95 backdrop-blur-sm flex flex-col items-center text-center">
+            <NeumorphicCard padding="md" className="flex flex-col items-center text-center">
               <div className="bg-[#D4A373] w-12 h-12 rounded-full flex items-center justify-center mb-4">
                 <Camera className="w-6 h-6 text-white" />
               </div>
@@ -211,7 +174,7 @@ const Homepage: React.FC = () => {
               </p>
             </NeumorphicCard>
 
-            <NeumorphicCard padding="md" className="bg-white/95 backdrop-blur-sm flex flex-col items-center text-center">
+            <NeumorphicCard padding="md" className="flex flex-col items-center text-center">
               <div className="bg-[#7C9885] w-12 h-12 rounded-full flex items-center justify-center mb-4">
                 <Sparkles className="w-6 h-6 text-white" />
               </div>
@@ -223,7 +186,7 @@ const Homepage: React.FC = () => {
               </p>
             </NeumorphicCard>
 
-            <NeumorphicCard padding="md" className="bg-white/95 backdrop-blur-sm flex flex-col items-center text-center">
+            <NeumorphicCard padding="md" className="flex flex-col items-center text-center">
               <div className="bg-[#0D7070] w-12 h-12 rounded-full flex items-center justify-center mb-4">
                 <Coffee className="w-6 h-6 text-white" />
               </div>
@@ -235,7 +198,7 @@ const Homepage: React.FC = () => {
               </p>
             </NeumorphicCard>
 
-            <NeumorphicCard padding="md" className="bg-white/95 backdrop-blur-sm flex flex-col items-center text-center">
+            <NeumorphicCard padding="md" className="flex flex-col items-center text-center">
               <div className="bg-[#FF6B6B] w-12 h-12 rounded-full flex items-center justify-center mb-4">
                 <Award className="w-6 h-6 text-white" />
               </div>
