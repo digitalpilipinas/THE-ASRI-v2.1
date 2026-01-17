@@ -242,7 +242,7 @@ const MobileBottomNav = () => {
             {/* LEFT GROUP: Home, Services */}
             {leftNavItems.map(renderNavItem)}
 
-            {/* CENTER: PREMIUM FAB BUTTON - 3D depth with solid opaque button */}
+            {/* CENTER: FAB BUTTON - SOLID COLORS ONLY (NO GLOW, NO EFFECTS) */}
             <button
               onClick={handleBookClick}
               className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group py-2"
@@ -250,38 +250,25 @@ const MobileBottomNav = () => {
             >
               {/* Elevated -mt-8 (32px up, 60px button = 47% outside border) */}
               <div className="relative -mt-8">
-                {/* Premium white border ring with 3-layer luminous glow */}
+                {/* Solid white border ring - NO GLOW */}
                 <div className="relative">
-                  {/* Thicker white ring scale-125 (7.5px visible border) */}
+                  {/* Solid white ring scale-125 (7.5px visible border) - NO boxShadow */}
                   <div 
-                    className="absolute inset-0 bg-white rounded-full scale-125" 
-                    style={{
-                      boxShadow: `
-                        0 8px 32px rgba(255, 255, 255, 0.8),
-                        0 4px 16px rgba(255, 255, 255, 0.9),
-                        0 0 8px rgba(255, 255, 255, 1)
-                      `
-                    }} 
+                    className="absolute inset-0 bg-white rounded-full scale-125"
                   />
                   
-                  {/* FAB 60px - SOLID OPAQUE (100%) with enhanced shadows */}
+                  {/* FAB 60px - SOLID COLOR ONLY (NO shadows, NO gradient, NO glow) */}
                   <div
                     className="relative w-[60px] h-[60px] rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-active:scale-95"
                     style={{
-                      background: `linear-gradient(135deg, ${currentBookState.color}, ${currentBookState.color})`,
-                      boxShadow: `
-                        0 16px 48px ${currentBookState.color}70,
-                        0 8px 24px ${currentBookState.color}50,
-                        0 4px 12px ${currentBookState.color}40,
-                        inset 0 3px 12px rgba(255, 255, 255, 0.7)
-                      `
+                      backgroundColor: currentBookState.color
                     }}
                   >
                     <currentBookState.icon className="w-[22px] h-[22px] text-white" strokeWidth={2.5} />
                   </div>
                 </div>
                 
-                {/* Brand-colored label with premium readability */}
+                {/* Brand-colored label with simple readability shadow */}
                 <span 
                   className="absolute -bottom-5 left-1/2 -translate-x-1/2 font-lato text-[9px] whitespace-nowrap transition-colors duration-500 uppercase"
                   style={{ 
@@ -292,9 +279,7 @@ const MobileBottomNav = () => {
                       -1px -1px 0 white,
                       1px -1px 0 white,
                       -1px 1px 0 white,
-                      1px 1px 0 white,
-                      0 2px 4px rgba(0, 0, 0, 0.25),
-                      0 0 12px ${currentBookState.color}40
+                      1px 1px 0 white
                     `
                   }}
                 >
