@@ -37,43 +37,56 @@ const Header = () => {
       className={`
         fixed top-0 left-0 right-0 z-40 transition-all duration-300
         ${isScrolled 
-          ? 'bg-[#F5F1E8]/95 backdrop-blur-md shadow-lg' 
-          : 'bg-gradient-to-b from-[#1A2332]/30 to-transparent'
+          ? 'bg-[#F5F1E8]/80 backdrop-blur-2xl shadow-lg' 
+          : 'bg-gradient-to-b from-[#1A2332]/40 to-transparent'
         }
       `}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo Section */}
+          {/* LOGO SECTION - Enhanced with Glow Ring */}
           <Link to="/" className="flex items-center group gap-3">
-            <div className={`
-              p-2 rounded-xl transition-all duration-300
-              ${!isScrolled 
-                ? 'bg-white/10 backdrop-blur-sm shadow-lg' 
-                : 'bg-transparent'
-              }
-            `}>
-              <img 
-                src="/images/logo/THE-ASRI-LOGO.svg" 
-                alt="The Asri Logo" 
-                className={`
-                  h-10 w-auto md:h-12 transition-transform group-hover:scale-105
-                  ${!isScrolled 
-                    ? 'drop-shadow-[0_2px_4px_rgba(255,255,255,0.9)] drop-shadow-[0_4px_12px_rgba(255,255,255,0.6)] drop-shadow-[0_0_2px_rgba(255,255,255,1)]' 
-                    : ''
-                  }
-                `}
-              />
+            {/* Logo Container with Subtle Glow */}
+            <div className="relative">
+              {/* Glow Ring - Only visible when NOT scrolled (on dark hero) */}
+              {!isScrolled && (
+                <div className="absolute inset-0 bg-[#0D7070]/15 blur-lg rounded-full scale-110" />
+              )}
+              
+              {/* Logo Background */}
+              <div className={`
+                relative p-2 rounded-xl transition-all duration-300
+                ${!isScrolled 
+                  ? 'bg-white/10 backdrop-blur-sm shadow-lg' 
+                  : 'bg-transparent'
+                }
+              `}>
+                <img 
+                  src="/images/logo/THE-ASRI-LOGO.svg" 
+                  alt="The Asri Logo" 
+                  className={`
+                    h-10 w-auto md:h-12 transition-all duration-300 group-hover:scale-105 group-active:scale-95
+                    ${!isScrolled 
+                      ? 'drop-shadow-[0_2px_8px_rgba(255,255,255,0.9)] drop-shadow-[0_4px_16px_rgba(255,255,255,0.6)] drop-shadow-[0_0_4px_rgba(255,255,255,1)]' 
+                      : 'drop-shadow-md'
+                    }
+                  `}
+                />
+              </div>
             </div>
+            
+            {/* Brand Text Stack - Enhanced Legibility */}
             <div className="flex flex-col">
               <span className={`
                 text-lg md:text-xl font-bold font-playfair tracking-tight leading-none
+                transition-colors duration-300
                 ${isScrolled ? 'text-[#0D7070]' : 'text-white'}
               `}>
                 The Asri
               </span>
               <span className={`
-                text-[8px] md:text-[10px] font-semibold font-lato tracking-[0.2em] leading-none mt-1
+                text-[9px] md:text-[10px] font-semibold font-lato tracking-[0.25em] leading-none mt-1.5
+                transition-colors duration-300
                 ${isScrolled ? 'text-[#4A5568]' : 'text-white/80'}
               `}>
                 DIVE & LEISURE RESORT
@@ -81,7 +94,7 @@ const Header = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* DESKTOP NAVIGATION - Hidden on Mobile (FAB handles nav) */}
           <nav className="hidden lg:flex items-center gap-1">
             {navigation.map((item) => (
               <Link
@@ -116,9 +129,9 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Desktop CTA Buttons */}
+          {/* DESKTOP CTA BUTTONS - Hidden on Mobile */}
           <div className="hidden lg:flex items-center gap-3">
-            {/* Call Now - Glassmorphism Pill */}
+            {/* Call Now - Enhanced Glassmorphism */}
             <a 
               href="tel:+639189003644" 
               className={`
@@ -127,7 +140,7 @@ const Header = () => {
                 transition-all duration-300 group
                 ${isScrolled
                   ? 'text-[#0D7070] hover:text-[#0a5555] hover:bg-[#E6EBE8]/70'
-                  : 'text-white bg-white/15 backdrop-blur-sm border border-white/20 hover:bg-white/25'
+                  : 'text-white bg-white/15 backdrop-blur-md border border-white/20 hover:bg-white/25'
                 }
               `}
               aria-label="Call us"
@@ -137,7 +150,7 @@ const Header = () => {
               <span className="hidden xl:inline">Call Now</span>
             </a>
             
-            {/* Book Now Button */}
+            {/* Book Now Button - Premium Gradient */}
             <Link 
               to="/rates" 
               className="
@@ -147,7 +160,7 @@ const Header = () => {
                 font-lato font-bold text-sm
                 shadow-lg hover:shadow-xl
                 transition-all duration-300
-                hover:scale-105
+                hover:scale-105 active:scale-95
                 group
               "
             >
@@ -160,7 +173,7 @@ const Header = () => {
         </div>
       </div>
       
-      {/* Wave divider when scrolled */}
+      {/* Wave divider when scrolled - Enhanced */}
       {isScrolled && (
         <div className="absolute bottom-0 left-0 right-0 h-1">
           <svg viewBox="0 0 1200 6" className="w-full h-full">
