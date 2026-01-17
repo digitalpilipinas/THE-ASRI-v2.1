@@ -1,50 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Camera, Award, Sparkles, Waves, Coffee, ChevronDown } from 'lucide-react'
+import { Camera, Award, Sparkles, Waves, Coffee } from 'lucide-react'
 import NeumorphicButton from '@/components/NeumorphicButton'
 import NeumorphicCard from '@/components/NeumorphicCard'
 import { resortImages, testimonials } from '@/data/mockData'
+import HeroSlider from '@/components/home/HeroSlider'
+import StatsBar from '@/components/home/StatsBar'
+import AccommodationsPreview from '@/components/home/AccommodationsPreview'
+import GalleryTeaser from '@/components/home/GalleryTeaser'
 
 const Homepage: React.FC = () => {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${resortImages.hero.homepage})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0D7070]/60 via-[#0D7070]/40 to-[#0D7070]/70"></div>
-        </div>
+      {/* Hero Section with Slider */}
+      <HeroSlider />
 
-        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl">
-            <h1 className="font-playfair font-bold text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
-              Where Macro Magic<br />Meets Serenity
-            </h1>
-            <p className="font-lato text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Discover world-class macro diving, luxurious accommodations, and Thai-inspired wellness in Anilao, Batangas.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/rates">
-                <NeumorphicButton variant="coral" size="lg">View Packages</NeumorphicButton>
-              </Link>
-              <Link to="/dive-services">
-                <NeumorphicButton variant="outline" size="lg" className="bg-white/90 hover:bg-white">
-                  Explore Diving
-                </NeumorphicButton>
-              </Link>
-            </div>
-            <p className="font-lato text-sm text-white/80 mt-6">
-              Mabini, Batangas (Anilao), Philippines
-            </p>
-          </div>
-        </div>
-
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-8 h-8 text-white/80" />
-        </div>
-      </section>
+      {/* Stats Bar - Sticky */}
+      <StatsBar />
 
       {/* Experience Section */}
       <section className="py-16 md:py-24 bg-[#F5F1E8]">
@@ -305,6 +277,12 @@ const Homepage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Accommodations Preview - NEW */}
+      <AccommodationsPreview />
+
+      {/* Gallery Teaser - NEW */}
+      <GalleryTeaser />
 
       {/* Final CTA */}
       <section
