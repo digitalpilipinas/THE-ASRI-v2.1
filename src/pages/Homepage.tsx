@@ -8,7 +8,6 @@ import HeroSlider from '@/components/home/HeroSlider'
 import StatsBar from '@/components/home/StatsBar'
 import AccommodationsPreview from '@/components/home/AccommodationsPreview'
 import GalleryTeaser from '@/components/home/GalleryTeaser'
-import TestimonialCarousel from '@/components/home/TestimonialCarousel'
 
 const Homepage: React.FC = () => {
   return (
@@ -213,13 +212,76 @@ const Homepage: React.FC = () => {
         </div>
       </section>
 
-      {/* Testimonials Carousel - NEW */}
-      <TestimonialCarousel testimonials={testimonials} />
+      {/* Testimonials */}
+      <section className="py-16 md:py-24 bg-[#F5F1E8]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="font-playfair font-bold text-3xl md:text-5xl text-[#1A2332] mb-4">
+              Guest Stories
+            </h2>
+            <p className="font-lato text-lg text-[#4A5568]">
+              Do not just take our word for it - hear from our happy guests.
+            </p>
+          </div>
 
-      {/* Accommodations Preview */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {testimonials.slice(0, 3).map((testimonial) => (
+              <NeumorphicCard key={testimonial.id} padding="md">
+                <div className="flex items-center gap-4 mb-4">
+                  <img
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
+                    className="w-14 h-14 rounded-full object-cover"
+                  />
+                  <div>
+                    <h4 className="font-lato font-bold text-[#1A2332]">
+                      {testimonial.name}
+                    </h4>
+                    <p className="font-lato text-sm text-[#718096]">
+                      {testimonial.location}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-1 mb-3">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <span key={i} className="text-[#FF6B6B]">★</span>
+                  ))}
+                </div>
+                <p className="font-lato text-[#4A5568] text-sm mb-3">
+                  {testimonial.text}
+                </p>
+                <p className="font-lato text-xs text-[#718096]">
+                  via {testimonial.source}
+                </p>
+              </NeumorphicCard>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap justify-center items-center gap-8 mt-12 pt-8 border-t border-[#D4A373]/20">
+            <div className="text-center">
+              <p className="font-playfair font-bold text-3xl text-[#0D7070]">5.0</p>
+              <p className="font-lato text-sm text-[#718096]">TripAdvisor</p>
+            </div>
+            <div className="text-center">
+              <p className="font-playfair font-bold text-3xl text-[#0D7070]">100%</p>
+              <p className="font-lato text-sm text-[#718096]">Safety Record</p>
+            </div>
+            <div className="text-center">
+              <p className="font-playfair font-bold text-3xl text-[#0D7070]">15+</p>
+              <p className="font-lato text-sm text-[#718096]">Years Experience</p>
+            </div>
+            <div className="text-center">
+              <p className="font-playfair font-bold text-3xl text-[#0D7070]">PADI</p>
+              <p className="font-lato text-sm text-[#718096]">5-Star IDC</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Accommodations Preview - NEW */}
       <AccommodationsPreview />
 
-      {/* Gallery Teaser */}
+      {/* Gallery Teaser - NEW */}
       <GalleryTeaser />
 
       {/* Final CTA */}
