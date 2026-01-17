@@ -9,6 +9,7 @@ import StatsBar from '@/components/home/StatsBar'
 import AccommodationsPreview from '@/components/home/AccommodationsPreview'
 import GalleryTeaser from '@/components/home/GalleryTeaser'
 import TestimonialCarousel from '@/components/home/TestimonialCarousel'
+import ScrollToTop from '@/components/shared/ScrollToTop'
 
 const Homepage: React.FC = () => {
   return (
@@ -259,6 +260,9 @@ const Homepage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
     </div>
   )
 }
