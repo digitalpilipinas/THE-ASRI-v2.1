@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Home, Waves, ImagePlus, Menu, X, LucideIcon, Compass, Flower2 } from 'lucide-react';
+import { Home, ConciergeBell, ImagePlus, Menu, X, LucideIcon, Compass, Flower2, Waves } from 'lucide-react';
 import MoreMenu from '@/components/MoreMenu';
 
 interface NavItem {
@@ -81,7 +81,7 @@ const MobileBottomNav = () => {
     return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
   }, []);
 
-  // LEFT GROUP: Home, Dive
+  // LEFT GROUP: Home, Services
   const leftNavItems: NavItem[] = [
     {
       name: 'HOME',
@@ -90,14 +90,14 @@ const MobileBottomNav = () => {
       activeColor: '#0D7070' // Deep Teal
     },
     {
-      name: 'DIVE',
+      name: 'SERVICES', // Changed from DIVE
       path: '/dive-services',
-      icon: Waves,
+      icon: ConciergeBell, // Changed from Waves
       activeColor: '#7C9885' // Bamboo Green
     }
   ];
 
-  // RIGHT GROUP: Gallery, Menu
+  // RIGHT GROUP: Gallery
   const rightNavItems: NavItem[] = [
     {
       name: 'GALLERY',
@@ -135,57 +135,54 @@ const MobileBottomNav = () => {
       <Link
         key={item.path}
         to={item.path}
-        className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group py-3"
+        className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group py-2"
         aria-label={item.name}
         aria-current={active ? 'page' : undefined}
       >
         <div className="flex flex-col items-center">
+          {/* FIX #1: Reduced container size w-14 h-14 → w-11 h-11 */}
           <div
             className={`
-              relative w-14 h-14 rounded-2xl
+              relative w-11 h-11 rounded-xl
               flex items-center justify-center
               transition-all duration-300
               ${active 
-                ? 'bg-gradient-to-br from-white/60 to-white/40 scale-100' 
+                ? 'bg-gradient-to-br from-white/60 to-white/40' 
                 : 'bg-transparent group-hover:bg-white/20'
               }
             `}
             style={active ? {
               boxShadow: `
-                inset 3px 3px 10px rgba(13, 112, 112, 0.15),
-                inset -3px -3px 10px rgba(255, 255, 255, 0.7),
-                0 4px 12px ${item.activeColor}40
+                inset 2px 2px 8px rgba(13, 112, 112, 0.15),
+                inset -2px -2px 8px rgba(255, 255, 255, 0.7),
+                0 2px 8px ${item.activeColor}40
               `
             } : {}}
           >
+            {/* FIX #1: Reduced icon size w-7 h-7 → w-5 h-5 */}
             <Icon 
-              className="w-7 h-7 transition-all duration-300 group-hover:scale-110"
+              className="w-5 h-5 transition-all duration-300 group-hover:scale-110"
               strokeWidth={active ? 2.5 : 2}
               style={{ color: active ? item.activeColor : '#718096' }}
             />
             
-            {/* Active pulse dot */}
-            {active && (
-              <span 
-                className="absolute -top-1 -right-1 w-2 h-2 rounded-full animate-pulse"
-                style={{ backgroundColor: item.activeColor }}
-              />
-            )}
+            {/* FIX #2: REMOVED pulse dot - was causing overflow */}
           </div>
 
-          {/* Label - FIX #4: mt-3, mb-2, uppercase, font-semibold */}
+          {/* FIX #1: Reduced text spacing mt-3 mb-2 → mt-2 mb-1 */}
+          {/* FIX #2: Removed scale-105 - was causing overflow */}
           <span
             className={`
-              font-lato text-[11px] whitespace-nowrap transition-all duration-300 
-              mt-3 mb-2 uppercase font-semibold
-              ${active ? 'font-bold scale-105' : ''}
+              font-lato text-[10px] whitespace-nowrap transition-all duration-300 
+              mt-2 mb-1 uppercase font-semibold
+              ${active ? 'font-bold' : ''}
             `}
             style={{ color: active ? item.activeColor : '#718096' }}
           >
             {item.name}
           </span>
 
-          {/* FIX #3: Active gradient line - w-8 and -bottom-6 */}
+          {/* Active gradient line - kept w-8 and -bottom-6 */}
           {active && (
             <div 
               className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-8 h-0.5 rounded-full"
@@ -208,69 +205,63 @@ const MobileBottomNav = () => {
         className="lg:hidden fixed bottom-0 left-0 right-0 z-40"
         aria-label="Mobile bottom navigation"
       >
-        {/* ENHANCED GLASSMORPHISM CONTAINER - Premium Resort Feel */}
-        {/* FIX #5: Added pb-4 */}
+        {/* OPTIMIZED GLASSMORPHISM CONTAINER */}
+        {/* FIX #1: Reduced height h-20 → h-16, pb-4 → pb-2 */}
         <div 
           className="
             bg-white/75 backdrop-blur-2xl
             border-t border-white/30
-            pb-safe pb-4
+            pb-safe pb-2
           "
           style={{
             boxShadow: '0 -12px 40px rgba(13, 112, 112, 0.12)'
           }}
         >
-          <div className="flex items-center justify-around h-20 px-4">
-            {/* LEFT GROUP: Home, Dive */}
+          <div className="flex items-center justify-around h-16 px-4">
+            {/* LEFT GROUP: Home, Services */}
             {leftNavItems.map(renderNavItem)}
 
             {/* CENTER: AUTO-ROTATING BOOK FAB BUTTON */}
             <button
               onClick={handleBookClick}
-              className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group py-3"
+              className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group py-2"
               aria-label={`Book now - ${currentBookState.label} for ${currentBookState.persona}`}
             >
-              <div className="relative -mt-8">
-                {/* Animated glow effect - changes color with rotation */}
-                <div 
-                  className="absolute inset-0 blur-xl rounded-full transition-colors duration-500"
-                  style={{ 
-                    backgroundColor: `${currentBookState.color}20`
-                  }}
-                />
+              <div className="relative -mt-6">
+                {/* FIX #4: REMOVED glow effect - was bleeding under text */}
                 
                 {/* Main button with white border */}
                 <div className="relative">
                   {/* White border ring */}
                   <div className="absolute inset-0 bg-white rounded-full scale-110" style={{
-                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15)'
+                    boxShadow: '0 6px 20px rgba(0, 0, 0, 0.12)'
                   }} />
                   
-                  {/* Inner gradient button - color changes with rotation */}
+                  {/* FIX #1: Reduced FAB size w-16 h-16 → w-14 h-14 (56px) */}
                   <div
-                    className="relative w-16 h-16 rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-115 group-active:scale-95"
+                    className="relative w-14 h-14 rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-active:scale-95"
                     style={{
                       background: `linear-gradient(135deg, ${currentBookState.color}, ${currentBookState.color}dd)`,
-                      boxShadow: `0 8px 32px ${currentBookState.color}40, inset 0 2px 4px rgba(255, 255, 255, 0.4)`
+                      boxShadow: `0 6px 24px ${currentBookState.color}40, inset 0 2px 4px rgba(255, 255, 255, 0.4)`
                     }}
                   >
-                    {/* FIX #2: Using Lucide icons only (Waves, Compass, Flower2) */}
-                    <currentBookState.icon className="w-7 h-7 text-white" strokeWidth={2.5} />
+                    {/* FIX #1: Reduced FAB icon w-7 h-7 → w-6 h-6 */}
+                    <currentBookState.icon className="w-6 h-6 text-white" strokeWidth={2.5} />
                   </div>
                 </div>
                 
-                {/* Dynamic label - FIX #7: Already uppercase */}
+                {/* Dynamic label - uppercase */}
                 <span 
-                  className="absolute -bottom-6 left-1/2 -translate-x-1/2 font-lato text-[11px] font-bold whitespace-nowrap transition-colors duration-500 uppercase"
+                  className="absolute -bottom-5 left-1/2 -translate-x-1/2 font-lato text-[10px] font-bold whitespace-nowrap transition-colors duration-500 uppercase"
                   style={{ color: currentBookState.color }}
                 >
                   {currentBookState.label}
                 </span>
 
-                {/* FIX #3: Active indicator - w-8 and -bottom-6 */}
+                {/* Active indicator for FAB */}
                 {isActive(currentBookState.route) && (
                   <div 
-                    className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full transition-colors duration-500"
+                    className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-8 h-0.5 rounded-full transition-colors duration-500"
                     style={{ 
                       background: `linear-gradient(90deg, transparent, ${currentBookState.color}, transparent)` 
                     }}
@@ -285,59 +276,57 @@ const MobileBottomNav = () => {
             {/* MENU BUTTON */}
             <button
               onClick={handleMoreClick}
-              className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group py-3"
+              className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group py-2"
               aria-label="Menu"
               aria-expanded={showMoreMenu}
             >
               <div className="flex flex-col items-center">
+                {/* FIX #1: Reduced size w-14 h-14 → w-11 h-11 */}
                 <div
                   className={`
-                    relative w-14 h-14 rounded-2xl
+                    relative w-11 h-11 rounded-xl
                     flex items-center justify-center
                     transition-all duration-300
                     ${showMoreMenu 
-                      ? 'bg-gradient-to-br from-white/60 to-white/40 scale-100' 
+                      ? 'bg-gradient-to-br from-white/60 to-white/40' 
                       : 'bg-transparent group-hover:bg-white/20'
                     }
                   `}
                   style={showMoreMenu ? {
                     boxShadow: `
-                      inset 3px 3px 10px rgba(13, 112, 112, 0.15),
-                      inset -3px -3px 10px rgba(255, 255, 255, 0.7),
-                      0 4px 12px rgba(255, 107, 107, 0.25)
+                      inset 2px 2px 8px rgba(13, 112, 112, 0.15),
+                      inset -2px -2px 8px rgba(255, 255, 255, 0.7),
+                      0 2px 8px rgba(255, 107, 107, 0.25)
                     `
                   } : {}}
                 >
                   {showMoreMenu ? (
                     <X 
-                      className="w-7 h-7 text-[#FF6B6B] transition-all duration-300"
+                      className="w-5 h-5 text-[#FF6B6B] transition-all duration-300"
                       strokeWidth={2.5}
                     />
                   ) : (
                     <Menu 
-                      className="w-7 h-7 text-[#718096] group-hover:scale-110 transition-all duration-300"
+                      className="w-5 h-5 text-[#718096] group-hover:scale-110 transition-all duration-300"
                       strokeWidth={2}
                     />
                   )}
                   
-                  {/* Active pulse dot */}
-                  {showMoreMenu && (
-                    <span className="absolute -top-1 -right-1 w-2 h-2 bg-[#FF6B6B] rounded-full animate-pulse" />
-                  )}
+                  {/* FIX #2: REMOVED pulse dot */}
                 </div>
 
-                {/* Label - FIX #4 & #7: mt-3, mb-2, uppercase, font-semibold */}
+                {/* FIX #1: Reduced spacing, FIX #2: Removed scale */}
                 <span
                   className={`
-                    font-lato text-[11px] transition-all duration-300 
-                    mt-3 mb-2 uppercase font-semibold
-                    ${showMoreMenu ? 'font-bold scale-105 text-[#FF6B6B]' : 'text-[#718096]'}
+                    font-lato text-[10px] transition-all duration-300 
+                    mt-2 mb-1 uppercase font-semibold
+                    ${showMoreMenu ? 'font-bold text-[#FF6B6B]' : 'text-[#718096]'}
                   `}
                 >
                   MENU
                 </span>
 
-                {/* FIX #3: Active gradient line - w-8 and -bottom-6 */}
+                {/* Active gradient line */}
                 {showMoreMenu && (
                   <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-transparent via-[#FF6B6B] to-transparent rounded-full" />
                 )}
