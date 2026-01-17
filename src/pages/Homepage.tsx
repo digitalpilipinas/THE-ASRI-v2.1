@@ -1,6 +1,5 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { motion, useScroll, useTransform } from 'framer-motion'
 import { Camera, Award, Sparkles, Waves, Coffee } from 'lucide-react'
 import NeumorphicButton from '@/components/NeumorphicButton'
 import NeumorphicCard from '@/components/NeumorphicCard'
@@ -10,16 +9,9 @@ import StatsBar from '@/components/home/StatsBar'
 import AccommodationsPreview from '@/components/home/AccommodationsPreview'
 import GalleryTeaser from '@/components/home/GalleryTeaser'
 import TestimonialCarousel from '@/components/home/TestimonialCarousel'
+import ScrollToTop from '@/components/shared/ScrollToTop'
 
 const Homepage: React.FC = () => {
-  // Parallax for "Why Choose Us" section
-  const whyChooseRef = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: whyChooseRef,
-    offset: ["start end", "end start"]
-  })
-  const parallaxY = useTransform(scrollYProgress, [0, 1], [0, -120])
-
   return (
     <div className="min-h-screen">
       {/* Hero Section with Slider */}
@@ -134,29 +126,9 @@ const Homepage: React.FC = () => {
         </div>
       </section>
 
-      {/* Why Choose Us - WITH PARALLAX BACKGROUND */}
-      <section
-        ref={whyChooseRef}
-        className="relative py-16 md:py-24 overflow-hidden"
-      >
-        {/* Parallax Background Layer */}
-        <motion.div
-          style={{ y: parallaxY }}
-          className="absolute inset-0 z-0"
-        >
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: `url(${resortImages.diving.coralReef})`,
-              filter: 'blur(1px)'
-            }}
-          />
-          {/* Gradient overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/96 via-white/93 to-white/96" />
-        </motion.div>
-
-        {/* Content Layer (above parallax) */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Why Choose Us */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="font-playfair font-bold text-3xl md:text-5xl text-[#1A2332] mb-4">
               Why Dive with The Asri?
@@ -288,6 +260,9 @@ const Homepage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
     </div>
   )
 }
