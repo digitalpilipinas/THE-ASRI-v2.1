@@ -12,11 +12,11 @@ const Footer = () => {
                 <img 
                   src="/images/logo/THE-ASRI-LOGO.svg" 
                   alt="The Asri Logo" 
-                  className="h-16 w-auto transition-transform group-hover:scale-105 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+                  className="h-16 w-auto transition-transform group-hover:scale-105"
                 />
                 <div className="flex flex-col">
                   <span className="text-xl font-bold font-playfair tracking-tight text-white">
-                    The Asri
+                    THE ASRI
                   </span>
                   <span className="text-[9px] font-semibold font-lato tracking-[0.2em] text-[#718096] mt-1">
                     DIVE & LEISURE RESORT
