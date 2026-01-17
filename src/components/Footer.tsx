@@ -45,9 +45,9 @@ const Footer = () => {
           {/* Logo */}
           <Link to="/" className="inline-flex items-center gap-3 mb-6 group">
             <img 
-              src="/images/logo/THE-ASRI-LOGO.svg" 
+              src="/images/logo/THE-ASRI-LOGO-BG.svg" 
               alt="The Asri Logo" 
-              className="h-14 w-auto transition-transform group-hover:scale-105 drop-shadow-[0_0_12px_rgba(255,255,255,0.4)]"
+              className="h-14 w-auto transition-transform group-hover:scale-105"
             />
             <div className="flex flex-col text-left">
               <span className="text-2xl font-bold font-playfair tracking-tight text-white">
@@ -138,9 +138,9 @@ const Footer = () => {
               <div className="mb-6">
                 <Link to="/" className="flex items-center gap-4 group">
                   <img 
-                    src="/images/logo/THE-ASRI-LOGO.svg" 
+                    src="/images/logo/THE-ASRI-LOGO-BG.svg" 
                     alt="The Asri Logo" 
-                    className="h-16 w-auto transition-transform group-hover:scale-105 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+                    className="h-16 w-auto transition-transform group-hover:scale-105"
                   />
                   <div className="flex flex-col">
                     <span className="text-xl font-bold font-playfair tracking-tight text-white">
