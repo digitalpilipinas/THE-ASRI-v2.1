@@ -47,7 +47,7 @@ const Header = () => {
           {/* Logo Section */}
           <Link to="/" className="flex items-center group gap-3">
             <img 
-              src="/images/logo/asri-logo.svg" 
+              src="/images/logo/THE-ASRI-LOGO.svg" 
               alt="The Asri Logo" 
               className="h-12 w-auto md:h-14 transition-transform group-hover:scale-105"
             />
