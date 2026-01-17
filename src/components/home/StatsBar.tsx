@@ -6,7 +6,7 @@ const StatsBar = () => {
     {
       icon: Award,
       value: 'PADI 5★',
-      label: 'IDC Center',
+      label: 'Dive Resort',
       color: 'text-[#0D7070]'
     },
     {
