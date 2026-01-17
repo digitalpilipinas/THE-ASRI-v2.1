@@ -16,8 +16,8 @@ import GalleryPage from '@/pages/GalleryPage'
 import ContactPage from '@/pages/ContactPage'
 import { loadFonts } from '@/lib/fonts'
 
-// ScrollToTop component - scrolls to top on route change
-const ScrollToTop = () => {
+// ScrollToTopOnNavigation component - scrolls to top on route change
+const ScrollToTopOnNavigation = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const App: React.FC = () => {
     <div className="App">
       <BrowserRouter>
         {/* Scroll to top on route change */}
-        <ScrollToTop />
+        <ScrollToTopOnNavigation />
         
         <Header />
         
@@ -65,7 +65,7 @@ const App: React.FC = () => {
         {/* WhatsApp FAB */}
         <WhatsAppButton />
         
-        {/* Scroll to Top Button - Global */}
+        {/* Scroll to Top UI Button */}
         <ScrollToTopButton />
         
         <Toaster />

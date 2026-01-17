@@ -22,6 +22,7 @@ export interface ResortImages {
     coralCanyon: string
     fishSchool: string
     turtle: string
+    coralReef: string
     diverShipwreck: string
     diverUnderwater: string
   }
@@ -71,6 +72,7 @@ export const resortImages: ResortImages = {
     coralCanyon: "https://images.unsplash.com/photo-1628371217613-714161455f6b?w=800&q=80",
     fishSchool: "https://images.unsplash.com/photo-1644027616320-b378fc57f78e?w=800&q=80",
     turtle: "https://images.unsplash.com/photo-1600342709088-bb70d3371bcd?w=800&q=80",
+    coralReef: "https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=1920&q=80",
     diverShipwreck: "https://images.unsplash.com/photo-1729746402321-cc79f99964f6?w=800&q=80",
     diverUnderwater: "https://images.unsplash.com/photo-1716406756834-76996f3b8dee?w=800&q=80",
   },
