@@ -46,12 +46,18 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo Section */}
           <Link to="/" className="flex items-center gap-3 group">
-            <img 
-              src="/images/logo/asri-logo.svg" 
-              alt="The Asri Logo" 
-              className="h-10 w-auto md:h-14 transition-transform group-hover:scale-105"
-              loading="eager"
-            />
+            <div className={`
+              transition-all duration-500 transform
+              ${isScrolled ? 'text-[#0D7070] scale-90' : 'text-white scale-100'}
+            `}>
+              <img 
+                src="/images/logo/asri-logo.svg" 
+                alt="The Asri Logo" 
+                className="h-10 w-auto md:h-14 transition-all duration-300 group-hover:scale-105"
+                style={{ filter: isScrolled ? 'none' : 'brightness(0) invert(1)' }}
+                loading="eager"
+              />
+            </div>
             <div className="flex flex-col">
               <span className={`
                 font-playfair font-bold text-2xl md:text-3xl transition-colors
