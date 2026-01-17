@@ -46,6 +46,9 @@ const BOOK_STATES: BookState[] = [
   }
 ];
 
+// Brand color constant - Deep Teal for ALL nav items
+const BRAND_TEAL = '#0D7070';
+
 const MobileBottomNav = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -111,13 +114,13 @@ const MobileBottomNav = () => {
       name: 'HOME',
       path: '/',
       icon: Home,
-      activeColor: '#0D7070'
+      activeColor: BRAND_TEAL  // Now consistent
     },
     {
       name: 'SERVICES',
       path: '/dive-services',
       icon: ConciergeBell,
-      activeColor: '#7C9885'
+      activeColor: BRAND_TEAL  // Now consistent
     }
   ];
 
@@ -127,7 +130,7 @@ const MobileBottomNav = () => {
       name: 'GALLERY',
       path: '/gallery',
       icon: ImagePlus,
-      activeColor: '#D4A373'
+      activeColor: BRAND_TEAL  // Now consistent
     }
   ];
 
@@ -177,35 +180,36 @@ const MobileBottomNav = () => {
               boxShadow: `
                 inset 2px 2px 8px rgba(13, 112, 112, 0.15),
                 inset -2px -2px 8px rgba(255, 255, 255, 0.7),
-                0 2px 8px ${item.activeColor}40
+                0 2px 8px ${BRAND_TEAL}40
               `
             } : {}}
           >
-            {/* Icon stays 18px (8px padding each side = perfect) */}
+            {/* Icon - ALWAYS Deep Teal, bolder when active */}
             <Icon 
               className="w-[18px] h-[18px] transition-all duration-300 group-hover:scale-110"
               strokeWidth={active ? 2.5 : 2}
-              style={{ color: active ? item.activeColor : '#718096' }}
+              style={{ color: BRAND_TEAL }}  // Always Deep Teal!
             />
           </div>
 
+          {/* Text - ALWAYS Deep Teal, bolder when active */}
           <span
             className={`
               font-lato text-[9px] whitespace-nowrap transition-all duration-300 
               mt-2 mb-1 uppercase font-semibold
               ${active ? 'font-bold' : ''}
             `}
-            style={{ color: active ? item.activeColor : '#718096' }}
+            style={{ color: BRAND_TEAL }}  // Always Deep Teal!
           >
             {item.name}
           </span>
 
-          {/* Active gradient line */}
+          {/* Active gradient line - Deep Teal */}
           {active && (
             <div 
               className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-8 h-0.5 rounded-full"
               style={{ 
-                background: `linear-gradient(90deg, transparent, ${item.activeColor}, transparent)` 
+                background: `linear-gradient(90deg, transparent, ${BRAND_TEAL}, transparent)` 
               }}
             />
           )}
@@ -279,7 +283,7 @@ const MobileBottomNav = () => {
                 <span 
                   className="absolute -bottom-5 left-1/2 -translate-x-1/2 font-lato text-[10px] whitespace-nowrap transition-colors duration-500 uppercase"
                   style={{ 
-                    color: '#0D7070',  // Deep Teal (always) - brand identity
+                    color: BRAND_TEAL,  // Deep Teal (always) - brand identity
                     fontWeight: 900,    // Extra bold (vs 600 for nav items)
                     letterSpacing: '0.12em',
                     textShadow: `
@@ -306,7 +310,7 @@ const MobileBottomNav = () => {
             {/* RIGHT GROUP: Gallery */}
             {rightNavItems.map(renderNavItem)}
 
-            {/* MORE BUTTON (renamed from MENU) */}
+            {/* MORE BUTTON - ALWAYS Deep Teal */}
             <button
               onClick={handleMoreClick}
               className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group py-2 overflow-hidden"
@@ -329,19 +333,21 @@ const MobileBottomNav = () => {
                     boxShadow: `
                       inset 2px 2px 8px rgba(13, 112, 112, 0.15),
                       inset -2px -2px 8px rgba(255, 255, 255, 0.7),
-                      0 2px 8px rgba(255, 107, 107, 0.25)
+                      0 2px 8px ${BRAND_TEAL}40
                     `
                   } : {}}
                 >
                   {showMoreMenu ? (
                     <X 
-                      className="w-[18px] h-[18px] text-[#FF6B6B] transition-all duration-300"
+                      className="w-[18px] h-[18px] transition-all duration-300"
                       strokeWidth={2.5}
+                      style={{ color: BRAND_TEAL }}  // Deep Teal (was red)
                     />
                   ) : (
                     <Menu 
-                      className="w-[18px] h-[18px] text-[#718096] group-hover:scale-110 transition-all duration-300"
+                      className="w-[18px] h-[18px] group-hover:scale-110 transition-all duration-300"
                       strokeWidth={2}
+                      style={{ color: BRAND_TEAL }}  // Deep Teal
                     />
                   )}
                 </div>
@@ -350,15 +356,21 @@ const MobileBottomNav = () => {
                   className={`
                     font-lato text-[9px] transition-all duration-300 
                     mt-2 mb-1 uppercase font-semibold
-                    ${showMoreMenu ? 'font-bold text-[#FF6B6B]' : 'text-[#718096]'}
+                    ${showMoreMenu ? 'font-bold' : ''}
                   `}
+                  style={{ color: BRAND_TEAL }}  // Always Deep Teal!
                 >
                   MORE
                 </span>
 
-                {/* Active gradient line */}
+                {/* Active gradient line - Deep Teal */}
                 {showMoreMenu && (
-                  <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-transparent via-[#FF6B6B] to-transparent rounded-full" />
+                  <div 
+                    className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-8 h-0.5 rounded-full"
+                    style={{ 
+                      background: `linear-gradient(90deg, transparent, ${BRAND_TEAL}, transparent)` 
+                    }}
+                  />
                 )}
               </div>
             </button>
