@@ -242,7 +242,7 @@ const MobileBottomNav = () => {
             {/* LEFT GROUP: Home, Services */}
             {leftNavItems.map(renderNavItem)}
 
-            {/* CENTER: PREMIUM FAB BUTTON - 60px with brand-colored label */}
+            {/* CENTER: PREMIUM FAB BUTTON - 3D depth with luminous ring */}
             <button
               onClick={handleBookClick}
               className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group py-2"
@@ -250,25 +250,30 @@ const MobileBottomNav = () => {
             >
               {/* Elevated -mt-8 (32px up, 60px button = 47% outside border) */}
               <div className="relative -mt-8">
-                {/* Premium white border ring */}
+                {/* Premium white border ring with 3-layer luminous glow */}
                 <div className="relative">
-                  {/* FIX #2: White ring scale-118 (proportional to 60px) */}
+                  {/* FIX #1: Thicker white ring scale-125 (7.5px visible border) */}
                   <div 
-                    className="absolute inset-0 bg-white rounded-full scale-118" 
+                    className="absolute inset-0 bg-white rounded-full scale-125" 
                     style={{
-                      boxShadow: '0 6px 24px rgba(255, 255, 255, 0.5)'
+                      boxShadow: `
+                        0 8px 32px rgba(255, 255, 255, 0.8),
+                        0 4px 16px rgba(255, 255, 255, 0.9),
+                        0 0 8px rgba(255, 255, 255, 1)
+                      `
                     }} 
                   />
                   
-                  {/* FIX #2: FAB enlarged to 60px (47% outside border) */}
+                  {/* FAB 60px with enhanced 4-layer shadow depth */}
                   <div
                     className="relative w-[60px] h-[60px] rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-active:scale-95"
                     style={{
                       background: `linear-gradient(135deg, ${currentBookState.color}, ${currentBookState.color}dd)`,
                       boxShadow: `
-                        0 12px 40px ${currentBookState.color}50,
-                        0 6px 16px ${currentBookState.color}30,
-                        inset 0 2px 8px rgba(255, 255, 255, 0.5)
+                        0 16px 48px ${currentBookState.color}70,
+                        0 8px 24px ${currentBookState.color}50,
+                        0 4px 12px ${currentBookState.color}40,
+                        inset 0 3px 12px rgba(255, 255, 255, 0.7)
                       `
                     }}
                   >
@@ -276,7 +281,7 @@ const MobileBottomNav = () => {
                   </div>
                 </div>
                 
-                {/* FIX #1: Brand-colored label with premium readability */}
+                {/* Brand-colored label with premium readability */}
                 <span 
                   className="absolute -bottom-5 left-1/2 -translate-x-1/2 font-lato text-[9px] whitespace-nowrap transition-colors duration-500 uppercase"
                   style={{ 
