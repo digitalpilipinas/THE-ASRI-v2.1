@@ -6,7 +6,6 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import MobileBottomNav from '@/components/MobileBottomNav'
 import WhatsAppButton from '@/components/WhatsAppButton'
-import ScrollToTopButton from '@/components/shared/ScrollToTop'
 import Homepage from '@/pages/Homepage'
 import AboutPage from '@/pages/AboutPage'
 import DiveServicesPage from '@/pages/DiveServicesPage'
@@ -64,9 +63,6 @@ const App: React.FC = () => {
         
         {/* WhatsApp FAB */}
         <WhatsAppButton />
-        
-        {/* Scroll to Top Button - Global */}
-        <ScrollToTopButton />
         
         <Toaster />
       </BrowserRouter>
