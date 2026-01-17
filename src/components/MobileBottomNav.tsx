@@ -162,7 +162,7 @@ const MobileBottomNav = () => {
         aria-current={active ? 'page' : undefined}
       >
         <div className="flex flex-col items-center">
-          {/* FIX #2: Compact container 40px → 34px (-15%) */}
+          {/* Compact container 34px */}
           <div
             className={`
               relative w-[34px] h-[34px] rounded-lg overflow-hidden
@@ -242,28 +242,27 @@ const MobileBottomNav = () => {
             {/* LEFT GROUP: Home, Services */}
             {leftNavItems.map(renderNavItem)}
 
-            {/* CENTER: PREMIUM FAB BUTTON - Restored styling */}
+            {/* CENTER: PREMIUM FAB BUTTON - 60px with brand-colored label */}
             <button
               onClick={handleBookClick}
               className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group py-2"
               aria-label={`Book now - ${currentBookState.label} for ${currentBookState.persona}`}
             >
-              {/* FIX #3: Elevated -mt-8 (32px = 28% of 64px container height) */}
+              {/* Elevated -mt-8 (32px up, 60px button = 47% outside border) */}
               <div className="relative -mt-8">
-                {/* Premium white border ring with enhanced glow */}
+                {/* Premium white border ring */}
                 <div className="relative">
-                  {/* FIX #1: White ring scale-115 (prominent halo) */}
+                  {/* FIX #2: White ring scale-118 (proportional to 60px) */}
                   <div 
-                    className="absolute inset-0 bg-white rounded-full scale-115" 
+                    className="absolute inset-0 bg-white rounded-full scale-118" 
                     style={{
-                      boxShadow: '0 8px 32px rgba(255, 255, 255, 0.6)'
+                      boxShadow: '0 6px 24px rgba(255, 255, 255, 0.5)'
                     }} 
                   />
                   
-                  {/* FIX #3: Restored FAB 56px (prominent size) */}
-                  {/* FIX #1: Enhanced 3-layer shadow system */}
+                  {/* FIX #2: FAB enlarged to 60px (47% outside border) */}
                   <div
-                    className="relative w-14 h-14 rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-active:scale-95"
+                    className="relative w-[60px] h-[60px] rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-active:scale-95"
                     style={{
                       background: `linear-gradient(135deg, ${currentBookState.color}, ${currentBookState.color}dd)`,
                       boxShadow: `
@@ -277,15 +276,20 @@ const MobileBottomNav = () => {
                   </div>
                 </div>
                 
-                {/* FIX #4: White text with colored glow (premium legibility) */}
+                {/* FIX #1: Brand-colored label with premium readability */}
                 <span 
                   className="absolute -bottom-5 left-1/2 -translate-x-1/2 font-lato text-[9px] whitespace-nowrap transition-colors duration-500 uppercase"
                   style={{ 
-                    color: 'white',
+                    color: currentBookState.color,
                     fontWeight: 800,
+                    letterSpacing: '0.12em',
                     textShadow: `
-                      0 2px 8px ${currentBookState.color}80,
-                      0 1px 2px rgba(0, 0, 0, 0.3)
+                      -1px -1px 0 white,
+                      1px -1px 0 white,
+                      -1px 1px 0 white,
+                      1px 1px 0 white,
+                      0 2px 4px rgba(0, 0, 0, 0.25),
+                      0 0 12px ${currentBookState.color}40
                     `
                   }}
                 >
@@ -315,7 +319,7 @@ const MobileBottomNav = () => {
               aria-expanded={showMoreMenu}
             >
               <div className="flex flex-col items-center">
-                {/* FIX #2: Compact 34px container */}
+                {/* Compact 34px container */}
                 <div
                   className={`
                     relative w-[34px] h-[34px] rounded-lg overflow-hidden
