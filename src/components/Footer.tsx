@@ -8,13 +8,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           <div className="lg:col-span-1">
             <div className="mb-4">
-              <img 
-                src="/images/logo/asri-logo.svg" 
-                alt="The Asri Logo" 
-                className="h-16 w-auto mb-4"
-              />
+              <Link to="/">
+                <img 
+                  src="/images/logo/asri-logo.svg" 
+                  alt="The Asri Logo" 
+                  className="h-24 w-auto mb-4"
+                />
+              </Link>
             </div>
-            <h3 className="font-playfair font-bold text-2xl text-white mb-4">The Asri</h3>
             <p className="font-lato text-sm text-[#718096] mb-6">
               PADI 5-Star dive resort in Anilao, Batangas. Boutique luxury with 14 waterfront rooms, Thai-inspired design, and access to 30+ world-class dive sites.
             </p>
