@@ -35,10 +35,10 @@ const Header = () => {
   return (
     <header 
       className={`
-        fixed top-4 left-4 right-4 z-40 transition-all duration-300
+        fixed top-0 left-0 right-0 z-40 transition-all duration-300
         ${isScrolled 
-          ? 'bg-white/95 backdrop-blur-lg shadow-lg rounded-2xl' 
-          : 'bg-white/80 backdrop-blur-md shadow-sm rounded-2xl'
+          ? 'bg-[#F5F1E8]/80 backdrop-blur-2xl shadow-lg' 
+          : 'bg-gradient-to-b from-[#1A2332]/40 to-transparent'
         }
       `}
     >
@@ -46,7 +46,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* LOGO SECTION - Dynamic Logo Based on Scroll State */}
           <Link to="/" className="flex items-center group gap-3">
-            {/* Logo with Dynamic Source and Rounded Corners */}
+            {/* Logo with Dynamic Source - ONLY CHANGE: added rounded-xl */}
             <img 
               src={isScrolled 
                 ? '/images/logo/THE-ASRI-LOGO.svg'
@@ -61,14 +61,14 @@ const Header = () => {
               <span className={`
                 text-lg md:text-xl font-bold font-playfair tracking-tight leading-none
                 transition-colors duration-300
-                ${isScrolled ? 'text-[#0D7070]' : 'text-[#0D7070]'}
+                ${isScrolled ? 'text-[#0D7070]' : 'text-white'}
               `}>
                 The Asri
               </span>
               <span className={`
                 text-[9px] md:text-[10px] font-semibold font-lato tracking-[0.25em] leading-none mt-1.5
                 transition-colors duration-300
-                ${isScrolled ? 'text-[#4A5568]' : 'text-[#4A5568]'}
+                ${isScrolled ? 'text-[#4A5568]' : 'text-white/80'}
               `}>
                 DIVE & LEISURE RESORT
               </span>
@@ -87,7 +87,9 @@ const Header = () => {
                   transition-all duration-300 group
                   ${isActive(item.path) 
                     ? 'text-[#0D7070] bg-[#E6EBE8] shadow-sm' 
-                    : 'text-[#4A5568] hover:text-[#0D7070] hover:bg-[#E6EBE8]/70'
+                    : isScrolled
+                      ? 'text-[#4A5568] hover:text-[#0D7070] hover:bg-[#E6EBE8]/70'
+                      : 'text-white hover:text-white hover:bg-white/15 backdrop-blur-sm border border-white/10'
                   }
                 `}
               >
@@ -99,7 +101,11 @@ const Header = () => {
                 )}
                 
                 {/* Hover wave animation */}
-                <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 rounded-full transition-all duration-300 group-hover:w-full bg-[#7C9885]" />
+                <span className={`
+                  absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 rounded-full 
+                  transition-all duration-300 group-hover:w-full
+                  ${isScrolled ? 'bg-[#7C9885]' : 'bg-white/70'}
+                `} />
               </Link>
             ))}
           </nav>
@@ -109,7 +115,15 @@ const Header = () => {
             {/* Call Now - Enhanced Glassmorphism */}
             <a 
               href="tel:+639189003644" 
-              className="flex items-center gap-2 px-4 py-2 rounded-xl font-lato text-sm font-semibold text-[#0D7070] hover:text-[#0a5555] hover:bg-[#E6EBE8]/70 transition-all duration-300 group"
+              className={`
+                flex items-center gap-2 px-4 py-2 rounded-xl
+                font-lato text-sm font-semibold
+                transition-all duration-300 group
+                ${isScrolled
+                  ? 'text-[#0D7070] hover:text-[#0a5555] hover:bg-[#E6EBE8]/70'
+                  : 'text-white bg-white/15 backdrop-blur-md border border-white/20 hover:bg-white/25'
+                }
+              `}
               aria-label="Call us"
               title="Call +63 918 900 3644"
             >
