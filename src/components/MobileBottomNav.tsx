@@ -242,7 +242,7 @@ const MobileBottomNav = () => {
             {/* LEFT GROUP: Home, Services */}
             {leftNavItems.map(renderNavItem)}
 
-            {/* CENTER: PREMIUM FAB BUTTON - 3D depth with luminous ring */}
+            {/* CENTER: PREMIUM FAB BUTTON - 3D depth with solid opaque button */}
             <button
               onClick={handleBookClick}
               className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group py-2"
@@ -252,7 +252,7 @@ const MobileBottomNav = () => {
               <div className="relative -mt-8">
                 {/* Premium white border ring with 3-layer luminous glow */}
                 <div className="relative">
-                  {/* FIX #1: Thicker white ring scale-125 (7.5px visible border) */}
+                  {/* Thicker white ring scale-125 (7.5px visible border) */}
                   <div 
                     className="absolute inset-0 bg-white rounded-full scale-125" 
                     style={{
@@ -264,11 +264,11 @@ const MobileBottomNav = () => {
                     }} 
                   />
                   
-                  {/* FAB 60px with enhanced 4-layer shadow depth */}
+                  {/* FAB 60px - SOLID OPAQUE (100%) with enhanced shadows */}
                   <div
                     className="relative w-[60px] h-[60px] rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-active:scale-95"
                     style={{
-                      background: `linear-gradient(135deg, ${currentBookState.color}, ${currentBookState.color}dd)`,
+                      background: `linear-gradient(135deg, ${currentBookState.color}, ${currentBookState.color})`,
                       boxShadow: `
                         0 16px 48px ${currentBookState.color}70,
                         0 8px 24px ${currentBookState.color}50,
