@@ -12,13 +12,13 @@ import GalleryTeaser from '@/components/home/GalleryTeaser'
 import TestimonialCarousel from '@/components/home/TestimonialCarousel'
 
 const Homepage: React.FC = () => {
-  // Parallax for "Why Choose Us" section
+  // Parallax for "Why Choose Us" section - SUBTLE movement (like Final CTA)
   const whyChooseRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
     target: whyChooseRef,
     offset: ["start end", "end start"]
   })
-  const parallaxY = useTransform(scrollYProgress, [0, 1], [0, -120])
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [0, -30])
 
   return (
     <div className="min-h-screen">
@@ -134,25 +134,18 @@ const Homepage: React.FC = () => {
         </div>
       </section>
 
-      {/* Why Choose Us - WITH PARALLAX BACKGROUND */}
+      {/* Why Choose Us - SUBTLE TRANSPARENT OCEAN GRADIENT */}
       <section
         ref={whyChooseRef}
-        className="relative py-16 md:py-24 overflow-hidden"
+        className="relative py-16 md:py-24 overflow-hidden bg-[#E6EBE8]"
       >
-        {/* Parallax Background Layer */}
+        {/* Parallax Ocean Gradient Layer - SEMI-TRANSPARENT (30-35% opacity) */}
         <motion.div
           style={{ y: parallaxY }}
           className="absolute inset-0 z-0"
         >
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: `url(${resortImages.diving.coralReef})`,
-              filter: 'blur(1px)'
-            }}
-          />
-          {/* Gradient overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/96 via-white/93 to-white/96" />
+          {/* Multi-color gradient: Deep teal → Medium teal → Bamboo green */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0D7070]/35 via-[#1a8a8a]/30 to-[#7C9885]/35" />
         </motion.div>
 
         {/* Content Layer (above parallax) */}
