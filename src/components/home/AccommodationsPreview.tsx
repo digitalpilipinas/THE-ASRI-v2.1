@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowRight, Users, Maximize, Eye, Sparkles } from 'lucide-react'
 import NeumorphicButton from '@/components/NeumorphicButton'
-import { resortImages, roomTypes } from '@/data/mockData'
+import { roomTypes } from '@/data/mockData'
 
 const AccommodationsPreview = () => {
   // Get the popular room (Deluxe Garden View)
