@@ -15,11 +15,11 @@
 
 export const UNSPLASH_IMAGES = {
   hero: {
-    main: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1920&q=80', // Tropical beach resort panorama
-    diving: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1920&q=80', // Scuba diver underwater
+    main: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1920&q=80', // Tropical resort pool panorama
+    diving: 'https://images.unsplash.com/photo-_tDdlCJIwOA?w=1920&q=80', // Scuba diver over coral reef
     resort: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1920&q=80', // Luxury resort pool
   },
-  
+
   rooms: {
     deluxe: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&q=80', // Beach resort room with ocean view
     suite: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80', // Luxury suite interior
@@ -27,7 +27,7 @@ export const UNSPLASH_IMAGES = {
     beachfront: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80', // Beachfront bungalow
     interior: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80', // Hotel room interior
   },
-  
+
   diving: {
     underwater: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=800&q=80', // Tropical underwater scene
     equipment: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80', // Dive equipment setup
@@ -36,7 +36,7 @@ export const UNSPLASH_IMAGES = {
     diver: 'https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=800&q=80', // Scuba diver silhouette
     marine: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80', // Marine life
   },
-  
+
   amenities: {
     pool: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80', // Resort infinity pool
     restaurant: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80', // Beachfront restaurant
@@ -64,7 +64,7 @@ export const UNSPLASH_IMAGES = {
     facility: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80', // Resort facilities
     location: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80', // Anilao-style coastal beauty
   },
-  
+
   contact: {
     map: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80', // Tropical location map concept
     frontdesk: 'https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=800&q=80', // Hotel reception
