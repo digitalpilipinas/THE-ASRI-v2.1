@@ -275,16 +275,16 @@ const MobileBottomNav = () => {
                   </div>
                 </div>
                 
-                {/* Brand-colored label with drop shadows (NO outline) */}
+                {/* Deep Teal label - ALWAYS readable (brand identity) */}
                 <span 
-                  className="absolute -bottom-5 left-1/2 -translate-x-1/2 font-lato text-[9px] whitespace-nowrap transition-colors duration-500 uppercase"
+                  className="absolute -bottom-5 left-1/2 -translate-x-1/2 font-lato text-[10px] whitespace-nowrap transition-colors duration-500 uppercase"
                   style={{ 
-                    color: currentBookState.color,
-                    fontWeight: 800,
+                    color: '#0D7070',  // Deep Teal (always) - brand identity
+                    fontWeight: 900,    // Extra bold (vs 600 for nav items)
                     letterSpacing: '0.12em',
                     textShadow: `
-                      0 2px 4px rgba(0, 0, 0, 0.3),
-                      0 1px 2px rgba(0, 0, 0, 0.2)
+                      0 2px 6px rgba(0, 0, 0, 0.4),
+                      0 1px 3px rgba(0, 0, 0, 0.3)
                     `
                   }}
                 >
@@ -306,11 +306,11 @@ const MobileBottomNav = () => {
             {/* RIGHT GROUP: Gallery */}
             {rightNavItems.map(renderNavItem)}
 
-            {/* MENU BUTTON */}
+            {/* MORE BUTTON (renamed from MENU) */}
             <button
               onClick={handleMoreClick}
               className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group py-2 overflow-hidden"
-              aria-label="Menu"
+              aria-label="More options"
               aria-expanded={showMoreMenu}
             >
               <div className="flex flex-col items-center">
@@ -353,7 +353,7 @@ const MobileBottomNav = () => {
                     ${showMoreMenu ? 'font-bold text-[#FF6B6B]' : 'text-[#718096]'}
                   `}
                 >
-                  MENU
+                  MORE
                 </span>
 
                 {/* Active gradient line */}
