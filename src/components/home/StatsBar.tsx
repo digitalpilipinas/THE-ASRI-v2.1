@@ -1,43 +1,128 @@
 import { Award, Home, Waves, Sparkles } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect } from 'react'
 
 const StatsBar = () => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [direction, setDirection] = useState(1)
+
   const stats = [
     {
       icon: Award,
       value: 'PADI 5★',
       label: 'Dive Resort',
-      color: 'text-[#0D7070]'
+      color: 'text-[#0D7070]',
+      bgColor: 'bg-[#0D7070]'
     },
     {
       icon: Home,
       value: '14 Rooms',
       label: 'Boutique',
-      color: 'text-[#FF6B6B]'
+      color: 'text-[#FF6B6B]',
+      bgColor: 'bg-[#FF6B6B]'
     },
     {
       icon: Waves,
       value: '30+ Sites',
       label: 'Dive Sites',
-      color: 'text-[#7C9885]'
+      color: 'text-[#7C9885]',
+      bgColor: 'bg-[#7C9885]'
     },
     {
       icon: Sparkles,
       value: 'Thai Spa',
       label: 'Wellness',
-      color: 'text-[#D4A373]'
+      color: 'text-[#D4A373]',
+      bgColor: 'bg-[#D4A373]'
     }
   ]
 
+  // Auto-rotate every 3.5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDirection(1)
+      setCurrentIndex((prev) => (prev + 1) % stats.length)
+    }, 3500)
+
+    return () => clearInterval(timer)
+  }, [])
+
+  const goToSlide = (index: number) => {
+    setDirection(index > currentIndex ? 1 : -1)
+    setCurrentIndex(index)
+  }
+
+  const currentStat = stats[currentIndex]
+  const Icon = currentStat.icon
+
   return (
-    <motion.section
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.3 }}
-      className="sticky top-20 z-30 bg-[#E6EBE8]/95 backdrop-blur-md py-4 shadow-lg border-b border-white/20"
-    >
+    <section className="sticky top-20 z-30 bg-[#E6EBE8]/95 backdrop-blur-md py-6 shadow-lg border-b border-white/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap justify-around items-center gap-6 md:gap-8">
+        {/* MOBILE: Carousel View (Single Stat) */}
+        <div className="lg:hidden flex flex-col items-center justify-center">
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={currentIndex}
+              custom={direction}
+              initial={{ opacity: 0, x: direction * 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: direction * -50 }}
+              transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+              className="flex flex-col items-center"
+            >
+              {/* Icon with gradient background */}
+              <motion.div
+                initial={{ scale: 0.8, rotateY: 90 }}
+                animate={{ scale: 1, rotateY: 0 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className={`${
+                  currentStat.bgColor
+                } bg-opacity-10 rounded-full p-4 mb-3 shadow-lg backdrop-blur-sm`}
+                style={{ boxShadow: `0 8px 24px ${currentStat.color.replace('text-', 'rgba')}40` }}
+              >
+                <Icon className={`w-10 h-10 ${currentStat.color}`} strokeWidth={2.5} />
+              </motion.div>
+
+              {/* Value and Label */}
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.4 }}
+                className={`font-playfair font-bold text-2xl ${currentStat.color} mb-1`}
+              >
+                {currentStat.value}
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35, duration: 0.4 }}
+                className="font-lato text-sm text-[#4A5568]"
+              >
+                {currentStat.label}
+              </motion.p>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Pagination Dots */}
+          <div className="flex gap-2 mt-4">
+            {stats.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`transition-all duration-300 rounded-full ${
+                  index === currentIndex
+                    ? `w-8 h-2 ${stats[currentIndex].bgColor}`
+                    : 'w-2 h-2 bg-[#4A5568]/30 hover:bg-[#4A5568]/50'
+                }`}
+                aria-label={`Go to ${stats[index].label}`}
+                aria-current={index === currentIndex}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* DESKTOP: All Stats (Original Layout) */}
+        <div className="hidden lg:flex flex-wrap justify-around items-center gap-6 md:gap-8">
           {stats.map((stat, index) => {
             const Icon = stat.icon
             return (
@@ -68,7 +153,7 @@ const StatsBar = () => {
           })}
         </div>
       </div>
-    </motion.section>
+    </section>
   )
 }
 
