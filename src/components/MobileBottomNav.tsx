@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Home, Waves, ImagePlus, Menu, X, LucideIcon, Compass, Flower2 } from 'lucide-react';
 import MoreMenu from '@/components/MoreMenu';
