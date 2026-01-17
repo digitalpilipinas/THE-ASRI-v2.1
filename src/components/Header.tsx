@@ -44,36 +44,17 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* LOGO SECTION - Enhanced with Glow Ring */}
+          {/* LOGO SECTION - Dynamic Logo Based on Scroll State */}
           <Link to="/" className="flex items-center group gap-3">
-            {/* Logo Container with Subtle Glow */}
-            <div className="relative">
-              {/* Glow Ring - Only visible when NOT scrolled (on dark hero) */}
-              {!isScrolled && (
-                <div className="absolute inset-0 bg-[#0D7070]/15 blur-lg rounded-full scale-110" />
-              )}
-              
-              {/* Logo Background */}
-              <div className={`
-                relative p-2 rounded-xl transition-all duration-300
-                ${!isScrolled 
-                  ? 'bg-white/10 backdrop-blur-sm shadow-lg' 
-                  : 'bg-transparent'
-                }
-              `}>
-                <img 
-                  src="/images/logo/THE-ASRI-LOGO.svg" 
-                  alt="The Asri Logo" 
-                  className={`
-                    h-10 w-auto md:h-12 transition-all duration-300 group-hover:scale-105 group-active:scale-95
-                    ${!isScrolled 
-                      ? 'drop-shadow-[0_2px_8px_rgba(255,255,255,0.9)] drop-shadow-[0_4px_16px_rgba(255,255,255,0.6)] drop-shadow-[0_0_4px_rgba(255,255,255,1)]' 
-                      : 'drop-shadow-md'
-                    }
-                  `}
-                />
-              </div>
-            </div>
+            {/* Logo with Dynamic Source */}
+            <img 
+              src={isScrolled 
+                ? '/images/logo/THE-ASRI-LOGO.svg'
+                : '/images/logo/THE-ASRI-LOGO-BG.svg'
+              }
+              alt="The Asri Logo" 
+              className="h-10 w-auto md:h-12 transition-all duration-300 group-hover:scale-105 group-active:scale-95"
+            />
             
             {/* Brand Text Stack - Enhanced Legibility */}
             <div className="flex flex-col">
