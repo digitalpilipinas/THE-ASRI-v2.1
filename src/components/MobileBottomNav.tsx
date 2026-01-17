@@ -53,7 +53,7 @@ const MobileBottomNav = () => {
   const [currentBookIndex, setCurrentBookIndex] = useState(0);
   const [isAutoRotate, setIsAutoRotate] = useState(true);
   
-  // FIX #4: Auto-hide navigation on scroll
+  // Auto-hide navigation on scroll
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -85,27 +85,22 @@ const MobileBottomNav = () => {
     return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
   }, []);
 
-  // FIX #4: Smart auto-hide navigation on scroll
+  // Smart auto-hide navigation on scroll
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Show when scrolling up, hide when scrolling down
-      // Always show when near top (< 50px)
       if (currentScrollY < 50) {
         setIsVisible(true);
       } else if (currentScrollY < lastScrollY) {
-        // Scrolling up - show navigation
         setIsVisible(true);
       } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down (past 100px) - hide navigation
         setIsVisible(false);
       }
       
       setLastScrollY(currentScrollY);
     };
 
-    // Use passive listener for better performance
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
@@ -167,11 +162,10 @@ const MobileBottomNav = () => {
         aria-current={active ? 'page' : undefined}
       >
         <div className="flex flex-col items-center">
-          {/* FIX #2: Reduced container 44px → 40px */}
-          {/* FIX #3: Added overflow-hidden, tighter rounding xl→lg */}
+          {/* FIX #2: Compact container 40px → 34px (-15%) */}
           <div
             className={`
-              relative w-10 h-10 rounded-lg overflow-hidden
+              relative w-[34px] h-[34px] rounded-lg overflow-hidden
               flex items-center justify-center
               transition-all duration-300
               ${active 
@@ -187,8 +181,7 @@ const MobileBottomNav = () => {
               `
             } : {}}
           >
-            {/* FIX #2: Reduced icon 20px → 18px */}
-            {/* FIX #3: Only scale icon, not container */}
+            {/* Icon stays 18px (8px padding each side = perfect) */}
             <Icon 
               className="w-[18px] h-[18px] transition-all duration-300 group-hover:scale-110"
               strokeWidth={active ? 2.5 : 2}
@@ -196,7 +189,6 @@ const MobileBottomNav = () => {
             />
           </div>
 
-          {/* FIX #2: Reduced text 10px → 9px */}
           <span
             className={`
               font-lato text-[9px] whitespace-nowrap transition-all duration-300 
@@ -227,7 +219,6 @@ const MobileBottomNav = () => {
       <MoreMenu isOpen={showMoreMenu} onClose={() => setShowMoreMenu(false)} />
 
       {/* PREMIUM BOTTOM NAVIGATION - Auto-hide with liquid glass */}
-      {/* FIX #4: Added auto-hide animation */}
       <nav
         className={`
           lg:hidden fixed bottom-0 left-0 right-0 z-40
@@ -236,7 +227,7 @@ const MobileBottomNav = () => {
         `}
         aria-label="Mobile bottom navigation"
       >
-        {/* FIX #1: Premium liquid glass bg-white/75 → bg-white/65 */}
+        {/* Premium liquid glass bg-white/65 */}
         <div 
           className="
             bg-white/65 backdrop-blur-2xl
@@ -251,37 +242,52 @@ const MobileBottomNav = () => {
             {/* LEFT GROUP: Home, Services */}
             {leftNavItems.map(renderNavItem)}
 
-            {/* CENTER: AUTO-ROTATING FAB BUTTON */}
+            {/* CENTER: PREMIUM FAB BUTTON - Restored styling */}
             <button
               onClick={handleBookClick}
               className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group py-2"
               aria-label={`Book now - ${currentBookState.label} for ${currentBookState.persona}`}
             >
-              <div className="relative -mt-6">
-                {/* Main button with white border */}
+              {/* FIX #3: Elevated -mt-8 (32px = 28% of 64px container height) */}
+              <div className="relative -mt-8">
+                {/* Premium white border ring with enhanced glow */}
                 <div className="relative">
-                  {/* FIX #2: White ring scale-110 → scale-108 */}
-                  <div className="absolute inset-0 bg-white rounded-full scale-108" style={{
-                    boxShadow: '0 6px 20px rgba(0, 0, 0, 0.12)'
-                  }} />
+                  {/* FIX #1: White ring scale-115 (prominent halo) */}
+                  <div 
+                    className="absolute inset-0 bg-white rounded-full scale-115" 
+                    style={{
+                      boxShadow: '0 8px 32px rgba(255, 255, 255, 0.6)'
+                    }} 
+                  />
                   
-                  {/* FIX #2: Reduced FAB 56px → 50px */}
+                  {/* FIX #3: Restored FAB 56px (prominent size) */}
+                  {/* FIX #1: Enhanced 3-layer shadow system */}
                   <div
-                    className="relative w-[50px] h-[50px] rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-active:scale-95"
+                    className="relative w-14 h-14 rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-active:scale-95"
                     style={{
                       background: `linear-gradient(135deg, ${currentBookState.color}, ${currentBookState.color}dd)`,
-                      boxShadow: `0 6px 24px ${currentBookState.color}40, inset 0 2px 4px rgba(255, 255, 255, 0.4)`
+                      boxShadow: `
+                        0 12px 40px ${currentBookState.color}50,
+                        0 6px 16px ${currentBookState.color}30,
+                        inset 0 2px 8px rgba(255, 255, 255, 0.5)
+                      `
                     }}
                   >
-                    {/* FIX #2: Reduced FAB icon 24px → 22px */}
                     <currentBookState.icon className="w-[22px] h-[22px] text-white" strokeWidth={2.5} />
                   </div>
                 </div>
                 
-                {/* FIX #2: Reduced text 10px → 9px */}
+                {/* FIX #4: White text with colored glow (premium legibility) */}
                 <span 
-                  className="absolute -bottom-5 left-1/2 -translate-x-1/2 font-lato text-[9px] font-bold whitespace-nowrap transition-colors duration-500 uppercase"
-                  style={{ color: currentBookState.color }}
+                  className="absolute -bottom-5 left-1/2 -translate-x-1/2 font-lato text-[9px] whitespace-nowrap transition-colors duration-500 uppercase"
+                  style={{ 
+                    color: 'white',
+                    fontWeight: 800,
+                    textShadow: `
+                      0 2px 8px ${currentBookState.color}80,
+                      0 1px 2px rgba(0, 0, 0, 0.3)
+                    `
+                  }}
                 >
                   {currentBookState.label}
                 </span>
@@ -309,11 +315,10 @@ const MobileBottomNav = () => {
               aria-expanded={showMoreMenu}
             >
               <div className="flex flex-col items-center">
-                {/* FIX #2: Reduced 44px → 40px */}
-                {/* FIX #3: Added overflow-hidden, rounded-xl → rounded-lg */}
+                {/* FIX #2: Compact 34px container */}
                 <div
                   className={`
-                    relative w-10 h-10 rounded-lg overflow-hidden
+                    relative w-[34px] h-[34px] rounded-lg overflow-hidden
                     flex items-center justify-center
                     transition-all duration-300
                     ${showMoreMenu 
@@ -329,7 +334,6 @@ const MobileBottomNav = () => {
                     `
                   } : {}}
                 >
-                  {/* FIX #2: Reduced icon 20px → 18px */}
                   {showMoreMenu ? (
                     <X 
                       className="w-[18px] h-[18px] text-[#FF6B6B] transition-all duration-300"
@@ -343,7 +347,6 @@ const MobileBottomNav = () => {
                   )}
                 </div>
 
-                {/* FIX #2: Reduced text 10px → 9px */}
                 <span
                   className={`
                     font-lato text-[9px] transition-all duration-300 
