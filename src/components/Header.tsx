@@ -46,17 +46,25 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo Section */}
           <Link to="/" className="flex items-center group gap-3">
-            <img 
-              src="/images/logo/THE-ASRI-LOGO.svg" 
-              alt="The Asri Logo" 
-              className="h-12 w-auto md:h-14 transition-transform group-hover:scale-105"
-            />
+            <div className={`
+              p-2 rounded-xl transition-all duration-300
+              ${!isScrolled 
+                ? 'bg-white/10 backdrop-blur-sm shadow-lg' 
+                : 'bg-transparent'
+              }
+            `}>
+              <img 
+                src="/images/logo/THE-ASRI-LOGO.svg" 
+                alt="The Asri Logo" 
+                className="h-10 w-auto md:h-12 transition-transform group-hover:scale-105"
+              />
+            </div>
             <div className="flex flex-col">
               <span className={`
                 text-lg md:text-xl font-bold font-playfair tracking-tight leading-none
                 ${isScrolled ? 'text-[#0D7070]' : 'text-white'}
               `}>
-                THE ASRI
+                The Asri
               </span>
               <span className={`
                 text-[8px] md:text-[10px] font-semibold font-lato tracking-[0.2em] leading-none mt-1
@@ -78,8 +86,10 @@ const Header = () => {
                   relative px-4 py-2 rounded-xl font-lato text-sm font-semibold
                   transition-all duration-300 group
                   ${isActive(item.path) 
-                    ? 'text-[#0D7070] bg-[#E6EBE8]' 
-                    : 'text-[#4A5568] hover:text-[#0D7070] hover:bg-[#E6EBE8]/70'
+                    ? 'text-[#0D7070] bg-[#E6EBE8] shadow-sm' 
+                    : isScrolled
+                      ? 'text-[#4A5568] hover:text-[#0D7070] hover:bg-[#E6EBE8]/70'
+                      : 'text-white hover:text-white hover:bg-white/15 backdrop-blur-sm border border-white/10'
                   }
                 `}
               >
@@ -91,7 +101,11 @@ const Header = () => {
                 )}
                 
                 {/* Hover wave animation */}
-                <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#7C9885] rounded-full transition-all duration-300 group-hover:w-full" />
+                <span className={`
+                  absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 rounded-full 
+                  transition-all duration-300 group-hover:w-full
+                  ${isScrolled ? 'bg-[#7C9885]' : 'bg-white/70'}
+                `} />
               </Link>
             ))}
           </nav>
