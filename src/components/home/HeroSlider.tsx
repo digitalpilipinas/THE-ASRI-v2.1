@@ -52,16 +52,26 @@ const HeroSlider = () => {
     setCurrentSlide(index)
   }
 
+  const scrollToContent = () => {
+    const experienceSection = document.getElementById('experience-section')
+    if (experienceSection) {
+      experienceSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+  }
+
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Slider Images */}
-      <AnimatePresence mode="wait">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-[#0D7070]">
+      {/* Slider Images - Crossfade with no white flash */}
+      <AnimatePresence initial={false}>
         <motion.div
           key={currentSlide}
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.95 }}
-          transition={{ duration: 1, ease: 'easeInOut' }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${slides[currentSlide].image})` }}
         >
@@ -137,10 +147,16 @@ const HeroSlider = () => {
         ))}
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+      {/* Scroll Indicator - Now Functional */}
+      <motion.button
+        onClick={scrollToContent}
+        whileHover={{ scale: 1.1, opacity: 1 }}
+        whileTap={{ scale: 0.9 }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20 cursor-pointer transition-opacity hover:opacity-100"
+        aria-label="Scroll to explore experiences"
+      >
         <ChevronDown className="w-8 h-8 text-white/80" />
-      </div>
+      </motion.button>
     </section>
   )
 }
