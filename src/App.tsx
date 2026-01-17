@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import '@/App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Toaster } from '@/components/ui/sonner'
@@ -15,6 +16,44 @@ import GalleryPage from '@/pages/GalleryPage'
 import ContactPage from '@/pages/ContactPage'
 import { loadFonts } from '@/lib/fonts'
 
+/**
+ * ScrollToTop Component
+ * 
+ * Automatically scrolls to the top of the page when navigating between routes.
+ * Also supports hash-based navigation (e.g., /contact#location) with smooth
+ * scrolling to specific elements with proper header offset.
+ * 
+ * Behavior:
+ * - No hash: Scrolls to top of page
+ * - With hash: Scrolls to element with ID matching hash (with 100px offset for fixed header)
+ */
+const ScrollToTop = () => {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) {
+      // No hash in URL → scroll to top immediately
+      window.scrollTo(0, 0);
+    } else {
+      // Hash present → scroll to the target element with header offset
+      // Small delay to ensure DOM is ready
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          const yOffset = -100; // Offset for fixed header (80px height + 20px padding)
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        } else {
+          // Element not found, scroll to top anyway
+          window.scrollTo(0, 0);
+        }
+      }, 100);
+    }
+  }, [pathname, hash]);
+
+  return null;
+};
+
 const App: React.FC = () => {
   useEffect(() => {
     loadFonts()
@@ -23,6 +62,9 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <BrowserRouter>
+        {/* Scroll restoration component - must be inside BrowserRouter */}
+        <ScrollToTop />
+        
         <Header />
         
         <main className="min-h-screen">
