@@ -56,7 +56,13 @@ const Header = () => {
               <img 
                 src="/images/logo/THE-ASRI-LOGO.svg" 
                 alt="The Asri Logo" 
-                className="h-10 w-auto md:h-12 transition-transform group-hover:scale-105"
+                className={`
+                  h-10 w-auto md:h-12 transition-transform group-hover:scale-105
+                  ${!isScrolled 
+                    ? 'drop-shadow-[0_2px_4px_rgba(255,255,255,0.9)] drop-shadow-[0_4px_12px_rgba(255,255,255,0.6)] drop-shadow-[0_0_2px_rgba(255,255,255,1)]' 
+                    : ''
+                  }
+                `}
               />
             </div>
             <div className="flex flex-col">
@@ -112,18 +118,26 @@ const Header = () => {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
+            {/* Call Now - Glassmorphism Pill */}
             <a 
               href="tel:+639189003644" 
-              className="flex items-center gap-2 text-[#0D7070] hover:text-[#0a5555] transition-colors p-2 rounded-lg hover:bg-[#E6EBE8]/50"
+              className={`
+                flex items-center gap-2 px-4 py-2 rounded-xl
+                font-lato text-sm font-semibold
+                transition-all duration-300 group
+                ${isScrolled
+                  ? 'text-[#0D7070] hover:text-[#0a5555] hover:bg-[#E6EBE8]/70'
+                  : 'text-white bg-white/15 backdrop-blur-sm border border-white/20 hover:bg-white/25'
+                }
+              `}
               aria-label="Call us"
               title="Call +63 918 900 3644"
             >
               <Phone className="w-5 h-5" />
-              <span className="font-lato text-sm font-medium hidden xl:inline">
-                Call Now
-              </span>
+              <span className="hidden xl:inline">Call Now</span>
             </a>
             
+            {/* Book Now Button */}
             <Link 
               to="/rates" 
               className="
