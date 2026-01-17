@@ -69,7 +69,7 @@ const MobileBottomNav = () => {
     if (!isAutoRotate || prefersReducedMotion) return;
 
     const interval = setInterval(() => {
-      setCurrentBookIndex((prev) => (prev + 1) % PREV + 1) % BOOK_STATES.length);
+      setCurrentBookIndex((prev) => (prev + 1) % BOOK_STATES.length);
     }, 4000);
 
     return () => clearInterval(interval);
@@ -275,7 +275,7 @@ const MobileBottomNav = () => {
                   </div>
                 </div>
                 
-                {/* Brand-colored label with simple readability shadow */}
+                {/* Brand-colored label with drop shadows (NO outline) */}
                 <span 
                   className="absolute -bottom-5 left-1/2 -translate-x-1/2 font-lato text-[9px] whitespace-nowrap transition-colors duration-500 uppercase"
                   style={{ 
@@ -283,10 +283,8 @@ const MobileBottomNav = () => {
                     fontWeight: 800,
                     letterSpacing: '0.12em',
                     textShadow: `
-                      -1px -1px 0 white,
-                      1px -1px 0 white,
-                      -1px 1px 0 white,
-                      1px 1px 0 white
+                      0 2px 4px rgba(0, 0, 0, 0.3),
+                      0 1px 2px rgba(0, 0, 0, 0.2)
                     `
                   }}
                 >
