@@ -13,27 +13,7 @@ interface NavItem {
 
 const MobileBottomNav = () => {
   const location = useLocation();
-  const [isVisible, setIsVisible] = useState<boolean>(true);
-  const [lastScrollY, setLastScrollY] = useState<number>(0);
   const [showMoreMenu, setShowMoreMenu] = useState<boolean>(false);
-
-  // Hide nav on scroll down, show on scroll up
-  useEffect(() => {
-    const handleScroll = (): void => {
-      const currentScrollY = window.scrollY;
-      
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
-      
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
 
   const navItems: NavItem[] = [
     {
@@ -76,26 +56,23 @@ const MobileBottomNav = () => {
     <>
       <MoreMenu isOpen={showMoreMenu} onClose={() => setShowMoreMenu(false)} />
 
+      {/* FIXED BOTTOM NAV - Always visible for high-intent resort users */}
       <nav
-        className={`
-          lg:hidden fixed bottom-0 left-0 right-0 z-40
-          transition-transform duration-300 ease-out
-          ${isVisible ? 'translate-y-0' : 'translate-y-full'}
-        `}
+        className="lg:hidden fixed bottom-0 left-0 right-0 z-40"
         aria-label="Mobile bottom navigation"
       >
-        {/* GLASSMORPHISM CONTAINER - Premium Feel */}
+        {/* ENHANCED GLASSMORPHISM CONTAINER - Premium Resort Feel */}
         <div 
           className="
-            bg-white/80 backdrop-blur-xl
-            border-t border-white/20
+            bg-white/75 backdrop-blur-2xl
+            border-t border-white/30
             pb-safe
           "
           style={{
-            boxShadow: '0 -8px 32px rgba(13, 112, 112, 0.08)'
+            boxShadow: '0 -12px 40px rgba(13, 112, 112, 0.12)'
           }}
         >
-          <div className="flex items-center justify-around h-16 px-2">
+          <div className="flex items-center justify-around h-20 px-4">
             {navItems.map((item) => {
               const Icon = item.icon;
               const active = isActive(item.path);
@@ -104,13 +81,13 @@ const MobileBottomNav = () => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group"
+                  className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group py-3"
                   aria-label={item.name}
                   aria-current={active ? 'page' : undefined}
                 >
                   {item.isPrimary ? (
                     // PRIMARY CTA - ELEVATED BOOK BUTTON
-                    <div className="relative -mt-6">
+                    <div className="relative -mt-8">
                       {/* Glow effect */}
                       <div className="absolute inset-0 bg-gradient-to-b from-[#FF6B6B]/20 to-transparent blur-xl rounded-full" />
                       
@@ -133,34 +110,38 @@ const MobileBottomNav = () => {
                       </div>
                       
                       {/* Label */}
-                      <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 font-lato text-[10px] font-bold text-[#FF6B6B] whitespace-nowrap">
+                      <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 font-lato text-[11px] font-bold text-[#FF6B6B] whitespace-nowrap">
                         {item.name}
                       </span>
 
                       {/* Active indicator */}
                       {active && (
-                        <div className="absolute -bottom-7 left-1/2 -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-transparent via-[#FF6B6B] to-transparent rounded-full" />
+                        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-transparent via-[#FF6B6B] to-transparent rounded-full" />
                       )}
                     </div>
                   ) : (
-                    // STANDARD ITEMS - Glass Style
-                    <div className="flex flex-col items-center gap-1 py-2">
+                    // STANDARD ITEMS - Enhanced Glass Style
+                    <div className="flex flex-col items-center gap-2">
                       <div
                         className={`
-                          relative w-12 h-12 rounded-2xl
+                          relative w-14 h-14 rounded-2xl
                           flex items-center justify-center
                           transition-all duration-300
                           ${active 
-                            ? 'bg-white/40 backdrop-blur-md scale-95' 
+                            ? 'bg-gradient-to-br from-white/60 to-white/40 scale-100' 
                             : 'bg-transparent group-hover:bg-white/20'
                           }
                         `}
                         style={active ? {
-                          boxShadow: 'inset 2px 2px 8px rgba(13, 112, 112, 0.1), inset -2px -2px 8px rgba(255, 255, 255, 0.5)'
+                          boxShadow: `
+                            inset 3px 3px 10px rgba(13, 112, 112, 0.15),
+                            inset -3px -3px 10px rgba(255, 255, 255, 0.7),
+                            0 4px 12px ${item.activeColor}40
+                          `
                         } : {}}
                       >
                         <Icon 
-                          className="w-6 h-6 transition-all duration-300 group-hover:scale-110"
+                          className="w-7 h-7 transition-all duration-300 group-hover:scale-110"
                           strokeWidth={active ? 2.5 : 2}
                           style={{ color: active ? item.activeColor : '#718096' }}
                         />
@@ -174,11 +155,11 @@ const MobileBottomNav = () => {
                         )}
                       </div>
 
-                      {/* Label */}
+                      {/* Label - More spacing */}
                       <span
                         className={`
-                          font-lato text-[10px] whitespace-nowrap transition-all duration-300
-                          ${active ? 'font-bold scale-105' : 'font-normal'}
+                          font-lato text-[11px] whitespace-nowrap transition-all duration-300 mt-1
+                          ${active ? 'font-bold scale-105' : 'font-semibold'}
                         `}
                         style={{ color: active ? item.activeColor : '#718096' }}
                       >
@@ -203,33 +184,37 @@ const MobileBottomNav = () => {
             {/* MENU BUTTON - Hamburger Icon */}
             <button
               onClick={handleMoreClick}
-              className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group"
+              className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group py-3"
               aria-label="Menu"
               aria-expanded={showMoreMenu}
             >
-              <div className="flex flex-col items-center gap-1 py-2">
+              <div className="flex flex-col items-center gap-2">
                 <div
                   className={`
-                    relative w-12 h-12 rounded-2xl
+                    relative w-14 h-14 rounded-2xl
                     flex items-center justify-center
                     transition-all duration-300
                     ${showMoreMenu 
-                      ? 'bg-white/40 backdrop-blur-md scale-95' 
+                      ? 'bg-gradient-to-br from-white/60 to-white/40 scale-100' 
                       : 'bg-transparent group-hover:bg-white/20'
                     }
                   `}
                   style={showMoreMenu ? {
-                    boxShadow: 'inset 2px 2px 8px rgba(13, 112, 112, 0.1), inset -2px -2px 8px rgba(255, 255, 255, 0.5)'
+                    boxShadow: `
+                      inset 3px 3px 10px rgba(13, 112, 112, 0.15),
+                      inset -3px -3px 10px rgba(255, 255, 255, 0.7),
+                      0 4px 12px rgba(255, 107, 107, 0.25)
+                    `
                   } : {}}
                 >
                   {showMoreMenu ? (
                     <X 
-                      className="w-6 h-6 text-[#FF6B6B] transition-all duration-300"
+                      className="w-7 h-7 text-[#FF6B6B] transition-all duration-300"
                       strokeWidth={2.5}
                     />
                   ) : (
                     <Menu 
-                      className="w-6 h-6 text-[#718096] group-hover:scale-110 transition-all duration-300"
+                      className="w-7 h-7 text-[#718096] group-hover:scale-110 transition-all duration-300"
                       strokeWidth={2}
                     />
                   )}
@@ -243,8 +228,8 @@ const MobileBottomNav = () => {
                 {/* Label */}
                 <span
                   className={`
-                    font-lato text-[10px] transition-all duration-300
-                    ${showMoreMenu ? 'font-bold scale-105 text-[#FF6B6B]' : 'font-normal text-[#718096]'}
+                    font-lato text-[11px] transition-all duration-300 mt-1
+                    ${showMoreMenu ? 'font-bold scale-105 text-[#FF6B6B]' : 'font-semibold text-[#718096]'}
                   `}
                 >
                   Menu

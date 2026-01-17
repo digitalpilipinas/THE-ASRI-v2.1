@@ -4,8 +4,16 @@ import { ChevronUp } from 'lucide-react'
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+
     const toggleVisibility = () => {
       // Show button when user scrolls past 600px
       setIsVisible(window.pageYOffset > 600)
@@ -15,6 +23,7 @@ const ScrollToTop = () => {
 
     return () => {
       window.removeEventListener('scroll', toggleVisibility)
+      window.removeEventListener('resize', checkMobile)
     }
   }, [])
 
@@ -23,6 +32,11 @@ const ScrollToTop = () => {
       top: 0,
       behavior: 'smooth'
     })
+    
+    // Haptic feedback
+    if ('vibrate' in navigator) {
+      navigator.vibrate(10)
+    }
   }
 
   return (
@@ -36,7 +50,12 @@ const ScrollToTop = () => {
           whileHover={{ scale: 1.15, y: -4 }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          className="fixed bottom-28 right-6 z-50 bg-gradient-to-br from-[#FF6B6B] to-[#FF8C8C] hover:from-[#FF5050] hover:to-[#FF6B6B] backdrop-blur-sm rounded-full p-4 md:p-5 shadow-2xl transition-all border-4 border-white"
+          className="fixed z-40 bg-gradient-to-br from-[#0D7070] to-[#0a5555] hover:from-[#0a5555] hover:to-[#084444] backdrop-blur-sm rounded-full p-3 md:p-4 transition-all border-2 border-white/30"
+          style={{
+            bottom: isMobile ? '168px' : '24px',
+            right: '24px',
+            boxShadow: '0 8px 24px rgba(13, 112, 112, 0.25), 0 4px 8px rgba(0, 0, 0, 0.1)'
+          }}
           aria-label="Scroll to top"
           title="Back to top"
         >
@@ -44,7 +63,7 @@ const ScrollToTop = () => {
             <ChevronUp className="w-6 h-6 md:w-7 md:h-7 text-white" strokeWidth={3} />
             {/* Pulsing ring animation for extra visibility */}
             <motion.div
-              className="absolute inset-0 rounded-full border-2 border-white opacity-75"
+              className="absolute inset-0 rounded-full border-2 border-white/50 opacity-75"
               animate={{
                 scale: [1, 1.3, 1],
                 opacity: [0.75, 0, 0.75]
