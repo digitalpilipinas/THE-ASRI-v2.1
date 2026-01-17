@@ -172,27 +172,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-      
-      {/* Wave divider when scrolled - Enhanced */}
-      {isScrolled && (
-        <div className="absolute bottom-0 left-0 right-0 h-1">
-          <svg viewBox="0 0 1200 6" className="w-full h-full">
-            <path 
-              d="M0,3 Q300,0 600,3 T1200,3" 
-              fill="none" 
-              stroke="url(#gradient)" 
-              strokeWidth="2"
-            />
-            <defs>
-              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#0D7070" />
-                <stop offset="50%" stopColor="#7C9885" />
-                <stop offset="100%" stopColor="#0D7070" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-      )}
     </header>
   );
 };

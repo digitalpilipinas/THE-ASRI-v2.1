@@ -86,27 +86,35 @@ const MobileBottomNav = () => {
                   aria-current={active ? 'page' : undefined}
                 >
                   {item.isPrimary ? (
-                    // PRIMARY CTA - ELEVATED BOOK BUTTON
+                    // PRIMARY CTA - ELEVATED BOOK BUTTON WITH WHITE BORDER
                     <div className="relative -mt-8">
                       {/* Glow effect */}
                       <div className="absolute inset-0 bg-gradient-to-b from-[#FF6B6B]/20 to-transparent blur-xl rounded-full" />
                       
-                      {/* Main button */}
-                      <div
-                        className={`
-                          relative w-16 h-16 rounded-full
-                          bg-gradient-to-br from-[#FF6B6B] to-[#ee5050]
-                          flex items-center justify-center
-                          transition-all duration-300
-                          ${active ? 'scale-110' : 'scale-100'}
-                          group-hover:scale-115
-                          group-active:scale-95
-                        `}
-                        style={{
-                          boxShadow: '0 8px 32px rgba(255, 107, 107, 0.4)'
-                        }}
-                      >
-                        <Icon className="w-7 h-7 text-white" strokeWidth={2.5} />
+                      {/* Main button with white border */}
+                      <div className="relative">
+                        {/* White border ring */}
+                        <div className="absolute inset-0 bg-white rounded-full scale-110" style={{
+                          boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15)'
+                        }} />
+                        
+                        {/* Inner gradient button */}
+                        <div
+                          className={`
+                            relative w-16 h-16 rounded-full
+                            bg-gradient-to-br from-[#FF6B6B] to-[#ee5050]
+                            flex items-center justify-center
+                            transition-all duration-300
+                            ${active ? 'scale-110' : 'scale-100'}
+                            group-hover:scale-115
+                            group-active:scale-95
+                          `}
+                          style={{
+                            boxShadow: '0 8px 32px rgba(255, 107, 107, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.4)'
+                          }}
+                        >
+                          <Icon className="w-7 h-7 text-white" strokeWidth={2.5} />
+                        </div>
                       </div>
                       
                       {/* Label */}

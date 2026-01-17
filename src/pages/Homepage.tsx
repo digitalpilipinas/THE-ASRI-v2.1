@@ -155,7 +155,7 @@ const Homepage: React.FC = () => {
                 <Waves className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-playfair font-bold text-xl text-[#1A2332] mb-2">
-                15+ Pristine Dive Sites
+                30+ Pristine Dive Sites
               </h3>
               <p className="font-lato text-sm text-[#718096]">
                 From coral gardens to macro paradises, all within a 10-minute boat ride.
