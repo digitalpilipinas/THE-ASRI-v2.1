@@ -144,7 +144,7 @@ const MobileBottomNav = () => {
   };
 
   const handleBookClick = (): void => {
-    setIsAutoRotate(false);
+    // Removed setIsAutoRotate(false) - keep animation running!
     navigate(currentBookState.route);
     
     if ('vibrate' in navigator) {
