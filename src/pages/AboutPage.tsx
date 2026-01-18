@@ -46,8 +46,8 @@ const AboutPage: React.FC = () => {
   ]
 
   const teamMembers: TeamMember[] = [
-    { id: 1, name: "John Dizon", role: "Resort Owner", specialty: "PADI Scuba Instructor", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" },
-    { id: 2, name: "Isabella Cruz", role: "Operations Manager", specialty: "Guest Relations", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&q=80" },
+    { id: 1, name: "John Dizon", role: "Resort Owner", specialty: "PADI Scuba Instructor", image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80" },
+    { id: 2, name: "Danica Villezar", role: "Resort Manager", specialty: "Guest Relations", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&q=80" },
     { id: 3, name: "Chef Marco Rossi", role: "Executive Chef", specialty: "Mediterranean Fusion", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&q=80" },
     { id: 4, name: "Ana Reyes", role: "Spa Director", specialty: "Thai Massage", image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=300&q=80" }
   ]
