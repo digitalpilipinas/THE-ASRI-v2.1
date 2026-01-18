@@ -1,5 +1,5 @@
 import React from 'react'
-import { Award, Heart, Users, Leaf, Trophy, Shield, LucideIcon } from 'lucide-react'
+import { Award, Heart, Users, Leaf, Trophy, Shield, LucideIcon, CheckCircle, Target, Compass } from 'lucide-react'
 import NeumorphicCard from '@/components/NeumorphicCard'
 import { resortImages } from '@/data/mockData'
 
@@ -107,7 +107,113 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-white">
+      {/* NEW PADI 5-STAR SECTION */}
+      <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle, #0D7070 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            {/* LEFT: PADI Badge */}
+            <div className="flex justify-center lg:justify-end order-2 lg:order-1">
+              <div className="relative max-w-lg w-full">
+                <img 
+                  src="/images/THE%20ASRI_PADI-5-STAR-RESORT.jpeg" 
+                  alt="PADI 5-Star Dive Resort Accreditation"
+                  className="w-full rounded-2xl shadow-2xl"
+                />
+                {/* Glow effect */}
+                <div className="absolute -inset-4 bg-gradient-to-br from-[#0D7070]/20 via-transparent to-[#FF6B6B]/20 blur-3xl -z-10"></div>
+              </div>
+            </div>
+
+            {/* RIGHT: Content */}
+            <div className="order-1 lg:order-2">
+              <div className="inline-block bg-gradient-to-r from-[#0D7070] to-[#0a5555] text-white px-4 py-2 rounded-full text-sm font-lato font-bold mb-4">
+                Internationally Certified
+              </div>
+              
+              <h2 className="font-playfair font-bold text-3xl md:text-5xl text-[#1A2332] mb-6">
+                PADI 5-Star Dive Resort
+              </h2>
+              
+              <p className="font-lato text-lg text-[#4A5568] mb-8">
+                The Asri proudly holds PADI 5-Star IDC Dive Resort status—the highest recognition in recreational diving. This certification means you are diving with a team that meets the most rigorous international standards for safety, professionalism, and training excellence.
+              </p>
+              
+              <div className="space-y-6">
+                {/* IDC Center Status */}
+                <div className="flex items-start gap-4">
+                  <div className="bg-[#0D7070] w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Award className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-lato font-bold text-xl text-[#1A2332] mb-2">
+                      IDC Center Status
+                    </h3>
+                    <p className="font-lato text-[#718096]">
+                      Authorized to train divers from beginner to professional Instructor level. Our facility meets PADI's highest operational and educational standards.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Professional Team */}
+                <div className="flex items-start gap-4">
+                  <div className="bg-[#FF6B6B] w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Target className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-lato font-bold text-xl text-[#1A2332] mb-2">
+                      Expert Instructors
+                    </h3>
+                    <p className="font-lato text-[#718096]">
+                      All instructors hold advanced PADI certifications with thousands of logged dives in Anilao's unique underwater environment.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Safety First */}
+                <div className="flex items-start gap-4">
+                  <div className="bg-[#7C9885] w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-lato font-bold text-xl text-[#1A2332] mb-2">
+                      15+ Years Safety Record
+                    </h3>
+                    <p className="font-lato text-[#718096]">
+                      Maintained 100% safety record since inception. Small group ratios (1:4 certified, 1:3 training) ensure personalized attention on every dive.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Trust Badges */}
+              <div className="mt-8 pt-6 border-t border-[#D4A373]/20">
+                <div className="flex flex-wrap items-center gap-4">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-[#0D7070]" />
+                    <span className="font-lato text-sm font-semibold text-[#1A2332]">Full Equipment Facility</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-[#0D7070]" />
+                    <span className="font-lato text-sm font-semibold text-[#1A2332]">Emergency Oxygen</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-[#0D7070]" />
+                    <span className="font-lato text-sm font-semibold text-[#1A2332]">Insurance Covered</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24 bg-[#F5F1E8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="font-playfair font-bold text-3xl md:text-5xl text-[#1A2332] mb-4">Our Values</h2>
@@ -133,7 +239,7 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-[#F5F1E8]">
+      <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="font-playfair font-bold text-3xl md:text-5xl text-[#1A2332] mb-4">Meet the Team</h2>
@@ -157,7 +263,7 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-[#F5F1E8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -189,7 +295,7 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-[#F5F1E8]">
+      <section className="py-16 md:py-24 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-4">
