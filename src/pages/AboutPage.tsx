@@ -1,5 +1,5 @@
 import React from 'react'
-import { Award, Heart, Users, Leaf, Trophy, Shield, LucideIcon, CheckCircle, Target, Compass } from 'lucide-react'
+import { Award, Heart, Users, Leaf, Trophy, Shield, LucideIcon, CheckCircle, Target } from 'lucide-react'
 import NeumorphicCard from '@/components/NeumorphicCard'
 import { resortImages } from '@/data/mockData'
 
