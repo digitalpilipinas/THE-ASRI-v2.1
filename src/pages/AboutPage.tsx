@@ -74,7 +74,7 @@ const AboutPage: React.FC = () => {
   return (
     <div className="min-h-screen pt-20">
       <section
-        className="relative h-[60vh] md:h-[70vh] flex items-center justify-center bg-cover bg-center"
+        className="relative h-[50vh] flex items-center justify-center bg-cover bg-center"
         style={{ backgroundImage: `url(${resortImages.hero.about})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-[#0D7070]/60 to-[#0D7070]/80"></div>
