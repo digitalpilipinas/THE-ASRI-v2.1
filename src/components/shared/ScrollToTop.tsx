@@ -52,7 +52,7 @@ const ScrollToTop = () => {
           onClick={scrollToTop}
           className="fixed z-40 bg-gradient-to-br from-[#0D7070] to-[#0a5555] hover:from-[#0a5555] hover:to-[#084444] backdrop-blur-sm rounded-full p-3 md:p-4 transition-all border-2 border-white/30"
           style={{
-            bottom: isMobile ? '168px' : '24px',
+            bottom: isMobile ? '168px' : '104px',
             right: '24px',
             boxShadow: '0 8px 24px rgba(13, 112, 112, 0.25), 0 4px 8px rgba(0, 0, 0, 0.1)'
           }}
