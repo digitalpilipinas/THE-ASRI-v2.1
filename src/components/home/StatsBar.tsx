@@ -56,7 +56,7 @@ const StatsBar = () => {
   const Icon = currentStat.icon
 
   return (
-    <section className="sticky top-20 z-30 bg-[#E6EBE8]/95 backdrop-blur-md py-6 shadow-lg border-b border-white/20">
+    <section className="bg-[#E6EBE8]/95 backdrop-blur-md py-6 shadow-lg border-b border-white/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* MOBILE: Carousel View (Single Stat) */}
         <div className="lg:hidden flex flex-col items-center justify-center">
