@@ -53,7 +53,7 @@ const AboutPage: React.FC = () => {
   ]
 
   const certifications: Certification[] = [
-    { name: 'PADI 5-Star IDC Center', year: 'Since 2010' },
+    { name: 'PADI 5-Star Dive Resort', year: 'Since 2025' },
     { name: 'TripAdvisor Excellence', year: '2018-2024' },
     { name: 'Green Fins Member', year: 'Since 2015' },
     { name: 'Philippine Tourism Award', year: '2022' },
@@ -141,7 +141,7 @@ const AboutPage: React.FC = () => {
               </h2>
               
               <p className="font-lato text-lg text-[#4A5568] mb-8">
-                The Asri proudly holds PADI 5-Star IDC Dive Resort status—the highest recognition in recreational diving. This certification means you are diving with a team that meets the most rigorous international standards for safety, professionalism, and training excellence.
+                The Asri proudly holds PADI 5-Star Dive Resort status—the highest recognition in recreational diving. This certification means you are diving with a team that meets the most rigorous international standards for safety, professionalism, and training excellence.
               </p>
               
               <div className="space-y-6">
