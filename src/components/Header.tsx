@@ -11,6 +11,7 @@ interface NavigationItem {
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const location = useLocation();
+  const isHomepage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = (): void => {
@@ -47,7 +48,9 @@ const Header = () => {
           transition-all duration-300
           ${isScrolled 
             ? 'bg-white/95 backdrop-blur-lg shadow-lg rounded-2xl' 
-            : 'bg-gradient-to-b from-[#1A2332]/40 to-transparent'
+            : isHomepage
+              ? 'bg-gradient-to-b from-[#1A2332]/40 to-transparent'
+              : 'bg-white shadow-sm'
           }
         `}
       >
@@ -57,7 +60,7 @@ const Header = () => {
             <Link to="/" className="flex items-center group gap-3">
               {/* Logo with Dynamic Source */}
               <img 
-                src={isScrolled 
+                src={(isScrolled || !isHomepage)
                   ? '/images/logo/THE-ASRI-LOGO.svg'
                   : '/images/logo/THE-ASRI-LOGO-BG.svg'
                 }
@@ -70,14 +73,14 @@ const Header = () => {
                 <span className={`
                   text-lg md:text-xl font-bold font-playfair tracking-tight leading-none
                   transition-colors duration-300
-                  ${isScrolled ? 'text-[#0D7070]' : 'text-white'}
+                  ${(isScrolled || !isHomepage) ? 'text-[#0D7070]' : 'text-white'}
                 `}>
                   The Asri
                 </span>
                 <span className={`
                   text-[9px] md:text-[10px] font-semibold font-lato tracking-[0.25em] leading-none mt-1.5
                   transition-colors duration-300
-                  ${isScrolled ? 'text-[#4A5568]' : 'text-white/80'}
+                  ${(isScrolled || !isHomepage) ? 'text-[#4A5568]' : 'text-white/80'}
                 `}>
                   DIVE & LEISURE RESORT
                 </span>
@@ -96,7 +99,7 @@ const Header = () => {
                     transition-all duration-300 group
                     ${isActive(item.path) 
                       ? 'text-[#0D7070] bg-[#E6EBE8] shadow-sm' 
-                      : isScrolled
+                      : (isScrolled || !isHomepage)
                         ? 'text-[#4A5568] hover:text-[#0D7070] hover:bg-[#E6EBE8]/70'
                         : 'text-white hover:text-white hover:bg-white/15 backdrop-blur-sm border border-white/10'
                     }
@@ -113,7 +116,7 @@ const Header = () => {
                   <span className={`
                     absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 rounded-full 
                     transition-all duration-300 group-hover:w-full
-                    ${isScrolled ? 'bg-[#7C9885]' : 'bg-white/70'}
+                    ${(isScrolled || !isHomepage) ? 'bg-[#7C9885]' : 'bg-white/70'}
                   `} />
                 </Link>
               ))}
@@ -128,7 +131,7 @@ const Header = () => {
                   flex items-center gap-2 px-4 py-2 rounded-xl
                   font-lato text-sm font-semibold
                   transition-all duration-300 group
-                  ${isScrolled
+                  ${(isScrolled || !isHomepage)
                     ? 'text-[#0D7070] hover:text-[#0a5555] hover:bg-[#E6EBE8]/70'
                     : 'text-white bg-white/15 backdrop-blur-md border border-white/20 hover:bg-white/25'
                   }
