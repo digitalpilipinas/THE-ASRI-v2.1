@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "title": "联系我们",
+    "subtitle": "有问题吗？我们很乐意协助你规划在 Anilao 的完美潜水假期或身心疗愈之旅。"
+  },
+  "form": {
+    "title": "给我们留言",
+    "successAlert": "消息已发送！我们将在 24 小时内回复你。",
+    "fields": {
+      "name": { "label": "姓名 *", "placeholder": "张三" },
+      "email": { "label": "邮箱 *", "placeholder": "zhangsan@example.com" },
+      "phone": { "label": "电话", "placeholder": "+63 XXX XXX XXXX" },
+      "subject": {
+        "label": "主题 *",
+        "options": {
+          "general": "一般咨询",
+          "booking": "预订与价格",
+          "diving": "潜水服务",
+          "courses": "PADI 课程",
+          "group": "团体预订",
+          "other": "其他"
+        }
+      },
+      "message": {
+        "label": "留言内容 *",
+        "placeholder": "告诉我们你的计划、问题或特别需求..."
+      },
+      "consent": {
+        "label": "我同意 The Asri 通过邮件或电话就我的咨询与我联系。"
+      }
+    },
+    "submit": {
+      "default": "发送消息",
+      "sending": "发送中..."
+    }
+  },
+  "quickContact": {
+    "title": "快速联系",
+    "phone": { "label": "电话" },
+    "whatsapp": { "label": "WhatsApp" },
+    "email": { "label": "邮箱" },
+    "officeHours": {
+      "label": "办公时间",
+      "value": "8:00 AM - 8:00 PM PHT",
+      "frequency": "每日"
+    }
+  },
+  "followUs": {
+    "title": "关注我们"
+  },
+  "gettingThere": {
+    "title": "如何到达",
+    "subtitle": "我们位于风景迷人的 Sabang, Puerto Galera——离天堂比你想象的更近。",
+    "mapTitle": "The Asri 位置地图",
+    "cardTitle": "前往 Mabini, Batangas（Anilao）",
+    "cardIntro": "The Asri 位于 Anilao 的核心地带，这里是菲律宾顶级潜水目的地之一。",
+    "fromManila": {
+      "title": "从马尼拉出发：",
+      "steps": [
+        "乘巴士到 Batangas Grand Terminal（约 2.5 小时）",
+        "乘出租车前往 Mabini, Batangas 的 The Asri Resort（约 30 分钟）",
+        "备选：可选择公共拼车"
+      ]
+    },
+    "privateTransfer": {
+      "title": "私人接送 / 机场接机：",
+      "description": "我们提供从马尼拉酒店出发的门到门服务。",
+      "cta": "欢迎联系我们了解价格与可用性。"
+    },
+    "proTip": {
+      "label": "小贴士：",
+      "text": "建议预订清晨出发的行程，以便赶上下午的潜水！"
+    }
+  }
+}

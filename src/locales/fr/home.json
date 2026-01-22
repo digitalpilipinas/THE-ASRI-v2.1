@@ -1,0 +1,134 @@
+{
+  "hero": {
+    "slides": [
+      {
+        "title": "Là où la mer\nrencontre la sérénité",
+        "subtitle": "Découvrez une plongée de classe mondiale et une élégance d’inspiration thaïe au cœur de Mabini (Anilao), Batangas."
+      },
+      {
+        "title": "Plongez dans\nun paradis sous-marin",
+        "subtitle": "Plus de 30 sites préservés, une formation PADI 5 étoiles et des guides macro experts vous attendent."
+      },
+      {
+        "title": "Votre sanctuaire\nocéan privé",
+        "subtitle": "Chambres de luxe d’inspiration thaïe, piscine à débordement et soins spa avec des couchers de soleil à couper le souffle."
+      },
+      {
+        "title": "Bien-être &\nressourcement",
+        "subtitle": "Massage thaï, yoga en bord de mer et instants sereins pensés pour vous régénérer."
+      }
+    ],
+    "primaryCta": "Planifier votre escapade",
+    "secondaryCta": "Découvrir la plongée",
+    "scrollCtaAria": "Faire défiler pour explorer les expériences"
+  },
+  "stats": [
+    { "value": "PADI 5★", "label": "Resort de plongée" },
+    { "value": "14 chambres", "label": "Boutique" },
+    { "value": "30+ sites", "label": "Sites de plongée" },
+    { "value": "Spa thaï", "label": "Bien-être" }
+  ],
+  "experience": {
+    "title": "Votre escapade parfaite vous attend",
+    "subtitle": "Que vous soyez passionné de macro, explorateur en devenir ou en quête de sérénité, nous avons imaginé des expériences faites pour vous.",
+    "cards": {
+      "diver": {
+        "imageAlt": "Plongée macro",
+        "title": "Pour le plongeur passionné",
+        "description": "Plus de 40 espèces de nudibranches, poissons-grenouilles, hippocampes et poissons-fantômes attendent votre objectif.",
+        "bullets": [
+          "Sites macro de renommée mondiale",
+          "Guides photo experts",
+          "Plongées en petits groupes"
+        ],
+        "cta": "Explorer les sites de plongée"
+      },
+      "explorer": {
+        "imageAlt": "Formation PADI",
+        "title": "Pour l’explorateur en devenir",
+        "description": "Commencez votre aventure avec une formation PADI 5 étoiles dans des eaux chaudes et calmes.",
+        "bullets": [
+          "Ratio instructeur 1:3",
+          "Sites adaptés aux débutants",
+          "100% de bilan sécurité"
+        ],
+        "cta": "Commencer l’aventure"
+      },
+      "serenity": {
+        "imageAlt": "Spa et bien-être",
+        "title": "Pour les amateurs de sérénité",
+        "description": "Détendez-vous avec un massage thaï, du yoga face à la mer et la douceur d’une piscine à débordement.",
+        "bullets": [
+          "Soins spa thaïlandais",
+          "Yoga et méditation",
+          "Chambres vue océan"
+        ],
+        "cta": "Trouver votre refuge"
+      }
+    }
+  },
+  "why": {
+    "title": "Pourquoi plonger avec The Asri ?",
+    "subtitle": "Nous ne sommes pas un resort de plongée comme les autres. Voici ce qui nous distingue.",
+    "cards": [
+      {
+        "title": "Resort de plongée PADI 5 étoiles",
+        "description": "Centre de plongée certifié à l’international, avec les plus hauts standards de sécurité et de formation."
+      },
+      {
+        "title": "Plus de 30 sites de plongée préservés",
+        "description": "Des jardins de corail aux paradis macro, tout est à moins de 10 minutes en bateau."
+      },
+      {
+        "title": "Spécialistes de la macro",
+        "description": "Nos guides repèrent les plus petites créatures que la plupart des plongeurs manquent."
+      },
+      {
+        "title": "Chambres de luxe et spa",
+        "description": "Hébergements d’inspiration thaïe, vues sur l’océan et soins spa de classe mondiale."
+      },
+      {
+        "title": "Cuisine du terroir à l’assiette",
+        "description": "Fruits de mer frais et cuisine internationale servis en bord de mer avec de superbes couchers de soleil."
+      },
+      {
+        "title": "Engagement petits groupes",
+        "description": "Maximum 1:4 pour les plongeurs certifiés, 1:3 pour les cours. Une attention personnalisée garantie."
+      }
+    ]
+  },
+  "accommodationsPreview": {
+    "title": "Votre sanctuaire en bord de mer",
+    "subtitle": "Le luxe d’inspiration thaïe rencontre le confort moderne. 14 chambres exclusives pensées pour la sérénité.",
+    "price": { "startingFrom": "À partir de", "perNight": "/nuit" },
+    "badges": { "mostPopular": "Le plus populaire" },
+    "features": {
+      "upToGuests": "Jusqu’à {{count}} personnes",
+      "thaiInspired": "Inspiration thaïe"
+    },
+    "amenitiesTitle": "Équipements en chambre",
+    "cta": {
+      "viewAll": "Voir toutes les chambres",
+      "bookNow": "Réserver"
+    },
+    "trustIndicators": ["Vue sur l’océan", "Architecture thaïe", "Écoresponsable"]
+  },
+  "galleryTeaser": {
+    "title": "Découvrez l’expérience The Asri",
+    "subtitle": "Des merveilles macro sous-marines aux couchers de soleil paisibles : découvrez ce qui vous attend.",
+    "cta": "Voir la galerie complète",
+    "countLine": "{{count}}+ photos de plongée, chambres, cuisine et plus"
+  },
+  "testimonials": {
+    "title": "Récits de nos clients",
+    "subtitle": "Des expériences réelles de plongeurs, de familles et de débutants qui ont trouvé leur maison sous-marine.",
+    "featuredOn": "Aussi présent sur"
+  },
+  "finalCta": {
+    "title": "Prêt à vivre l’expérience The Asri ?",
+    "subtitle": "Réservez dès aujourd’hui votre aventure plongée ou votre retraite bien-être. Notre équipe est prête à créer votre escapade parfaite.",
+    "primary": "Planifier votre escapade",
+    "secondary": "Nous contacter",
+    "officeHours": "Horaires : 8h00 - 20h00 PHT (tous les jours)"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "mobileCta": {
+    "title": "Bereit zum Tauchen?",
+    "subtitle": "Buche dein Unterwasserabenteuer noch heute",
+    "viewRates": "Preise ansehen"
+  },
+  "sections": {
+    "quickLinks": "Schnellzugriff",
+    "diveInfo": "Tauchinfo"
+  },
+  "links": {
+    "padiCourses": "PADI-Kurse"
+  },
+  "contact": {
+    "address": {
+      "mobile": "Sitio Balagbag, Brgy. Bagalangit, Mabini, Batangas, Philippinen",
+      "desktop": "Sitio Balagbag, Barangay Bagalangit, Batangas, Mabini, Philippinen"
+    }
+  },
+  "desktop": {
+    "aboutBlurb": "PADI 5-Sterne-Tauchresort in Anilao, Batangas. Boutique-Luxus mit 14 Zimmern direkt am Wasser, thailändisch inspiriertem Design und Zugang zu über 30 erstklassigen Tauchplätzen."
+  },
+  "social": {
+    "facebookAria": "Facebook",
+    "instagramAria": "Instagram",
+    "youtubeAria": "YouTube"
+  },
+  "copyright": "© {{year}} {{brand}} Dive & Leisure Resort. Alle Rechte vorbehalten."
+}

@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "title": "Kontakt aufnehmen",
+    "subtitle": "Fragen? Wir helfen dir gern dabei, deinen perfekten Tauchurlaub oder Wellness-Retreat in Anilao zu planen."
+  },
+  "form": {
+    "title": "Schreib uns eine Nachricht",
+    "successAlert": "Nachricht gesendet! Wir melden uns innerhalb von 24 Stunden bei dir.",
+    "fields": {
+      "name": { "label": "Vollständiger Name *", "placeholder": "Max Mustermann" },
+      "email": { "label": "E-Mail-Adresse *", "placeholder": "max@beispiel.com" },
+      "phone": { "label": "Telefonnummer", "placeholder": "+63 XXX XXX XXXX" },
+      "subject": {
+        "label": "Betreff *",
+        "options": {
+          "general": "Allgemeine Anfrage",
+          "booking": "Buchung und Preise",
+          "diving": "Tauchservices",
+          "courses": "PADI-Kurse",
+          "group": "Gruppenbuchung",
+          "other": "Sonstiges"
+        }
+      },
+      "message": {
+        "label": "Deine Nachricht *",
+        "placeholder": "Erzähl uns von deinen Plänen, Fragen oder besonderen Wünschen..."
+      },
+      "consent": {
+        "label": "Ich stimme zu, dass The Asri mich per E-Mail oder Telefon zu meiner Anfrage kontaktiert."
+      }
+    },
+    "submit": {
+      "default": "Nachricht senden",
+      "sending": "Wird gesendet..."
+    }
+  },
+  "quickContact": {
+    "title": "Schnellkontakt",
+    "phone": { "label": "Telefon" },
+    "whatsapp": { "label": "WhatsApp" },
+    "email": { "label": "E-Mail" },
+    "officeHours": {
+      "label": "Öffnungszeiten",
+      "value": "8:00–20:00 PHT",
+      "frequency": "Täglich"
+    }
+  },
+  "followUs": {
+    "title": "Folge uns"
+  },
+  "gettingThere": {
+    "title": "Anreise",
+    "subtitle": "Wir befinden uns im wunderschönen Sabang, Puerto Galera – das Paradies ist näher, als du denkst.",
+    "mapTitle": "The Asri Standortkarte",
+    "cardTitle": "Anreise nach Mabini, Batangas (Anilao)",
+    "cardIntro": "The Asri liegt im Herzen von Anilao, einem der besten Tauchziele der Philippinen.",
+    "fromManila": {
+      "title": "Ab Manila:",
+      "steps": [
+        "Bus zum Batangas Grand Terminal (2,5 Stunden)",
+        "Taxi zum The Asri Resort in Mabini, Batangas (30 Minuten)",
+        "Alternative: Öffentliche Mitfahrmöglichkeiten verfügbar"
+      ]
+    },
+    "privateTransfer": {
+      "title": "Privattransfer / Abholung vom Flughafen:",
+      "description": "Wir bieten einen Tür-zu-Tür-Service von Hotels in Manila an.",
+      "cta": "Kontaktiere uns für Preise und Verfügbarkeit."
+    },
+    "proTip": {
+      "label": "Tipp:",
+      "text": "Buche frühe Abfahrten am Morgen, damit du rechtzeitig zu den Nachmittags-Tauchgängen ankommst!"
+    }
+  }
+}

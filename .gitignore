@@ -35,3 +35,7 @@ dist-ssr
 
 # Vite
 .vite
+
+# Tooling / generated artifacts
+reports
+.trae

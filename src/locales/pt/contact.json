@@ -1,0 +1,90 @@
+{
+  "hero": {
+    "title": "Get In Touch",
+    "subtitle": "Have questions? We are here to help plan your perfect dive vacation or wellness retreat in Anilao."
+  },
+  "form": {
+    "title": "Send Us a Message",
+    "successAlert": "Message sent! We will get back to you within 24 hours.",
+    "fields": {
+      "name": {
+        "label": "Full Name *",
+        "placeholder": "John Doe"
+      },
+      "email": {
+        "label": "Email Address *",
+        "placeholder": "john@example.com"
+      },
+      "phone": {
+        "label": "Phone Number",
+        "placeholder": "+63 XXX XXX XXXX"
+      },
+      "subject": {
+        "label": "Subject *",
+        "options": {
+          "general": "General Inquiry",
+          "booking": "Booking and Rates",
+          "diving": "Diving Services",
+          "courses": "PADI Courses",
+          "group": "Group Booking",
+          "other": "Other"
+        }
+      },
+      "message": {
+        "label": "Your Message *",
+        "placeholder": "Tell us about your plans, questions, or special requirements..."
+      },
+      "consent": {
+        "label": "I consent to The Asri contacting me via email or phone regarding my inquiry."
+      }
+    },
+    "submit": {
+      "default": "Send Message",
+      "sending": "Sending..."
+    }
+  },
+  "quickContact": {
+    "title": "Quick Contact",
+    "phone": {
+      "label": "Phone"
+    },
+    "whatsapp": {
+      "label": "WhatsApp"
+    },
+    "email": {
+      "label": "Email"
+    },
+    "officeHours": {
+      "label": "Office Hours",
+      "value": "8:00 AM - 8:00 PM PHT",
+      "frequency": "Daily"
+    }
+  },
+  "followUs": {
+    "title": "Follow Us"
+  },
+  "gettingThere": {
+    "title": "How to Get Here",
+    "subtitle": "We are located in beautiful Sabang, Puerto Galera - paradise is closer than you think.",
+    "mapTitle": "The Asri Location Map",
+    "cardTitle": "Getting to Mabini, Batangas (Anilao)",
+    "cardIntro": "The Asri is located in the heart of Anilao, one of the Philippines premier diving destinations.",
+    "fromManila": {
+      "title": "From Manila:",
+      "steps": [
+        "Bus to Batangas Grand Terminal (2.5 hours)",
+        "Taxi to The Asri Resort in Mabini, Batangas (30 minutes)",
+        "Alternative: Public carpooling options available"
+      ]
+    },
+    "privateTransfer": {
+      "title": "Private Transfer / Airport Pickup:",
+      "description": "We offer door-to-door service from Manila hotels.",
+      "cta": "Contact us for pricing and availability."
+    },
+    "proTip": {
+      "label": "Pro Tip:",
+      "text": "Book early morning trips to arrive in time for afternoon dives!"
+    }
+  }
+}

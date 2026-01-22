@@ -2,9 +2,12 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Home, ConciergeBell, ImagePlus, Menu, X, LucideIcon, Compass, Flower2, Waves } from 'lucide-react';
 import MoreMenu from '@/components/MoreMenu';
+import { useTranslation } from 'react-i18next';
+import { useNamespace } from '@/i18n/useNamespace';
 
 interface NavItem {
   name: string;
+  ariaLabel: string;
   path: string;
   icon: LucideIcon;
   activeColor: string;
@@ -18,38 +21,12 @@ interface BookState {
   color: string;
 }
 
-/**
- * Three rotating states for the Book FAB button
- * Each represents a different user persona from THE-ASRI-BLUEPRINT
- */
-const BOOK_STATES: BookState[] = [
-  {
-    icon: Waves,
-    label: 'DIVE',
-    route: '/dive-services',
-    persona: 'Obsessed Diver',
-    color: '#0D7070' // Deep Teal
-  },
-  {
-    icon: Compass,
-    label: 'EXPLORE',
-    route: '/rates',
-    persona: 'Aspiring Explorer',
-    color: '#7C9885' // Bamboo Green
-  },
-  {
-    icon: Flower2,
-    label: 'UNWIND',
-    route: '/accommodations',
-    persona: 'Serenity Seeker',
-    color: '#D4A373' // Warm Sand
-  }
-];
-
 // Brand color constant - Deep Teal for ALL nav items
 const BRAND_TEAL = '#0D7070';
 
 const MobileBottomNav = () => {
+  useNamespace('navigation')
+  const { t } = useTranslation(['navigation', 'common'])
   const location = useLocation();
   const navigate = useNavigate();
   const [showMoreMenu, setShowMoreMenu] = useState<boolean>(false);
@@ -60,7 +37,31 @@ const MobileBottomNav = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const currentBookState = BOOK_STATES[currentBookIndex];
+  const bookStates: BookState[] = [
+    {
+      icon: Waves,
+      label: t('navigation:mobileNav.bookStates.dive'),
+      route: '/dive-services',
+      persona: t('navigation:mobileNav.personas.dive'),
+      color: '#0D7070'
+    },
+    {
+      icon: Compass,
+      label: t('navigation:mobileNav.bookStates.explore'),
+      route: '/rates',
+      persona: t('navigation:mobileNav.personas.explore'),
+      color: '#7C9885'
+    },
+    {
+      icon: Flower2,
+      label: t('navigation:mobileNav.bookStates.unwind'),
+      route: '/accommodations',
+      persona: t('navigation:mobileNav.personas.unwind'),
+      color: '#D4A373'
+    }
+  ];
+
+  const currentBookState = bookStates[currentBookIndex];
 
   // Check for reduced motion preference (accessibility)
   const prefersReducedMotion = window.matchMedia(
@@ -72,11 +73,11 @@ const MobileBottomNav = () => {
     if (!isAutoRotate || prefersReducedMotion) return;
 
     const interval = setInterval(() => {
-      setCurrentBookIndex((prev) => (prev + 1) % BOOK_STATES.length);
+      setCurrentBookIndex((prev) => (prev + 1) % bookStates.length);
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [isAutoRotate, prefersReducedMotion]);
+  }, [isAutoRotate, prefersReducedMotion, bookStates.length]);
 
   // Pause rotation when tab is hidden (battery saving)
   useEffect(() => {
@@ -111,13 +112,15 @@ const MobileBottomNav = () => {
   // LEFT GROUP: Home, Services
   const leftNavItems: NavItem[] = [
     {
-      name: 'HOME',
+      name: t('navigation:items.home.short'),
+      ariaLabel: t('navigation:items.home.full'),
       path: '/',
       icon: Home,
       activeColor: BRAND_TEAL  // Now consistent
     },
     {
-      name: 'SERVICES',
+      name: t('navigation:items.services.short'),
+      ariaLabel: t('navigation:items.services.full'),
       path: '/dive-services',
       icon: ConciergeBell,
       activeColor: BRAND_TEAL  // Now consistent
@@ -127,7 +130,8 @@ const MobileBottomNav = () => {
   // RIGHT GROUP: Gallery
   const rightNavItems: NavItem[] = [
     {
-      name: 'GALLERY',
+      name: t('navigation:items.gallery.short'),
+      ariaLabel: t('navigation:items.gallery.full'),
       path: '/gallery',
       icon: ImagePlus,
       activeColor: BRAND_TEAL  // Now consistent
@@ -161,7 +165,7 @@ const MobileBottomNav = () => {
         key={item.path}
         to={item.path}
         className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group py-2 overflow-hidden"
-        aria-label={item.name}
+        aria-label={item.ariaLabel}
         aria-current={active ? 'page' : undefined}
       >
         <div className="flex flex-col items-center">
@@ -229,7 +233,7 @@ const MobileBottomNav = () => {
           transition-transform duration-300 ease-out
           ${isVisible ? 'translate-y-0' : 'translate-y-full'}
         `}
-        aria-label="Mobile bottom navigation"
+        aria-label={t('navigation:mobileNav.navAria')}
       >
         {/* Premium liquid glass bg-white/65 */}
         <div 
@@ -250,7 +254,7 @@ const MobileBottomNav = () => {
             <button
               onClick={handleBookClick}
               className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group py-2"
-              aria-label={`Book now - ${currentBookState.label} for ${currentBookState.persona}`}
+              aria-label={t('navigation:mobileNav.bookAria', { label: currentBookState.label, persona: currentBookState.persona })}
             >
               {/* Elevated -mt-8 (32px up, 60px button = 47% outside border) */}
               <div className="relative -mt-8">
@@ -314,7 +318,7 @@ const MobileBottomNav = () => {
             <button
               onClick={handleMoreClick}
               className="relative flex flex-col items-center justify-center transition-all duration-300 flex-1 group py-2 overflow-hidden"
-              aria-label="More options"
+              aria-label={t('navigation:mobileNav.moreAria')}
               aria-expanded={showMoreMenu}
             >
               <div className="flex flex-col items-center">
@@ -360,7 +364,7 @@ const MobileBottomNav = () => {
                   `}
                   style={{ color: BRAND_TEAL }}  // Always Deep Teal!
                 >
-                  MORE
+                  {t('navigation:mobileNav.more')}
                 </span>
 
                 {/* Active gradient line - Deep Teal */}

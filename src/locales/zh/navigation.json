@@ -1,0 +1,65 @@
+{
+  "brand": {
+    "name": "The Asri",
+    "tagline": "潜水与休闲度假村"
+  },
+  "logo": {
+    "alt": "The Asri 标志"
+  },
+  "items": {
+    "home": { "short": "首页", "full": "首页" },
+    "about": { "short": "关于", "full": "关于我们" },
+    "services": { "short": "服务", "full": "潜水服务" },
+    "rooms": { "short": "客房", "full": "住宿" },
+    "rates": { "short": "价格", "full": "价格与套餐" },
+    "gallery": { "short": "相册", "full": "相册" },
+    "contact": { "short": "联系", "full": "联系我们" }
+  },
+  "cta": {
+    "call": {
+      "aria": "致电我们",
+      "title": "拨打 +63 918 900 3644",
+      "label": "立即致电"
+    },
+    "bookNow": "立即预订"
+  },
+  "moreMenu": {
+    "title": "探索更多",
+    "subtitle": "发现 The Asri 的所有精彩体验",
+    "close": "关闭菜单",
+    "items": {
+      "accommodations": {
+        "title": "住宿",
+        "subtitle": "海滨客房与套房"
+      },
+      "rates": {
+        "title": "价格与套餐",
+        "subtitle": "价格、优惠与特价"
+      },
+      "about": {
+        "title": "关于 The Asri",
+        "subtitle": "我们的故事与 PADI 五星资质"
+      },
+      "contact": {
+        "title": "联系与路线",
+        "subtitle": "位置、营业时间与到达方式"
+      }
+    }
+  },
+  "mobileNav": {
+    "navAria": "移动端底部导航",
+    "more": "更多",
+    "moreAria": "更多选项",
+    "bookAria": "立即预订 - {{label}}（{{persona}}）",
+    "bookStates": {
+      "dive": "潜水",
+      "explore": "探索",
+      "unwind": "放松"
+    },
+    "personas": {
+      "dive": "微距潜水爱好者",
+      "explore": "探索者新手",
+      "unwind": "静心放松者"
+    }
+  }
+}

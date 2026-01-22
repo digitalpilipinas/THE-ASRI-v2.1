@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone } from 'lucide-react';
+import LanguageSelector from '@/components/LanguageSelector';
+import { useTranslation } from 'react-i18next';
 
 interface NavigationItem {
   name: string;
@@ -12,6 +14,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const location = useLocation();
   const isHomepage = location.pathname === '/';
+  const { t } = useTranslation('navigation');
 
   useEffect(() => {
     const handleScroll = (): void => {
@@ -22,13 +25,13 @@ const Header = () => {
   }, []);
 
   const navigation: NavigationItem[] = [
-    { name: 'Home', path: '/', fullName: 'Home' },
-    { name: 'About', path: '/about', fullName: 'About Us' },
-    { name: 'Services', path: '/dive-services', fullName: 'Dive Services' },
-    { name: 'Rooms', path: '/accommodations', fullName: 'Accommodations' },
-    { name: 'Rates', path: '/rates', fullName: 'Rates & Packages' },
-    { name: 'Gallery', path: '/gallery', fullName: 'Gallery' },
-    { name: 'Contact', path: '/contact', fullName: 'Contact Us' },
+    { name: t('items.home.short'), path: '/', fullName: t('items.home.full') },
+    { name: t('items.about.short'), path: '/about', fullName: t('items.about.full') },
+    { name: t('items.services.short'), path: '/dive-services', fullName: t('items.services.full') },
+    { name: t('items.rooms.short'), path: '/accommodations', fullName: t('items.rooms.full') },
+    { name: t('items.rates.short'), path: '/rates', fullName: t('items.rates.full') },
+    { name: t('items.gallery.short'), path: '/gallery', fullName: t('items.gallery.full') },
+    { name: t('items.contact.short'), path: '/contact', fullName: t('items.contact.full') },
   ];
 
   const isActive = (path: string): boolean => location.pathname === path;
@@ -64,7 +67,7 @@ const Header = () => {
                   ? '/images/logo/THE-ASRI-LOGO.svg'
                   : '/images/logo/THE-ASRI-LOGO-BG.svg'
                 }
-                alt="The Asri Logo" 
+                alt={t('logo.alt')}
                 className="h-10 w-auto md:h-12 rounded-xl transition-all duration-300 group-hover:scale-105 group-active:scale-95"
               />
               
@@ -75,14 +78,14 @@ const Header = () => {
                   transition-colors duration-300
                   ${(isScrolled || !isHomepage) ? 'text-[#0D7070]' : 'text-white'}
                 `}>
-                  The Asri
+                  {t('brand.name')}
                 </span>
                 <span className={`
                   text-[9px] md:text-[10px] font-semibold font-lato tracking-[0.25em] leading-none mt-1.5
                   transition-colors duration-300
                   ${(isScrolled || !isHomepage) ? 'text-[#4A5568]' : 'text-white/80'}
                 `}>
-                  DIVE & LEISURE RESORT
+                  {t('brand.tagline')}
                 </span>
               </div>
             </Link>
@@ -124,6 +127,13 @@ const Header = () => {
 
             {/* DESKTOP CTA BUTTONS - Hidden on Mobile */}
             <div className="hidden lg:flex items-center gap-3">
+              <LanguageSelector
+                triggerClassName={
+                  (isScrolled || !isHomepage)
+                    ? 'border border-[#E6EBE8] bg-transparent text-[#4A5568]'
+                    : 'border border-white/20 bg-white/10 text-white'
+                }
+              />
               {/* Call Now - Enhanced Glassmorphism */}
               <a 
                 href="tel:+639189003644" 
@@ -136,11 +146,11 @@ const Header = () => {
                     : 'text-white bg-white/15 backdrop-blur-md border border-white/20 hover:bg-white/25'
                   }
                 `}
-                aria-label="Call us"
-                title="Call +63 918 900 3644"
+                aria-label={t('cta.call.aria')}
+                title={t('cta.call.title')}
               >
                 <Phone className="w-5 h-5" />
-                <span className="hidden xl:inline">Call Now</span>
+                <span className="hidden xl:inline">{t('cta.call.label')}</span>
               </a>
               
               {/* Book Now Button - Premium Gradient */}
@@ -157,7 +167,7 @@ const Header = () => {
                   group
                 "
               >
-                <span className="relative z-10">Book Now</span>
+                <span className="relative z-10">{t('cta.bookNow')}</span>
                 
                 {/* Ripple effect */}
                 <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 bg-white/30 rounded-full group-hover:w-full group-hover:h-full group-hover:scale-150 transition-all duration-500" />

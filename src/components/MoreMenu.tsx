@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Hotel, DollarSign, Info, MapPin, ChevronRight, LucideIcon } from 'lucide-react';
+import LanguageSelector from '@/components/LanguageSelector';
+import { useTranslation } from 'react-i18next';
 
 interface MoreMenuProps {
   isOpen: boolean;
@@ -16,6 +18,7 @@ interface MenuItem {
 }
 
 const MoreMenu = ({ isOpen, onClose }: MoreMenuProps) => {
+  const { t } = useTranslation('navigation');
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -46,29 +49,29 @@ const MoreMenu = ({ isOpen, onClose }: MoreMenuProps) => {
   const menuItems: MenuItem[] = [
     {
       icon: Hotel,
-      title: 'Accommodations',
-      subtitle: 'Waterfront rooms & suites',
+      title: t('moreMenu.items.accommodations.title'),
+      subtitle: t('moreMenu.items.accommodations.subtitle'),
       path: '/accommodations',
       color: '#0D7070'
     },
     {
       icon: DollarSign,
-      title: 'Rates & Packages',
-      subtitle: 'Pricing, deals & specials',
+      title: t('moreMenu.items.rates.title'),
+      subtitle: t('moreMenu.items.rates.subtitle'),
       path: '/rates',
       color: '#7C9885'
     },
     {
       icon: Info,
-      title: 'About The Asri',
-      subtitle: 'Our story & PADI 5-Star status',
+      title: t('moreMenu.items.about.title'),
+      subtitle: t('moreMenu.items.about.subtitle'),
       path: '/about',
       color: '#D4A373'
     },
     {
       icon: MapPin,
-      title: 'Contact & Directions',
-      subtitle: 'Location, hours & getting here',
+      title: t('moreMenu.items.contact.title'),
+      subtitle: t('moreMenu.items.contact.subtitle'),
       path: '/contact',
       color: '#FF6B6B'
     }
@@ -109,11 +112,14 @@ const MoreMenu = ({ isOpen, onClose }: MoreMenuProps) => {
         {/* Menu Header */}
         <div className="px-6 pb-4">
           <h3 className="font-playfair font-bold text-2xl text-[#1A2332]">
-            Explore More
+            {t('moreMenu.title')}
           </h3>
           <p className="font-lato text-sm text-[#718096] mt-1">
-            Discover everything The Asri has to offer
+            {t('moreMenu.subtitle')}
           </p>
+          <div className="mt-4">
+            <LanguageSelector triggerClassName="h-11 rounded-xl border border-[#E6EBE8] bg-white text-[#1A2332]" />
+          </div>
         </div>
 
         {/* Menu Items */}
@@ -168,6 +174,8 @@ const MoreMenu = ({ isOpen, onClose }: MoreMenuProps) => {
                     w-5 h-5 text-[#4A5568]
                     group-hover:translate-x-1
                     transition-transform duration-300
+                    [[dir=rtl]_&]:rotate-180
+                    [[dir=rtl]_&]:group-hover:-translate-x-1
                   " 
                 />
               </Link>
@@ -189,7 +197,7 @@ const MoreMenu = ({ isOpen, onClose }: MoreMenuProps) => {
               transition-all duration-300
             "
           >
-            Close Menu
+            {t('moreMenu.close')}
           </button>
         </div>
       </div>

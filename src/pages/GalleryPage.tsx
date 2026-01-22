@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { X } from 'lucide-react'
 import NeumorphicButton from '@/components/NeumorphicButton'
 import { resortImages, galleryImages, GalleryImage } from '@/data/mockData'
+import { useTranslation } from 'react-i18next'
+import { useNamespace } from '@/i18n/useNamespace'
 
 type FilterType = 'all' | 'diving' | 'rooms' | 'dining' | 'spa' | 'moments'
 
@@ -11,16 +13,18 @@ interface Filter {
 }
 
 const GalleryPage: React.FC = () => {
+  useNamespace('gallery')
+  const { t } = useTranslation(['gallery', 'common'])
   const [selectedFilter, setSelectedFilter] = useState<FilterType>('all')
   const [lightboxImage, setLightboxImage] = useState<GalleryImage | null>(null)
 
   const filters: Filter[] = [
-    { id: 'all', label: 'All' },
-    { id: 'diving', label: 'Diving' },
-    { id: 'rooms', label: 'Rooms' },
-    { id: 'dining', label: 'Dining' },
-    { id: 'spa', label: 'Spa' },
-    { id: 'moments', label: 'Moments' },
+    { id: 'all', label: t('gallery:filters.all') },
+    { id: 'diving', label: t('gallery:filters.diving') },
+    { id: 'rooms', label: t('gallery:filters.rooms') },
+    { id: 'dining', label: t('gallery:filters.dining') },
+    { id: 'spa', label: t('gallery:filters.spa') },
+    { id: 'moments', label: t('gallery:filters.moments') },
   ]
 
   const filteredImages = selectedFilter === 'all'
@@ -36,10 +40,10 @@ const GalleryPage: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0D7070]/70 to-[#0D7070]/80"></div>
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
           <h1 className="font-playfair font-bold text-4xl md:text-6xl text-white mb-4">
-            Experience The Asri<br />Through Our Lens
+            {t('gallery:hero.titleLine1')}<br />{t('gallery:hero.titleLine2')}
           </h1>
           <p className="font-lato text-lg text-white/90">
-            Dive into our visual story - from underwater magic to beachfront bliss.
+            {t('gallery:hero.subtitle')}
           </p>
         </div>
       </section>
@@ -90,7 +94,7 @@ const GalleryPage: React.FC = () => {
 
           {filteredImages.length === 0 && (
             <div className="text-center py-12">
-              <p className="font-lato text-[#718096] text-lg">No images found in this category.</p>
+              <p className="font-lato text-[#718096] text-lg">{t('gallery:emptyState')}</p>
             </div>
           )}
         </div>
@@ -104,6 +108,7 @@ const GalleryPage: React.FC = () => {
           <button
             className="absolute top-4 right-4 text-white hover:text-[#FF6B6B] transition-colors z-10"
             onClick={() => setLightboxImage(null)}
+            aria-label={t('common:lightbox.close')}
           >
             <X className="w-8 h-8" />
           </button>
@@ -122,21 +127,21 @@ const GalleryPage: React.FC = () => {
       <section className="py-16 md:py-24 bg-[#F5F1E8]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-playfair font-bold text-3xl md:text-4xl text-[#1A2332] mb-4">
-            Share Your Experience
+            {t('gallery:share.title')}
           </h2>
           <p className="font-lato text-lg text-[#4A5568] mb-8">
-            Share your unforgettable moments at The Asri with the world! Tag us on Instagram and your photos could be featured in our gallery.
+            {t('gallery:share.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://instagram.com/theasrianilao" target="_blank" rel="noopener noreferrer">
-              <NeumorphicButton variant="primary" size="lg">Follow @theasrianilao</NeumorphicButton>
+              <NeumorphicButton variant="primary" size="lg">{t('gallery:share.followCta')}</NeumorphicButton>
             </a>
             <a href="https://instagram.com/theasrianilao" target="_blank" rel="noopener noreferrer">
-              <NeumorphicButton variant="outline" size="lg">Share on Instagram</NeumorphicButton>
+              <NeumorphicButton variant="outline" size="lg">{t('gallery:share.shareCta')}</NeumorphicButton>
             </a>
           </div>
           <p className="font-lato text-sm text-[#718096] mt-6">
-            Tag us <strong className="text-[#FF6B6B]">@theasrianilao</strong> to be featured in our gallery
+            {t('gallery:share.tagLine.prefix')} <strong className="text-[#FF6B6B]">@theasrianilao</strong> {t('gallery:share.tagLine.suffix')}
           </p>
         </div>
       </section>

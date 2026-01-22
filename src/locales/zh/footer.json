@@ -1,0 +1,29 @@
+{
+  "mobileCta": {
+    "title": "准备好潜水了吗？",
+    "subtitle": "立即预订你的海底冒险",
+    "viewRates": "查看价格"
+  },
+  "sections": {
+    "quickLinks": "快速链接",
+    "diveInfo": "潜水信息"
+  },
+  "links": {
+    "padiCourses": "PADI 课程"
+  },
+  "contact": {
+    "address": {
+      "mobile": "Sitio Balagbag, Brgy. Bagalangit, Mabini, Batangas, Philippines",
+      "desktop": "Sitio Balagbag, Barangay Bagalangit, Batangas, Mabini, Philippines"
+    }
+  },
+  "desktop": {
+    "aboutBlurb": "位于八打雁省 Anilao 的 PADI 五星潜水度假村。精品奢华的 14 间海滨客房，泰式灵感设计，并可轻松前往 30+ 世界级潜点。"
+  },
+  "social": {
+    "facebookAria": "Facebook",
+    "instagramAria": "Instagram",
+    "youtubeAria": "YouTube"
+  },
+  "copyright": "© {{year}} {{brand}} Dive & Leisure Resort。保留所有权利。"
+}

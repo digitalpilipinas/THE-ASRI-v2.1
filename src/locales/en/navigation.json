@@ -1,0 +1,65 @@
+{
+  "brand": {
+    "name": "The Asri",
+    "tagline": "DIVE & LEISURE RESORT"
+  },
+  "logo": {
+    "alt": "The Asri logo"
+  },
+  "items": {
+    "home": { "short": "Home", "full": "Home" },
+    "about": { "short": "About", "full": "About Us" },
+    "services": { "short": "Services", "full": "Dive Services" },
+    "rooms": { "short": "Rooms", "full": "Accommodations" },
+    "rates": { "short": "Rates", "full": "Rates & Packages" },
+    "gallery": { "short": "Gallery", "full": "Gallery" },
+    "contact": { "short": "Contact", "full": "Contact Us" }
+  },
+  "cta": {
+    "call": {
+      "aria": "Call us",
+      "title": "Call +63 918 900 3644",
+      "label": "Call Now"
+    },
+    "bookNow": "Book Now"
+  },
+  "moreMenu": {
+    "title": "Explore More",
+    "subtitle": "Discover everything The Asri has to offer",
+    "close": "Close Menu",
+    "items": {
+      "accommodations": {
+        "title": "Accommodations",
+        "subtitle": "Waterfront rooms & suites"
+      },
+      "rates": {
+        "title": "Rates & Packages",
+        "subtitle": "Pricing, deals & specials"
+      },
+      "about": {
+        "title": "About The Asri",
+        "subtitle": "Our story & PADI 5-Star status"
+      },
+      "contact": {
+        "title": "Contact & Directions",
+        "subtitle": "Location, hours & getting here"
+      }
+    }
+  },
+  "mobileNav": {
+    "navAria": "Mobile bottom navigation",
+    "more": "More",
+    "moreAria": "More options",
+    "bookAria": "Book now - {{label}} for {{persona}}",
+    "bookStates": {
+      "dive": "Dive",
+      "explore": "Explore",
+      "unwind": "Unwind"
+    },
+    "personas": {
+      "dive": "Obsessed Diver",
+      "explore": "Aspiring Explorer",
+      "unwind": "Serenity Seeker"
+    }
+  }
+}

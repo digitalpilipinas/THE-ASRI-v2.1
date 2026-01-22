@@ -2,6 +2,8 @@ import React from 'react'
 import { Award, Heart, Users, Leaf, Trophy, Shield, LucideIcon, CheckCircle, Target } from 'lucide-react'
 import NeumorphicCard from '@/components/NeumorphicCard'
 import { resortImages } from '@/data/mockData'
+import { useTranslation } from 'react-i18next'
+import { useNamespace } from '@/i18n/useNamespace'
 
 interface Value {
   icon: LucideIcon
@@ -24,52 +26,45 @@ interface Certification {
 }
 
 const AboutPage: React.FC = () => {
+  useNamespace('about')
+  const { t } = useTranslation('about')
   const values: Value[] = [
     {
       icon: Award,
-      title: 'Mastery',
-      description: 'Excellence in diving instruction, safety protocols, and guest service. Our team holds the highest certifications and never stops learning.',
+      title: t('values.items.0.title'),
+      description: t('values.items.0.description'),
       color: '#0D7070'
     },
     {
       icon: Heart,
-      title: 'Stewardship',
-      description: 'We protect the underwater world we love through sustainable practices, reef conservation, and educating every guest about marine preservation.',
+      title: t('values.items.1.title'),
+      description: t('values.items.1.description'),
       color: '#7C9885'
     },
     {
       icon: Users,
-      title: 'Intimacy',
-      description: 'Small groups, personalized service, and genuine connections. You are not a number here - you are family from the moment you arrive.',
+      title: t('values.items.2.title'),
+      description: t('values.items.2.description'),
       color: '#FF6B6B'
     }
   ]
 
   const teamMembers: TeamMember[] = [
-    { id: 1, name: "John Dizon", role: "Resort Owner", specialty: "PADI Scuba Instructor", image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80" },
-    { id: 2, name: "Danica Villezar", role: "Resort Manager", specialty: "Guest Relations", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&q=80" },
-    { id: 3, name: "Chef Marco Rossi", role: "Executive Chef", specialty: "Mediterranean Fusion", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&q=80" },
-    { id: 4, name: "Ana Reyes", role: "Spa Director", specialty: "Thai Massage", image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=300&q=80" }
+    { id: 1, name: "John Dizon", role: t('team.items.0.role'), specialty: t('team.items.0.specialty'), image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80" },
+    { id: 2, name: "Danica Villezar", role: t('team.items.1.role'), specialty: t('team.items.1.specialty'), image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&q=80" },
+    { id: 3, name: "Chef Marco Rossi", role: t('team.items.2.role'), specialty: t('team.items.2.specialty'), image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&q=80" },
+    { id: 4, name: "Ana Reyes", role: t('team.items.3.role'), specialty: t('team.items.3.specialty'), image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=300&q=80" }
   ]
 
   const certifications: Certification[] = [
-    { name: 'PADI 5-Star Dive Resort', year: 'Since 2025' },
-    { name: 'TripAdvisor Excellence', year: '2018-2024' },
-    { name: 'Green Fins Member', year: 'Since 2015' },
-    { name: 'Philippine Tourism Award', year: '2022' },
-    { name: '100% Safety Record', year: '15+ Years' },
+    { name: t('certifications.items.0.name'), year: t('certifications.items.0.year') },
+    { name: t('certifications.items.1.name'), year: t('certifications.items.1.year') },
+    { name: t('certifications.items.2.name'), year: t('certifications.items.2.year') },
+    { name: t('certifications.items.3.name'), year: t('certifications.items.3.year') },
+    { name: t('certifications.items.4.name'), year: t('certifications.items.4.year') },
   ]
 
-  const sustainabilityPractices: string[] = [
-    'Zero single-use plastics throughout resort',
-    'Reef-safe sunscreen policy',
-    'Monthly beach and reef cleanup',
-    'Solar panels power 60% of energy',
-    'Organic waste composting',
-    'Partnership with marine conservation',
-    'Staff marine biology training',
-    'Guest education programs'
-  ]
+  const sustainabilityPractices = t('sustainability.practices', { returnObjects: true }) as string[]
 
   return (
     <div className="min-h-screen pt-20">
@@ -80,10 +75,10 @@ const AboutPage: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0D7070]/60 to-[#0D7070]/80"></div>
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
           <h1 className="font-playfair font-bold text-4xl md:text-6xl text-white mb-6">
-            More Than a Resort<br />It is a Feeling
+            {t('hero.titleLine1')}<br />{t('hero.titleLine2')}
           </h1>
           <p className="font-lato text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-            Born from a love of the ocean and a dream to share Anilao underwater magic with the world.
+            {t('hero.subtitle')}
           </p>
         </div>
       </section>
@@ -92,15 +87,15 @@ const AboutPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
-              <img src={resortImages.resort.aerialView} alt="The Asri aerial view" className="rounded-2xl shadow-2xl" />
+              <img src={resortImages.resort.aerialView} alt={t('story.imageAlt')} className="rounded-2xl shadow-2xl" />
             </div>
             <div className="order-1 lg:order-2">
-              <h2 className="font-playfair font-bold text-3xl md:text-4xl text-[#1A2332] mb-6">Our Story</h2>
+              <h2 className="font-playfair font-bold text-3xl md:text-4xl text-[#1A2332] mb-6">{t('story.title')}</h2>
               <div className="space-y-4 font-lato text-[#4A5568]">
-                <p>The Asri Dive & Leisure Resort began with a simple dream: to create an intimate seaside sanctuary where world-class diving and warm Filipino hospitality come together in one unforgettable experience. Nestled in Sitio Balagbag, Barangay Bagalangit in Mabini, Batangas, just a few hours from Manila, The Asri was designed for people who want more than a quick escape—they want a place that feels like a second home by the sea.</p>
-                <p>From the start, the vision was clear: keep it small, keep it personal, and keep the standards high. With only around 14 waterfront rooms, The Asri was intentionally built to stay boutique. This intimacy allows the team to know guests by name, understand their goals—whether it is completing a first PADI course, chasing rare macro critters, or simply unwinding by the infinity pool—and tailor each stay around them.</p>
-                <p>Earning PADI 5-Star Dive Resort accreditation became a natural extension of that commitment. It formalized what guests were already experiencing: safe, professional, and thoughtfully guided diving in one of the richest marine biodiversity areas in the world. Today, our instructors and dive professionals welcome everyone—from nervous beginners to seasoned photographers—to explore over 30 nearby dive sites with confidence and curiosity.</p>
-                <p>Wrapped in a Thai-inspired aesthetic, surrounded by Balayan Bay sunsets, and supported by a team that genuinely cares, The Asri continues to grow not by becoming bigger, but by becoming better—one guest, one dive, and one shared story at a time.</p>
+                <p>{t('story.paragraphs.0')}</p>
+                <p>{t('story.paragraphs.1')}</p>
+                <p>{t('story.paragraphs.2')}</p>
+                <p>{t('story.paragraphs.3')}</p>
               </div>
             </div>
           </div>
@@ -122,7 +117,7 @@ const AboutPage: React.FC = () => {
               <div className="relative max-w-lg w-full">
                 <img 
                   src="/images/THE%20ASRI_PADI-5-STAR-RESORT.jpeg" 
-                  alt="PADI 5-Star Dive Resort Accreditation"
+                  alt={t('padi.badgeAlt')}
                   className="w-full rounded-2xl shadow-2xl"
                 />
                 {/* Glow effect */}
@@ -133,15 +128,15 @@ const AboutPage: React.FC = () => {
             {/* RIGHT: Content */}
             <div className="order-1 lg:order-2">
               <div className="inline-block bg-gradient-to-r from-[#0D7070] to-[#0a5555] text-white px-4 py-2 rounded-full text-sm font-lato font-bold mb-4">
-                Internationally Certified
+                {t('padi.kicker')}
               </div>
               
               <h2 className="font-playfair font-bold text-3xl md:text-5xl text-[#1A2332] mb-6">
-                PADI 5-Star Dive Resort
+                {t('padi.title')}
               </h2>
               
               <p className="font-lato text-lg text-[#4A5568] mb-8">
-                The Asri proudly holds PADI 5-Star Dive Resort status—the highest recognition in recreational diving. This certification means you are diving with a team that meets the most rigorous international standards for safety, professionalism, and training excellence.
+                {t('padi.intro')}
               </p>
               
               <div className="space-y-6">
@@ -152,10 +147,10 @@ const AboutPage: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-lato font-bold text-xl text-[#1A2332] mb-2">
-                      IDC Center Status
+                      {t('padi.features.0.title')}
                     </h3>
                     <p className="font-lato text-[#718096]">
-                      Authorized to train divers from beginner to professional Instructor level. Our facility meets PADI's highest operational and educational standards.
+                      {t('padi.features.0.description')}
                     </p>
                   </div>
                 </div>
@@ -167,10 +162,10 @@ const AboutPage: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-lato font-bold text-xl text-[#1A2332] mb-2">
-                      Expert Instructors
+                      {t('padi.features.1.title')}
                     </h3>
                     <p className="font-lato text-[#718096]">
-                      All instructors hold advanced PADI certifications with thousands of logged dives in Anilao's unique underwater environment.
+                      {t('padi.features.1.description')}
                     </p>
                   </div>
                 </div>
@@ -182,10 +177,10 @@ const AboutPage: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-lato font-bold text-xl text-[#1A2332] mb-2">
-                      15+ Years Safety Record
+                      {t('padi.features.2.title')}
                     </h3>
                     <p className="font-lato text-[#718096]">
-                      Maintained 100% safety record since inception. Small group ratios (1:4 certified, 1:3 training) ensure personalized attention on every dive.
+                      {t('padi.features.2.description')}
                     </p>
                   </div>
                 </div>
@@ -196,15 +191,15 @@ const AboutPage: React.FC = () => {
                 <div className="flex flex-wrap items-center gap-4">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-[#0D7070]" />
-                    <span className="font-lato text-sm font-semibold text-[#1A2332]">Full Equipment Facility</span>
+                    <span className="font-lato text-sm font-semibold text-[#1A2332]">{t('padi.badges.0')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-[#0D7070]" />
-                    <span className="font-lato text-sm font-semibold text-[#1A2332]">Emergency Oxygen</span>
+                    <span className="font-lato text-sm font-semibold text-[#1A2332]">{t('padi.badges.1')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-[#0D7070]" />
-                    <span className="font-lato text-sm font-semibold text-[#1A2332]">Insurance Covered</span>
+                    <span className="font-lato text-sm font-semibold text-[#1A2332]">{t('padi.badges.2')}</span>
                   </div>
                 </div>
               </div>
@@ -216,9 +211,9 @@ const AboutPage: React.FC = () => {
       <section className="py-16 md:py-24 bg-[#F5F1E8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="font-playfair font-bold text-3xl md:text-5xl text-[#1A2332] mb-4">Our Values</h2>
+            <h2 className="font-playfair font-bold text-3xl md:text-5xl text-[#1A2332] mb-4">{t('values.title')}</h2>
             <p className="font-lato text-lg text-[#4A5568] max-w-2xl mx-auto">
-              These three principles guide everything we do, from dive briefings to spa treatments to your morning coffee.
+              {t('values.subtitle')}
             </p>
           </div>
 
@@ -242,9 +237,9 @@ const AboutPage: React.FC = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="font-playfair font-bold text-3xl md:text-5xl text-[#1A2332] mb-4">Meet the Team</h2>
+            <h2 className="font-playfair font-bold text-3xl md:text-5xl text-[#1A2332] mb-4">{t('team.title')}</h2>
             <p className="font-lato text-lg text-[#4A5568] max-w-2xl mx-auto">
-              The heart and soul of The Asri. Passionate experts dedicated to making your experience unforgettable.
+              {t('team.subtitle')}
             </p>
           </div>
 
@@ -271,10 +266,10 @@ const AboutPage: React.FC = () => {
                 <div className="bg-[#7C9885] w-12 h-12 rounded-full flex items-center justify-center">
                   <Leaf className="w-6 h-6 text-white" />
                 </div>
-                <h2 className="font-playfair font-bold text-3xl md:text-4xl text-[#1A2332]">Sustainability</h2>
+                <h2 className="font-playfair font-bold text-3xl md:text-4xl text-[#1A2332]">{t('sustainability.title')}</h2>
               </div>
               <p className="font-lato text-[#4A5568] mb-6">
-                We believe that protecting the underwater world we showcase is not optional - it is essential. Our commitment to sustainability extends from our dive practices to our daily resort operations.
+                {t('sustainability.subtitle')}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {sustainabilityPractices.map((practice, index) => (
@@ -286,10 +281,10 @@ const AboutPage: React.FC = () => {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <img src={resortImages.diving.coralCanyon} alt="Coral reef" className="rounded-xl shadow-lg" />
-              <img src={resortImages.diving.turtle} alt="Sea turtle" className="rounded-xl shadow-lg mt-8" />
-              <img src={resortImages.people.yoga1} alt="Yoga" className="rounded-xl shadow-lg -mt-8" />
-              <img src={resortImages.amenities.flowers} alt="Nature" className="rounded-xl shadow-lg" />
+              <img src={resortImages.diving.coralCanyon} alt={t('sustainability.images.coralReef')} className="rounded-xl shadow-lg" />
+              <img src={resortImages.diving.turtle} alt={t('sustainability.images.seaTurtle')} className="rounded-xl shadow-lg mt-8" />
+              <img src={resortImages.people.yoga1} alt={t('sustainability.images.yoga')} className="rounded-xl shadow-lg -mt-8" />
+              <img src={resortImages.amenities.flowers} alt={t('sustainability.images.nature')} className="rounded-xl shadow-lg" />
             </div>
           </div>
         </div>
@@ -300,9 +295,9 @@ const AboutPage: React.FC = () => {
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-4">
               <Trophy className="w-8 h-8 text-[#D4A373]" />
-              <h2 className="font-playfair font-bold text-3xl md:text-4xl text-[#1A2332]">Certifications and Awards</h2>
+              <h2 className="font-playfair font-bold text-3xl md:text-4xl text-[#1A2332]">{t('certifications.title')}</h2>
             </div>
-            <p className="font-lato text-lg text-[#4A5568]">Recognized for excellence in diving, hospitality, and sustainability.</p>
+            <p className="font-lato text-lg text-[#4A5568]">{t('certifications.subtitle')}</p>
           </div>
 
           <NeumorphicCard padding="lg">

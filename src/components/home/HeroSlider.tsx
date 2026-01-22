@@ -4,30 +4,34 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react'
 import NeumorphicButton from '@/components/NeumorphicButton'
 import { resortImages } from '@/data/mockData'
+import { useTranslation } from 'react-i18next'
+import { useNamespace } from '@/i18n/useNamespace'
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
+  useNamespace('home')
+  const { t } = useTranslation(['home', 'common'])
 
   const slides = [
     {
       image: resortImages.hero.homepage,
-      title: 'Where the Sea\nMeets Serenity',
-      subtitle: 'Discover world-class diving and Thai-inspired elegance in the heart of Mabini (Anilao), Batangas.'
+      title: t('home:hero.slides.0.title'),
+      subtitle: t('home:hero.slides.0.subtitle')
     },
     {
       image: resortImages.diving.coralCanyon,
-      title: 'Dive Into\nUnderwater Paradise',
-      subtitle: '30+ pristine dive sites, PADI 5-Star training, and expert macro guides await your adventure.'
+      title: t('home:hero.slides.1.title'),
+      subtitle: t('home:hero.slides.1.subtitle')
     },
     {
       image: resortImages.resort.sunset,
-      title: 'Your Private\nOcean Sanctuary',
-      subtitle: 'Thai-inspired luxury rooms, infinity pool, and spa treatments with breathtaking sunset views.'
+      title: t('home:hero.slides.2.title'),
+      subtitle: t('home:hero.slides.2.subtitle')
     },
     {
       image: resortImages.amenities.spa,
-      title: 'Wellness &\nRejuvenation',
-      subtitle: 'Thai massage, beachfront yoga, and serene moments designed to restore your spirit.'
+      title: t('home:hero.slides.3.title'),
+      subtitle: t('home:hero.slides.3.subtitle')
     }
   ]
 
@@ -99,12 +103,12 @@ const HeroSlider = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/rates">
                 <NeumorphicButton variant="coral" size="lg">
-                  Plan Your Escape
+                  {t('home:hero.primaryCta')}
                 </NeumorphicButton>
               </Link>
               <Link to="/dive-services">
                 <NeumorphicButton variant="outline" size="lg" className="bg-white/90 hover:bg-white">
-                  Explore Diving
+                  {t('home:hero.secondaryCta')}
                 </NeumorphicButton>
               </Link>
             </div>
@@ -115,17 +119,17 @@ const HeroSlider = () => {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 transition-all duration-300 hover:scale-110"
-        aria-label="Previous slide"
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 transition-all duration-300 hover:scale-110 [[dir=rtl]_&]:left-auto [[dir=rtl]_&]:right-4 [[dir=rtl]_&]:md:right-8"
+        aria-label={t('common:carousel.previous')}
       >
-        <ChevronLeft className="w-6 h-6 text-white" />
+        <ChevronLeft className="w-6 h-6 text-white [[dir=rtl]_&]:rotate-180" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 transition-all duration-300 hover:scale-110"
-        aria-label="Next slide"
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 transition-all duration-300 hover:scale-110 [[dir=rtl]_&]:right-auto [[dir=rtl]_&]:left-4 [[dir=rtl]_&]:md:left-8"
+        aria-label={t('common:carousel.next')}
       >
-        <ChevronRight className="w-6 h-6 text-white" />
+        <ChevronRight className="w-6 h-6 text-white [[dir=rtl]_&]:rotate-180" />
       </button>
 
       {/* Slide Indicators */}
@@ -139,7 +143,7 @@ const HeroSlider = () => {
                 ? 'w-12 h-3 bg-white'
                 : 'w-3 h-3 bg-white/40 hover:bg-white/60'
             }`}
-            aria-label={`Go to slide ${index + 1}`}
+            aria-label={t('common:carousel.goTo', { index: index + 1 })}
           />
         ))}
       </div>
@@ -150,7 +154,7 @@ const HeroSlider = () => {
         whileHover={{ scale: 1.1, opacity: 1 }}
         whileTap={{ scale: 0.9 }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20 cursor-pointer transition-opacity hover:opacity-100"
-        aria-label="Scroll to explore experiences"
+        aria-label={t('home:hero.scrollCtaAria')}
       >
         <ChevronDown className="w-8 h-8 text-white/80" />
       </motion.button>

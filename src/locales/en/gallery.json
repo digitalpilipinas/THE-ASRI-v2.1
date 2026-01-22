@@ -1,0 +1,27 @@
+{
+  "hero": {
+    "titleLine1": "Experience The Asri",
+    "titleLine2": "Through Our Lens",
+    "subtitle": "Dive into our visual story - from underwater magic to beachfront bliss."
+  },
+  "filters": {
+    "all": "All",
+    "diving": "Diving",
+    "rooms": "Rooms",
+    "dining": "Dining",
+    "spa": "Spa",
+    "moments": "Moments"
+  },
+  "emptyState": "No images found in this category.",
+  "share": {
+    "title": "Share Your Experience",
+    "subtitle": "Share your unforgettable moments at The Asri with the world! Tag us on Instagram and your photos could be featured in our gallery.",
+    "followCta": "Follow @theasrianilao",
+    "shareCta": "Share on Instagram",
+    "tagLine": {
+      "prefix": "Tag us",
+      "suffix": "to be featured in our gallery"
+    }
+  }
+}
+

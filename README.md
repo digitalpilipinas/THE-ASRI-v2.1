@@ -47,6 +47,13 @@ npm run dev
 # Type check
 npm run type-check
 
+# i18n inventory and validation
+npm run i18n:inventory
+npm run i18n:validate
+
+# Tests
+npm test
+
 # Build for production
 npm run build
 
@@ -106,6 +113,9 @@ Using **shadcn/ui** components with custom theming:
 
 ## 📚 Documentation
 
+- [Internationalization (i18n)](./docs/i18n.md)
+- [Translation Workflow](./docs/translation-workflow.md)
+- [i18n QA Checklist](./docs/i18n-qa.md)
 - [Original Repository](https://github.com/digitalpilipinas/THE-ASRI)
 - [Blink.new Documentation](https://blink.new/docs)
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)

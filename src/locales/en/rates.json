@@ -1,0 +1,79 @@
+{
+  "hero": {
+    "titleLine1": "Packages Designed for",
+    "titleLine2": "Unforgettable Experiences",
+    "subtitle": "Save up to 20% with our thoughtfully curated dive and stay packages."
+  },
+  "packages": [
+    {
+      "id": 1,
+      "name": "Weekend Explorer",
+      "duration": "3 Days / 2 Nights",
+      "dives": "6 Fun Dives",
+      "room": "Deluxe Garden View",
+      "price": "12,500",
+      "originalPrice": "14,200",
+      "savings": "1,700",
+      "idealFor": "Weekend warriors",
+      "includes": ["2 nights accommodation", "6 boat dives", "All equipment", "Breakfast daily", "Airport transfer"],
+      "perks": ["Free nitrox upgrade", "Photo CD"]
+    },
+    {
+      "id": 2,
+      "name": "Full Dive Immersion",
+      "duration": "7 Days / 6 Nights",
+      "dives": "12 Fun Dives",
+      "room": "Deluxe Seaview",
+      "price": "28,900",
+      "originalPrice": "33,600",
+      "savings": "4,700",
+      "idealFor": "Serious divers",
+      "includes": ["6 nights accommodation", "12 boat dives", "Nitrox", "All meals", "Transfers", "Dive insurance"],
+      "perks": ["Free macro guide", "1 night dive", "10% spa discount"],
+      "popular": true
+    },
+    {
+      "id": 3,
+      "name": "Certification Retreat",
+      "duration": "5 Days / 4 Nights",
+      "dives": "Open Water Course",
+      "room": "Standard Garden View",
+      "price": "24,800",
+      "originalPrice": "27,200",
+      "savings": "2,400",
+      "idealFor": "New divers",
+      "includes": ["4 nights accommodation", "Full PADI course", "eLearning", "All equipment", "Breakfast", "Certification"],
+      "perks": ["Free manual", "Logbook", "T-shirt"]
+    }
+  ],
+  "packagesSection": {
+    "title": "Dive and Stay Packages",
+    "subtitle": "Combine accommodation and diving for maximum value.",
+    "badges": { "mostPopular": "Most Popular" },
+    "pricing": {
+      "was": "Was {{price}} PHP",
+      "save": "Save {{amount}} PHP"
+    },
+    "includesTitle": "Includes:",
+    "perksTitle": "Bonus Perks:",
+    "bookCta": "Book Package"
+  },
+  "roomRates": {
+    "title": "Room Rates",
+    "subtitle": "Book accommodation only - diving purchased separately.",
+    "headers": {
+      "roomType": "Room Type",
+      "peak": "Peak Season",
+      "regular": "Regular Season",
+      "low": "Low Season"
+    },
+    "longStay": "Long-stay discounts: 7+ nights (10% off), 14+ nights (15% off), 30+ nights (20% off)"
+  },
+  "finalCta": {
+    "title": "Ready to Book Your Adventure?",
+    "subtitle": "Questions? We are here to help craft your perfect package.",
+    "primary": "Check Availability",
+    "secondary": "WhatsApp Us"
+  }
+}
+

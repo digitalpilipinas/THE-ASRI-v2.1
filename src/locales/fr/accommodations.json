@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "title": "Your Sanctuary Awaits",
+    "subtitle": "Thai-inspired rooms with modern comfort, stunning views, and the sound of waves as your lullaby."
+  },
+  "roomsSection": {
+    "title": "Choose Your Perfect Room",
+    "subtitle": "From cozy garden retreats to oceanfront luxury - find your ideal sanctuary.",
+    "badges": {
+      "mostPopular": "Most Popular"
+    },
+    "stats": {
+      "size": "Size",
+      "guests": "Guests",
+      "view": "View",
+      "bed": "Bed"
+    },
+    "price": {
+      "startingFrom": "Starting from",
+      "perNight": "/night"
+    },
+    "bookRoom": "Book Room"
+  },
+  "amenitiesSection": {
+    "title": "Beyond Your Room",
+    "subtitle": "World-class facilities designed for relaxation, adventure, and connection."
+  },
+  "amenities": [
+    {
+      "name": "Infinity Pool",
+      "description": "Swim with panoramic ocean views"
+    },
+    {
+      "name": "Beachfront Dining",
+      "description": "Fresh seafood and cuisine"
+    },
+    {
+      "name": "Thai Spa",
+      "description": "Traditional massage and wellness"
+    },
+    {
+      "name": "Dive Center",
+      "description": "PADI 5-Star facility"
+    },
+    {
+      "name": "Gift Shop",
+      "description": "Dive gear and souvenirs"
+    },
+    {
+      "name": "Fitness Area",
+      "description": "Beachfront yoga and fitness"
+    }
+  ]
+}

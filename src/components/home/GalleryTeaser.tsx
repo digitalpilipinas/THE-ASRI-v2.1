@@ -4,10 +4,14 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { X, ArrowRight, Camera } from 'lucide-react'
 import NeumorphicButton from '@/components/NeumorphicButton'
 import { galleryImages } from '@/data/mockData'
+import { useTranslation } from 'react-i18next'
+import { useNamespace } from '@/i18n/useNamespace'
 
 const GalleryTeaser = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null)
+  useNamespace('home')
+  const { t } = useTranslation(['home', 'common'])
 
   // Get featured images (first 9 for 3x3 grid)
   const featuredImages = galleryImages.slice(0, 9)
@@ -55,11 +59,11 @@ const GalleryTeaser = () => {
             <div className="flex items-center justify-center gap-3 mb-4">
               <Camera className="w-8 h-8 text-[#0D7070]" />
               <h2 className="font-playfair font-bold text-3xl md:text-5xl text-[#1A2332]">
-                See The Asri Experience
+                {t('home:galleryTeaser.title')}
               </h2>
             </div>
             <p className="font-lato text-lg text-[#4A5568] max-w-2xl mx-auto">
-              From underwater macro wonders to serene sunset moments, discover what awaits you.
+              {t('home:galleryTeaser.subtitle')}
             </p>
           </motion.div>
 
@@ -120,13 +124,13 @@ const GalleryTeaser = () => {
             <Link to="/gallery">
               <NeumorphicButton variant="primary" size="lg">
                 <span className="flex items-center gap-2">
-                  View Full Gallery
+                  {t('home:galleryTeaser.cta')}
                   <ArrowRight className="w-5 h-5" />
                 </span>
               </NeumorphicButton>
             </Link>
             <p className="font-lato text-sm text-[#718096] mt-4">
-              {galleryImages.length}+ photos from diving, rooms, dining & more
+              {t('home:galleryTeaser.countLine', { count: galleryImages.length })}
             </p>
           </motion.div>
         </div>
@@ -145,8 +149,8 @@ const GalleryTeaser = () => {
             {/* Close button */}
             <button
               onClick={closeLightbox}
-              className="absolute top-6 right-6 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 transition-colors z-10"
-              aria-label="Close lightbox"
+              className="absolute top-6 right-6 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 transition-colors z-10 [[dir=rtl]_&]:right-auto [[dir=rtl]_&]:left-6"
+              aria-label={t('common:lightbox.close')}
             >
               <X className="w-6 h-6 text-white" />
             </button>

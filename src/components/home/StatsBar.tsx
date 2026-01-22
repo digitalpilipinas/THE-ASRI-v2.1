@@ -1,37 +1,41 @@
 import { Award, Home, Waves, Sparkles } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useNamespace } from '@/i18n/useNamespace'
 
 const StatsBar = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [direction, setDirection] = useState(1)
+  useNamespace('home')
+  const { t } = useTranslation(['home', 'common'])
 
   const stats = [
     {
       icon: Award,
-      value: 'PADI 5★',
-      label: 'Dive Resort',
+      value: t('home:stats.0.value'),
+      label: t('home:stats.0.label'),
       color: 'text-[#0D7070]',
       bgColor: 'bg-[#0D7070]'
     },
     {
       icon: Home,
-      value: '14 Rooms',
-      label: 'Boutique',
+      value: t('home:stats.1.value'),
+      label: t('home:stats.1.label'),
       color: 'text-[#FF6B6B]',
       bgColor: 'bg-[#FF6B6B]'
     },
     {
       icon: Waves,
-      value: '30+ Sites',
-      label: 'Dive Sites',
+      value: t('home:stats.2.value'),
+      label: t('home:stats.2.label'),
       color: 'text-[#7C9885]',
       bgColor: 'bg-[#7C9885]'
     },
     {
       icon: Sparkles,
-      value: 'Thai Spa',
-      label: 'Wellness',
+      value: t('home:stats.3.value'),
+      label: t('home:stats.3.label'),
       color: 'text-[#D4A373]',
       bgColor: 'bg-[#D4A373]'
     }
@@ -114,7 +118,7 @@ const StatsBar = () => {
                     ? `w-8 h-2 ${stats[currentIndex].bgColor}`
                     : 'w-2 h-2 bg-[#4A5568]/30 hover:bg-[#4A5568]/50'
                 }`}
-                aria-label={`Go to ${stats[index].label}`}
+                aria-label={t('common:actions.goTo', { label: stats[index].label })}
                 aria-current={index === currentIndex}
               />
             ))}
@@ -127,7 +131,7 @@ const StatsBar = () => {
             const Icon = stat.icon
             return (
               <motion.div
-                key={stat.label}
+                key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}

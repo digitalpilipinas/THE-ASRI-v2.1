@@ -1,0 +1,134 @@
+{
+  "hero": {
+    "slides": [
+      {
+        "title": "Wo das Meer\nauf Ruhe trifft",
+        "subtitle": "Entdecke Weltklasse-Tauchen und thai-inspirierte Eleganz im Herzen von Mabini (Anilao), Batangas."
+      },
+      {
+        "title": "Tauche ein in\nein Unterwasserparadies",
+        "subtitle": "30+ unberührte Tauchplätze, PADI-5-Sterne-Training und erfahrene Makro-Guides warten auf dich."
+      },
+      {
+        "title": "Dein privates\nOzean-Refugium",
+        "subtitle": "Thai-inspirierte Luxuszimmer, Infinity-Pool und Spa-Behandlungen mit atemberaubenden Sonnenuntergängen."
+      },
+      {
+        "title": "Wellness &\nErholung",
+        "subtitle": "Thai-Massage, Yoga am Strand und ruhige Momente, die deine Energie zurückbringen."
+      }
+    ],
+    "primaryCta": "Plane deine Auszeit",
+    "secondaryCta": "Tauchen entdecken",
+    "scrollCtaAria": "Scrollen, um Erlebnisse zu entdecken"
+  },
+  "stats": [
+    { "value": "PADI 5★", "label": "Tauchresort" },
+    { "value": "14 Zimmer", "label": "Boutique" },
+    { "value": "30+ Spots", "label": "Tauchplätze" },
+    { "value": "Thai-Spa", "label": "Wellness" }
+  ],
+  "experience": {
+    "title": "Deine perfekte Auszeit wartet",
+    "subtitle": "Ob du Macro-Enthusiast, aufstrebender Entdecker oder auf der Suche nach Ruhe bist: Wir haben Erlebnisse gestaltet, die zu dir passen.",
+    "cards": {
+      "diver": {
+        "imageAlt": "Makro-Tauchen",
+        "title": "Für den leidenschaftlichen Taucher",
+        "description": "Über 40 Nudibranch-Arten, Frogfish, Seepferdchen und Geisterpfeifenfische warten auf deine Linse.",
+        "bullets": [
+          "Makro-Spots auf Weltklasseniveau",
+          "Erfahrene Fotoguides",
+          "Kleine Tauchgruppen"
+        ],
+        "cta": "Tauchplätze entdecken"
+      },
+      "explorer": {
+        "imageAlt": "PADI-Ausbildung",
+        "title": "Für den Entdecker in spe",
+        "description": "Starte deine Tauchreise mit PADI-5-Sterne-Training in ruhigen, warmen Gewässern.",
+        "bullets": [
+          "1:3 Instructor-Verhältnis",
+          "Einsteigerfreundliche Spots",
+          "100% Sicherheitsbilanz"
+        ],
+        "cta": "Starte deine Reise"
+      },
+      "serenity": {
+        "imageAlt": "Spa und Wellness",
+        "title": "Für Ruhesuchende",
+        "description": "Entspanne bei Thai-Massage, Yoga am Strand und dem Gefühl von Infinity-Pool-Glück.",
+        "bullets": [
+          "Thai-Spa-Anwendungen",
+          "Yoga und Meditation",
+          "Zimmer mit Meerblick"
+        ],
+        "cta": "Finde deinen Rückzugsort"
+      }
+    }
+  },
+  "why": {
+    "title": "Warum mit The Asri tauchen?",
+    "subtitle": "Wir sind nicht einfach nur ein weiteres Tauchresort. Das macht uns besonders.",
+    "cards": [
+      {
+        "title": "PADI 5-Sterne-Tauchresort",
+        "description": "International zertifiziertes Tauchcenter mit höchsten Sicherheits- und Ausbildungsstandards."
+      },
+      {
+        "title": "30+ unberührte Tauchplätze",
+        "description": "Von Korallengärten bis zu Makro-Paradiesen – alles in nur 10 Minuten per Boot."
+      },
+      {
+        "title": "Makro-Spezialisten",
+        "description": "Unsere Guides haben Adleraugen für die kleinsten Lebewesen, die die meisten übersehen."
+      },
+      {
+        "title": "Luxuszimmer und Spa",
+        "description": "Thai-inspirierte Unterkünfte mit Meerblick und erstklassigen Spa-Behandlungen."
+      },
+      {
+        "title": "Farm-to-Table-Küche",
+        "description": "Frische Meeresfrüchte und internationale Küche direkt am Strand – mit spektakulären Sonnenuntergängen."
+      },
+      {
+        "title": "Versprechen: kleine Gruppen",
+        "description": "Maximal 1:4 für zertifizierte Taucher, 1:3 für Kurse. Persönliche Betreuung garantiert."
+      }
+    ]
+  },
+  "accommodationsPreview": {
+    "title": "Dein Refugium direkt am Wasser",
+    "subtitle": "Thai-inspirierter Luxus trifft modernen Komfort. 14 exklusive Zimmer für pure Entspannung.",
+    "price": { "startingFrom": "Ab", "perNight": "/Nacht" },
+    "badges": { "mostPopular": "Beliebt" },
+    "features": {
+      "upToGuests": "Für bis zu {{count}} Gäste",
+      "thaiInspired": "Thai-inspiriert"
+    },
+    "amenitiesTitle": "Zimmerausstattung",
+    "cta": {
+      "viewAll": "Alle Zimmer ansehen",
+      "bookNow": "Jetzt buchen"
+    },
+    "trustIndicators": ["Meerblick", "Thai-Architektur", "Umweltfreundlich"]
+  },
+  "galleryTeaser": {
+    "title": "Erlebe The Asri",
+    "subtitle": "Von Makro-Wundern unter Wasser bis zu ruhigen Sonnenuntergängen: Entdecke, was dich erwartet.",
+    "cta": "Ganze Galerie ansehen",
+    "countLine": "{{count}}+ Fotos von Tauchen, Zimmern, Kulinarik und mehr"
+  },
+  "testimonials": {
+    "title": "Geschichten unserer Gäste",
+    "subtitle": "Echte Erlebnisse von Tauchern, Familien und Erstbesuchern, die ihr Unterwasser-Zuhause gefunden haben.",
+    "featuredOn": "Außerdem bekannt von"
+  },
+  "finalCta": {
+    "title": "Bereit für The Asri?",
+    "subtitle": "Buche noch heute dein Tauchabenteuer oder deinen Wellness-Retreat. Unser Team ist bereit, deine perfekte Auszeit zu gestalten.",
+    "primary": "Plane deine Auszeit",
+    "secondary": "Kontakt aufnehmen",
+    "officeHours": "Öffnungszeiten: 8:00–20:00 PHT (täglich)"
+  }
+}

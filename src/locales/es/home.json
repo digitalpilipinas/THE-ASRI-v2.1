@@ -1,0 +1,134 @@
+{
+  "hero": {
+    "slides": [
+      {
+        "title": "Donde el mar\nse encuentra con la serenidad",
+        "subtitle": "Descubre buceo de clase mundial y elegancia de inspiración tailandesa en el corazón de Mabini (Anilao), Batangas."
+      },
+      {
+        "title": "Sumérgete en\nun paraíso submarino",
+        "subtitle": "Más de 30 sitios prístinos, formación PADI 5 estrellas y guías macro expertos te esperan."
+      },
+      {
+        "title": "Tu refugio\nprivado frente al mar",
+        "subtitle": "Habitaciones de lujo de inspiración tailandesa, piscina infinita y tratamientos de spa con vistas a puestas de sol inolvidables."
+      },
+      {
+        "title": "Bienestar y\nrenovación",
+        "subtitle": "Masaje tailandés, yoga frente a la playa y momentos de calma para recuperar tu energía."
+      }
+    ],
+    "primaryCta": "Planifica tu escapada",
+    "secondaryCta": "Explorar el buceo",
+    "scrollCtaAria": "Desplázate para explorar experiencias"
+  },
+  "stats": [
+    { "value": "PADI 5★", "label": "Resort de buceo" },
+    { "value": "14 habitaciones", "label": "Boutique" },
+    { "value": "30+ sitios", "label": "Sitios de buceo" },
+    { "value": "Spa tailandés", "label": "Bienestar" }
+  ],
+  "experience": {
+    "title": "Tu escapada perfecta te espera",
+    "subtitle": "Ya seas amante del macrobuceo, explorador en formación o busques serenidad, hemos diseñado experiencias para ti.",
+    "cards": {
+      "diver": {
+        "imageAlt": "Buceo macro",
+        "title": "Para el buceador apasionado",
+        "description": "Más de 40 especies de nudibranquios, peces rana, caballitos de mar y peces pipa fantasma esperan tu lente.",
+        "bullets": [
+          "Sitios macro de clase mundial",
+          "Guías expertos de fotografía",
+          "Inmersiones en grupos pequeños"
+        ],
+        "cta": "Explorar sitios de buceo"
+      },
+      "explorer": {
+        "imageAlt": "Entrenamiento PADI",
+        "title": "Para el explorador en formación",
+        "description": "Comienza tu aventura de buceo con formación PADI 5 estrellas en aguas cálidas y tranquilas.",
+        "bullets": [
+          "Proporción 1:3 instructor-alumno",
+          "Sitios aptos para principiantes",
+          "100% de historial de seguridad"
+        ],
+        "cta": "Empieza tu viaje"
+      },
+      "serenity": {
+        "imageAlt": "Spa y bienestar",
+        "title": "Para quien busca serenidad",
+        "description": "Relájate con masaje tailandés, yoga junto a la playa y la calma de la piscina infinita.",
+        "bullets": [
+          "Tratamientos de spa tailandés",
+          "Yoga y meditación",
+          "Habitaciones con vista al mar"
+        ],
+        "cta": "Encuentra tu refugio"
+      }
+    }
+  },
+  "why": {
+    "title": "¿Por qué bucear con The Asri?",
+    "subtitle": "No somos solo otro resort de buceo. Esto es lo que nos diferencia.",
+    "cards": [
+      {
+        "title": "Resort de buceo PADI 5 estrellas",
+        "description": "Centro de buceo certificado internacionalmente con los más altos estándares de seguridad y formación."
+      },
+      {
+        "title": "Más de 30 sitios de buceo prístinos",
+        "description": "Desde jardines de coral hasta paraísos macro, todo a solo 10 minutos en barco."
+      },
+      {
+        "title": "Especialistas en buceo macro",
+        "description": "Nuestros guías tienen ojo de águila para ver las criaturas más pequeñas que la mayoría pasa por alto."
+      },
+      {
+        "title": "Habitaciones de lujo y spa",
+        "description": "Alojamiento de inspiración tailandesa con vistas al mar y tratamientos de spa de primer nivel."
+      },
+      {
+        "title": "Gastronomía del huerto a la mesa",
+        "description": "Mariscos frescos y cocina internacional servidos frente a la playa con puestas de sol espectaculares."
+      },
+      {
+        "title": "Promesa de grupos pequeños",
+        "description": "Máximo 1:4 para buceadores certificados y 1:3 para cursos. Atención personalizada garantizada."
+      }
+    ]
+  },
+  "accommodationsPreview": {
+    "title": "Tu santuario frente al mar",
+    "subtitle": "Lujo de inspiración tailandesa con comodidad moderna. 14 habitaciones exclusivas pensadas para la serenidad.",
+    "price": { "startingFrom": "Desde", "perNight": "/noche" },
+    "badges": { "mostPopular": "Más popular" },
+    "features": {
+      "upToGuests": "Hasta {{count}} huéspedes",
+      "thaiInspired": "Inspiración tailandesa"
+    },
+    "amenitiesTitle": "Servicios de la habitación",
+    "cta": {
+      "viewAll": "Ver todas las habitaciones",
+      "bookNow": "Reservar"
+    },
+    "trustIndicators": ["Vistas al mar", "Arquitectura tailandesa", "Ecológico"]
+  },
+  "galleryTeaser": {
+    "title": "Vive la experiencia The Asri",
+    "subtitle": "Desde maravillas macro bajo el agua hasta atardeceres serenos, descubre lo que te espera.",
+    "cta": "Ver la galería completa",
+    "countLine": "{{count}}+ fotos de buceo, habitaciones, gastronomía y más"
+  },
+  "testimonials": {
+    "title": "Historias de nuestros huéspedes",
+    "subtitle": "Experiencias reales de buceadores, familias y primerizos que encontraron su hogar bajo el mar.",
+    "featuredOn": "También aparece en"
+  },
+  "finalCta": {
+    "title": "¿Listo para vivir The Asri?",
+    "subtitle": "Reserva hoy tu aventura de buceo o retiro de bienestar. Nuestro equipo está listo para diseñar tu escapada perfecta.",
+    "primary": "Planifica tu escapada",
+    "secondary": "Contáctanos",
+    "officeHours": "Horario de oficina: 8:00 AM - 8:00 PM PHT (diario)"
+  }
+}

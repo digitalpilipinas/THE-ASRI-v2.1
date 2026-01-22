@@ -1,0 +1,65 @@
+{
+  "brand": {
+    "name": "The Asri",
+    "tagline": "RESORT PLONGÉE & DÉTENTE"
+  },
+  "logo": {
+    "alt": "Logo de The Asri"
+  },
+  "items": {
+    "home": { "short": "Accueil", "full": "Accueil" },
+    "about": { "short": "À propos", "full": "À propos de nous" },
+    "services": { "short": "Services", "full": "Services de plongée" },
+    "rooms": { "short": "Chambres", "full": "Hébergements" },
+    "rates": { "short": "Tarifs", "full": "Tarifs et forfaits" },
+    "gallery": { "short": "Galerie", "full": "Galerie" },
+    "contact": { "short": "Contact", "full": "Nous contacter" }
+  },
+  "cta": {
+    "call": {
+      "aria": "Nous appeler",
+      "title": "Appeler le +63 918 900 3644",
+      "label": "Appeler"
+    },
+    "bookNow": "Réserver"
+  },
+  "moreMenu": {
+    "title": "Explorer plus",
+    "subtitle": "Découvrez tout ce que The Asri a à offrir",
+    "close": "Fermer le menu",
+    "items": {
+      "accommodations": {
+        "title": "Hébergements",
+        "subtitle": "Chambres et suites en bord de mer"
+      },
+      "rates": {
+        "title": "Tarifs et forfaits",
+        "subtitle": "Prix, offres et promotions"
+      },
+      "about": {
+        "title": "À propos de The Asri",
+        "subtitle": "Notre histoire et le statut PADI 5 étoiles"
+      },
+      "contact": {
+        "title": "Contact et itinéraire",
+        "subtitle": "Emplacement, horaires et accès"
+      }
+    }
+  },
+  "mobileNav": {
+    "navAria": "Navigation mobile en bas de page",
+    "more": "Plus",
+    "moreAria": "Plus d’options",
+    "bookAria": "Réserver - {{label}} pour {{persona}}",
+    "bookStates": {
+      "dive": "Plonger",
+      "explore": "Explorer",
+      "unwind": "Détente"
+    },
+    "personas": {
+      "dive": "Plongeur passionné",
+      "explore": "Explorateur en devenir",
+      "unwind": "En quête de sérénité"
+    }
+  }
+}

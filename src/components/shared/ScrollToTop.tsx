@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronUp } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const { t } = useTranslation('common')
+  const isRtl = document.documentElement.dir === 'rtl'
 
   useEffect(() => {
     const checkMobile = () => {
@@ -53,11 +56,11 @@ const ScrollToTop = () => {
           className="fixed z-40 bg-gradient-to-br from-[#0D7070] to-[#0a5555] hover:from-[#0a5555] hover:to-[#084444] backdrop-blur-sm rounded-full p-3 md:p-4 transition-all border-2 border-white/30"
           style={{
             bottom: isMobile ? '168px' : '104px',
-            right: '24px',
+            ...(isRtl ? { left: '24px' } : { right: '24px' }),
             boxShadow: '0 8px 24px rgba(13, 112, 112, 0.25), 0 4px 8px rgba(0, 0, 0, 0.1)'
           }}
-          aria-label="Scroll to top"
-          title="Back to top"
+          aria-label={t('scrollToTop.aria')}
+          title={t('scrollToTop.title')}
         >
           <div className="relative">
             <ChevronUp className="w-6 h-6 md:w-7 md:h-7 text-white" strokeWidth={3} />

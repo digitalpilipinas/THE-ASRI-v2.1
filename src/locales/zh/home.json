@@ -1,0 +1,134 @@
+{
+  "hero": {
+    "slides": [
+      {
+        "title": "在海天之间\n遇见宁静",
+        "subtitle": "在八打雁省 Mabini（Anilao）核心地带，探索世界级潜水与泰式灵感的优雅格调。"
+      },
+      {
+        "title": "潜入\n海底天堂",
+        "subtitle": "30+ 纯净潜点、PADI 五星培训与专业微距向导，等待你的冒险到来。"
+      },
+      {
+        "title": "你的专属\n海景避世之所",
+        "subtitle": "泰式灵感奢华客房、无边泳池与水疗护理，伴随令人屏息的日落美景。"
+      },
+      {
+        "title": "身心疗愈\n与焕新",
+        "subtitle": "泰式按摩、海边瑜伽与静谧时刻，为你的能量充电。"
+      }
+    ],
+    "primaryCta": "规划你的假期",
+    "secondaryCta": "探索潜水",
+    "scrollCtaAria": "向下滚动以探索体验"
+  },
+  "stats": [
+    { "value": "PADI 5★", "label": "潜水度假村" },
+    { "value": "14 间客房", "label": "精品" },
+    { "value": "30+ 潜点", "label": "潜水点" },
+    { "value": "泰式水疗", "label": "身心疗愈" }
+  ],
+  "experience": {
+    "title": "你的理想假期在此开启",
+    "subtitle": "无论你热爱微距潜水、正在开启探索之旅，或是渴望放松身心，我们都为你精心打造专属体验。",
+    "cards": {
+      "diver": {
+        "imageAlt": "微距潜水",
+        "title": "献给微距潜水发烧友",
+        "description": "超过 40 种海蛞蝓、躄鱼、海马与幽灵管鱼，正等待你的镜头捕捉。",
+        "bullets": [
+          "世界级微距潜点",
+          "专业摄影向导",
+          "小团潜水"
+        ],
+        "cta": "探索潜点"
+      },
+      "explorer": {
+        "imageAlt": "PADI 培训",
+        "title": "献给探索者新手",
+        "description": "在温暖平静的海域，以 PADI 五星培训开启你的潜水旅程。",
+        "bullets": [
+          "1:3 教练比例",
+          "适合新手的潜点",
+          "100% 安全记录"
+        ],
+        "cta": "开启旅程"
+      },
+      "serenity": {
+        "imageAlt": "水疗与身心疗愈",
+        "title": "献给静心放松者",
+        "description": "泰式按摩、海边瑜伽与无边泳池的惬意，让你彻底放松。",
+        "bullets": [
+          "泰式水疗护理",
+          "瑜伽与冥想",
+          "海景客房"
+        ],
+        "cta": "寻找你的疗愈空间"
+      }
+    }
+  },
+  "why": {
+    "title": "为什么选择 The Asri 潜水？",
+    "subtitle": "我们不仅是一家潜水度假村。以下是我们的与众不同之处。",
+    "cards": [
+      {
+        "title": "PADI 五星潜水度假村",
+        "description": "国际认证潜水中心，遵循最高安全与培训标准。"
+      },
+      {
+        "title": "30+ 纯净潜点",
+        "description": "从珊瑚花园到微距天堂，乘船 10 分钟即可抵达。"
+      },
+      {
+        "title": "微距潜水专家",
+        "description": "我们的向导拥有“鹰眼”，能发现多数潜水员错过的微小生物。"
+      },
+      {
+        "title": "奢华客房与水疗",
+        "description": "泰式灵感住宿，海景视野与世界级水疗护理。"
+      },
+      {
+        "title": "从农场到餐桌的美食",
+        "description": "新鲜海鲜与国际料理，海边用餐配绝美日落。"
+      },
+      {
+        "title": "小团承诺",
+        "description": "持证潜水员最多 1:4，课程最多 1:3。保证个性化关注。"
+      }
+    ]
+  },
+  "accommodationsPreview": {
+    "title": "你的海滨静谧居所",
+    "subtitle": "泰式灵感奢华与现代舒适相遇。14 间专属客房，为宁静而生。",
+    "price": { "startingFrom": "起价", "perNight": "/晚" },
+    "badges": { "mostPopular": "最受欢迎" },
+    "features": {
+      "upToGuests": "最多 {{count}} 位宾客",
+      "thaiInspired": "泰式灵感"
+    },
+    "amenitiesTitle": "客房设施",
+    "cta": {
+      "viewAll": "查看全部客房",
+      "bookNow": "立即预订"
+    },
+    "trustIndicators": ["海景", "泰式建筑", "环保理念"]
+  },
+  "galleryTeaser": {
+    "title": "看看 The Asri 的体验瞬间",
+    "subtitle": "从海底微距奇观到宁静日落时刻，发现等待你的精彩。",
+    "cta": "查看完整相册",
+    "countLine": "{{count}}+ 张照片，涵盖潜水、客房、美食等"
+  },
+  "testimonials": {
+    "title": "来自宾客的故事",
+    "subtitle": "潜水爱好者、家庭与第一次到访的客人分享他们的真实体验。",
+    "featuredOn": "亦曾被以下平台报道"
+  },
+  "finalCta": {
+    "title": "准备好体验 The Asri 了吗？",
+    "subtitle": "立即预订你的潜水冒险或身心疗愈之旅。我们的团队随时为你打造完美假期。",
+    "primary": "规划你的假期",
+    "secondary": "联系我们",
+    "officeHours": "办公时间：8:00 AM - 8:00 PM PHT（每日）"
+  }
+}

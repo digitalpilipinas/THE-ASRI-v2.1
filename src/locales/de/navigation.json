@@ -1,0 +1,65 @@
+{
+  "brand": {
+    "name": "The Asri",
+    "tagline": "TAUCH- & FREIZEITRESORT"
+  },
+  "logo": {
+    "alt": "The Asri Logo"
+  },
+  "items": {
+    "home": { "short": "Startseite", "full": "Startseite" },
+    "about": { "short": "Über uns", "full": "Über uns" },
+    "services": { "short": "Services", "full": "Tauchservices" },
+    "rooms": { "short": "Zimmer", "full": "Unterkünfte" },
+    "rates": { "short": "Preise", "full": "Preise & Pakete" },
+    "gallery": { "short": "Galerie", "full": "Galerie" },
+    "contact": { "short": "Kontakt", "full": "Kontakt" }
+  },
+  "cta": {
+    "call": {
+      "aria": "Rufen Sie uns an",
+      "title": "Rufen Sie +63 918 900 3644 an",
+      "label": "Jetzt anrufen"
+    },
+    "bookNow": "Jetzt buchen"
+  },
+  "moreMenu": {
+    "title": "Mehr entdecken",
+    "subtitle": "Entdecke alles, was The Asri zu bieten hat",
+    "close": "Menü schließen",
+    "items": {
+      "accommodations": {
+        "title": "Unterkünfte",
+        "subtitle": "Zimmer & Suiten direkt am Wasser"
+      },
+      "rates": {
+        "title": "Preise & Pakete",
+        "subtitle": "Preise, Angebote & Specials"
+      },
+      "about": {
+        "title": "Über The Asri",
+        "subtitle": "Unsere Geschichte & PADI 5-Sterne-Status"
+      },
+      "contact": {
+        "title": "Kontakt & Anfahrt",
+        "subtitle": "Lage, Zeiten & Anreise"
+      }
+    }
+  },
+  "mobileNav": {
+    "navAria": "Mobile Navigation unten",
+    "more": "Mehr",
+    "moreAria": "Mehr Optionen",
+    "bookAria": "Jetzt buchen – {{label}} für {{persona}}",
+    "bookStates": {
+      "dive": "Tauchen",
+      "explore": "Entdecken",
+      "unwind": "Entspannen"
+    },
+    "personas": {
+      "dive": "Leidenschaftlicher Taucher",
+      "explore": "Aufstrebender Entdecker",
+      "unwind": "Ruhesuchender Gast"
+    }
+  }
+}

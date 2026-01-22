@@ -1,0 +1,155 @@
+{
+  "hero": {
+    "slides": [
+      {
+        "title": "Where the Sea\nMeets Serenity",
+        "subtitle": "Discover world-class diving and Thai-inspired elegance in the heart of Mabini (Anilao), Batangas."
+      },
+      {
+        "title": "Dive Into\nUnderwater Paradise",
+        "subtitle": "30+ pristine dive sites, PADI 5-Star training, and expert macro guides await your adventure."
+      },
+      {
+        "title": "Your Private\nOcean Sanctuary",
+        "subtitle": "Thai-inspired luxury rooms, infinity pool, and spa treatments with breathtaking sunset views."
+      },
+      {
+        "title": "Wellness &\nRejuvenation",
+        "subtitle": "Thai massage, beachfront yoga, and serene moments designed to restore your spirit."
+      }
+    ],
+    "primaryCta": "Plan Your Escape",
+    "secondaryCta": "Explore Diving",
+    "scrollCtaAria": "Scroll to explore experiences"
+  },
+  "stats": [
+    {
+      "value": "PADI 5★",
+      "label": "Dive Resort"
+    },
+    {
+      "value": "14 Rooms",
+      "label": "Boutique"
+    },
+    {
+      "value": "30+ Sites",
+      "label": "Dive Sites"
+    },
+    {
+      "value": "Thai Spa",
+      "label": "Wellness"
+    }
+  ],
+  "experience": {
+    "title": "Your Perfect Escape Awaits",
+    "subtitle": "Whether you are a macro diving enthusiast, aspiring explorer, or seeking serenity, we have crafted experiences just for you.",
+    "cards": {
+      "diver": {
+        "imageAlt": "Macro diving",
+        "title": "For the Obsessed Diver",
+        "description": "Over 40 nudibranch species, frogfish, seahorses, and ghost pipefish await your lens.",
+        "bullets": [
+          "World-class macro sites",
+          "Expert photo guides",
+          "Small group dives"
+        ],
+        "cta": "Explore Dive Sites"
+      },
+      "explorer": {
+        "imageAlt": "PADI training",
+        "title": "For the Aspiring Explorer",
+        "description": "Start your diving journey with PADI 5-Star training in calm, warm waters.",
+        "bullets": [
+          "1:3 instructor ratio",
+          "Beginner-friendly sites",
+          "100% safety record"
+        ],
+        "cta": "Start Your Journey"
+      },
+      "serenity": {
+        "imageAlt": "Spa and wellness",
+        "title": "For the Serenity Seeker",
+        "description": "Unwind with Thai massage, beachfront yoga, and infinity pool bliss.",
+        "bullets": [
+          "Thai spa treatments",
+          "Yoga and meditation",
+          "Ocean view rooms"
+        ],
+        "cta": "Find Your Sanctuary"
+      }
+    }
+  },
+  "why": {
+    "title": "Why Dive with The Asri?",
+    "subtitle": "We are not just another dive resort. Here is what sets us apart.",
+    "cards": [
+      {
+        "title": "PADI 5-Star Dive Resort",
+        "description": "Internationally certified dive center with the highest safety and training standards."
+      },
+      {
+        "title": "30+ Pristine Dive Sites",
+        "description": "From coral gardens to macro paradises, all within a 10-minute boat ride."
+      },
+      {
+        "title": "Macro Diving Specialists",
+        "description": "Our guides have eagle eyes for the tiniest critters that most divers miss."
+      },
+      {
+        "title": "Luxury Rooms and Spa",
+        "description": "Thai-inspired accommodations with ocean views and world-class spa treatments."
+      },
+      {
+        "title": "Farm-to-Table Dining",
+        "description": "Fresh seafood and international cuisine served beachfront with stunning sunset views."
+      },
+      {
+        "title": "Small Group Promise",
+        "description": "Maximum 1:4 ratio for certified divers, 1:3 for courses. Personalized attention guaranteed."
+      }
+    ]
+  },
+  "accommodationsPreview": {
+    "title": "Your Waterfront Sanctuary",
+    "subtitle": "Thai-inspired luxury meets modern comfort. 14 exclusive rooms designed for serenity.",
+    "price": {
+      "startingFrom": "Starting from",
+      "perNight": "/night"
+    },
+    "badges": {
+      "mostPopular": "Most Popular"
+    },
+    "features": {
+      "upToGuests": "Up to {{count}} guests",
+      "thaiInspired": "Thai-Inspired"
+    },
+    "amenitiesTitle": "Room Amenities",
+    "cta": {
+      "viewAll": "View All Rooms",
+      "bookNow": "Book Now"
+    },
+    "trustIndicators": [
+      "Ocean Views",
+      "Thai Architecture",
+      "Eco-Friendly"
+    ]
+  },
+  "galleryTeaser": {
+    "title": "See The Asri Experience",
+    "subtitle": "From underwater macro wonders to serene sunset moments, discover what awaits you.",
+    "cta": "View Full Gallery",
+    "countLine": "{{count}}+ photos from diving, rooms, dining & more"
+  },
+  "testimonials": {
+    "title": "Stories from Our Guests",
+    "subtitle": "Real experiences from divers, families, and first-timers who found their underwater home.",
+    "featuredOn": "Also Featured On"
+  },
+  "finalCta": {
+    "title": "Ready to Experience The Asri?",
+    "subtitle": "Book your dive adventure or wellness retreat today. Our team is standing by to craft your perfect escape.",
+    "primary": "Plan Your Escape",
+    "secondary": "Contact Us",
+    "officeHours": "Office Hours: 8:00 AM - 8:00 PM PHT (Daily)"
+  }
+}

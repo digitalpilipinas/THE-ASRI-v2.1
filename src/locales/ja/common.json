@@ -1,0 +1,48 @@
+{
+  "languageSelector": {
+    "aria": "Select language",
+    "placeholder": "Language"
+  },
+  "carousel": {
+    "previous": "Previous slide",
+    "next": "Next slide",
+    "goTo": "Go to slide {{index}}"
+  },
+  "actions": {
+    "close": "Close",
+    "goTo": "Go to {{label}}"
+  },
+  "whatsapp": {
+    "aria": "Chat on WhatsApp",
+    "defaultMessage": "Hi! I'd like to learn more about The Asri.",
+    "tooltipMobile": "Need help? Chat now!",
+    "tooltipDesktop": "Chat with us!"
+  },
+  "status": {
+    "loading": "Loading"
+  },
+  "sidebar": {
+    "mobileTitle": "Sidebar",
+    "mobileDescription": "Displays the mobile sidebar.",
+    "toggle": "Toggle sidebar"
+  },
+  "pagination": {
+    "aria": "Pagination",
+    "previousPageAria": "Go to previous page",
+    "nextPageAria": "Go to next page",
+    "previous": "Previous",
+    "next": "Next",
+    "morePages": "More pages"
+  },
+  "breadcrumb": {
+    "aria": "Breadcrumb",
+    "more": "More"
+  },
+  "scrollToTop": {
+    "aria": "Scroll to top",
+    "title": "Back to top"
+  },
+  "lightbox": {
+    "close": "Close lightbox"
+  }
+}

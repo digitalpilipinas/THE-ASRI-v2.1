@@ -1,0 +1,48 @@
+{
+  "languageSelector": {
+    "aria": "Choisir la langue",
+    "placeholder": "Langue"
+  },
+  "carousel": {
+    "previous": "Diapositive précédente",
+    "next": "Diapositive suivante",
+    "goTo": "Aller à la diapositive {{index}}"
+  },
+  "actions": {
+    "close": "Fermer",
+    "goTo": "Aller à {{label}}"
+  },
+  "whatsapp": {
+    "aria": "Discuter sur WhatsApp",
+    "defaultMessage": "Bonjour ! J’aimerais en savoir plus sur The Asri.",
+    "tooltipMobile": "Besoin d’aide ? Écrivez-nous !",
+    "tooltipDesktop": "Discutez avec nous !"
+  },
+  "status": {
+    "loading": "Chargement"
+  },
+  "sidebar": {
+    "mobileTitle": "Barre latérale",
+    "mobileDescription": "Affiche la barre latérale mobile.",
+    "toggle": "Afficher/masquer la barre latérale"
+  },
+  "pagination": {
+    "aria": "Pagination",
+    "previousPageAria": "Aller à la page précédente",
+    "nextPageAria": "Aller à la page suivante",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "morePages": "Plus de pages"
+  },
+  "breadcrumb": {
+    "aria": "Fil d’Ariane",
+    "more": "Plus"
+  },
+  "scrollToTop": {
+    "aria": "Revenir en haut",
+    "title": "Revenir en haut"
+  },
+  "lightbox": {
+    "close": "Fermer la visionneuse"
+  }
+}

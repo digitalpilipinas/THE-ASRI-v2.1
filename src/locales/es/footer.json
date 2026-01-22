@@ -1,0 +1,29 @@
+{
+  "mobileCta": {
+    "title": "¿Listo para bucear?",
+    "subtitle": "Reserva tu aventura submarina hoy",
+    "viewRates": "Ver tarifas"
+  },
+  "sections": {
+    "quickLinks": "Enlaces rápidos",
+    "diveInfo": "Info de buceo"
+  },
+  "links": {
+    "padiCourses": "Cursos PADI"
+  },
+  "contact": {
+    "address": {
+      "mobile": "Sitio Balagbag, Brgy. Bagalangit, Mabini, Batangas, Filipinas",
+      "desktop": "Sitio Balagbag, Barangay Bagalangit, Batangas, Mabini, Filipinas"
+    }
+  },
+  "desktop": {
+    "aboutBlurb": "Resort de buceo PADI 5 estrellas en Anilao, Batangas. Lujo boutique con 14 habitaciones frente al mar, diseño de inspiración tailandesa y acceso a más de 30 sitios de buceo de clase mundial."
+  },
+  "social": {
+    "facebookAria": "Facebook",
+    "instagramAria": "Instagram",
+    "youtubeAria": "YouTube"
+  },
+  "copyright": "© {{year}} {{brand}} Dive & Leisure Resort. Todos los derechos reservados."
+}

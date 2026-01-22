@@ -4,6 +4,8 @@ import NeumorphicButton from '@/components/NeumorphicButton'
 import NeumorphicCard from '@/components/NeumorphicCard'
 import { resortImages, roomTypes } from '@/data/mockData'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { useNamespace } from '@/i18n/useNamespace'
 
 interface Amenity {
   name: string
@@ -12,13 +14,15 @@ interface Amenity {
 }
 
 const AccommodationsPage: React.FC = () => {
+  useNamespace('accommodations')
+  const { t } = useTranslation(['accommodations', 'navigation'])
   const amenities: Amenity[] = [
-    { name: 'Infinity Pool', description: 'Swim with panoramic ocean views', image: resortImages.resort.infinityPool },
-    { name: 'Beachfront Dining', description: 'Fresh seafood and cuisine', image: resortImages.amenities.restaurant },
-    { name: 'Thai Spa', description: 'Traditional massage and wellness', image: resortImages.amenities.spa },
-    { name: 'Dive Center', description: 'PADI 5-Star facility', image: resortImages.diving.diverShipwreck },
-    { name: 'Gift Shop', description: 'Dive gear and souvenirs', image: resortImages.resort.beachLoungers },
-    { name: 'Fitness Area', description: 'Beachfront yoga and fitness', image: resortImages.people.yoga2 }
+    { name: t('accommodations:amenities.0.name'), description: t('accommodations:amenities.0.description'), image: resortImages.resort.infinityPool },
+    { name: t('accommodations:amenities.1.name'), description: t('accommodations:amenities.1.description'), image: resortImages.amenities.restaurant },
+    { name: t('accommodations:amenities.2.name'), description: t('accommodations:amenities.2.description'), image: resortImages.amenities.spa },
+    { name: t('accommodations:amenities.3.name'), description: t('accommodations:amenities.3.description'), image: resortImages.diving.diverShipwreck },
+    { name: t('accommodations:amenities.4.name'), description: t('accommodations:amenities.4.description'), image: resortImages.resort.beachLoungers },
+    { name: t('accommodations:amenities.5.name'), description: t('accommodations:amenities.5.description'), image: resortImages.people.yoga2 }
   ]
 
   return (
@@ -29,9 +33,9 @@ const AccommodationsPage: React.FC = () => {
       >
         <div className="absolute inset-0 bg-gradient-to-b from-[#0D7070]/60 to-[#0D7070]/80"></div>
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-          <h1 className="font-playfair font-bold text-4xl md:text-6xl text-white mb-6">Your Sanctuary Awaits</h1>
+          <h1 className="font-playfair font-bold text-4xl md:text-6xl text-white mb-6">{t('accommodations:hero.title')}</h1>
           <p className="font-lato text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Thai-inspired rooms with modern comfort, stunning views, and the sound of waves as your lullaby.
+            {t('accommodations:hero.subtitle')}
           </p>
         </div>
       </section>
@@ -40,10 +44,10 @@ const AccommodationsPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-playfair font-bold text-3xl md:text-5xl text-[#1A2332] mb-4">
-              Choose Your Perfect Room
+              {t('accommodations:roomsSection.title')}
             </h2>
             <p className="font-lato text-lg text-[#4A5568]">
-              From cozy garden retreats to oceanfront luxury - find your ideal sanctuary.
+              {t('accommodations:roomsSection.subtitle')}
             </p>
           </div>
 
@@ -57,7 +61,7 @@ const AccommodationsPage: React.FC = () => {
                 <NeumorphicCard className={index % 2 === 1 ? 'lg:order-1' : ''}>
                   {room.popular && (
                     <div className="inline-block bg-[#FF6B6B] text-white px-4 py-1 rounded-full text-sm font-lato font-bold mb-4">
-                      Most Popular
+                      {t('accommodations:roomsSection.badges.mostPopular')}
                     </div>
                   )}
                   <h3 className="font-playfair font-bold text-3xl text-[#1A2332] mb-3">{room.name}</h3>
@@ -67,28 +71,28 @@ const AccommodationsPage: React.FC = () => {
                     <div className="flex items-center gap-2">
                       <Maximize className="w-5 h-5 text-[#0D7070]" />
                       <div>
-                        <p className="font-lato text-xs text-[#718096]">Size</p>
+                        <p className="font-lato text-xs text-[#718096]">{t('accommodations:roomsSection.stats.size')}</p>
                         <p className="font-lato font-bold text-sm text-[#1A2332]">{room.size}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
                       <Users className="w-5 h-5 text-[#0D7070]" />
                       <div>
-                        <p className="font-lato text-xs text-[#718096]">Guests</p>
+                        <p className="font-lato text-xs text-[#718096]">{t('accommodations:roomsSection.stats.guests')}</p>
                         <p className="font-lato font-bold text-sm text-[#1A2332]">{room.maxGuests}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
                       <Eye className="w-5 h-5 text-[#0D7070]" />
                       <div>
-                        <p className="font-lato text-xs text-[#718096]">View</p>
+                        <p className="font-lato text-xs text-[#718096]">{t('accommodations:roomsSection.stats.view')}</p>
                         <p className="font-lato font-bold text-sm text-[#1A2332]">{room.view}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
                       <Coffee className="w-5 h-5 text-[#0D7070]" />
                       <div>
-                        <p className="font-lato text-xs text-[#718096]">Bed</p>
+                        <p className="font-lato text-xs text-[#718096]">{t('accommodations:roomsSection.stats.bed')}</p>
                         <p className="font-lato font-bold text-sm text-[#1A2332]">{room.bed}</p>
                       </div>
                     </div>
@@ -96,13 +100,13 @@ const AccommodationsPage: React.FC = () => {
 
                   <div className="flex items-center justify-between pt-6 border-t border-[#D4A373]/20">
                     <div>
-                      <p className="font-lato text-sm text-[#718096]">Starting from</p>
+                      <p className="font-lato text-sm text-[#718096]">{t('accommodations:roomsSection.price.startingFrom')}</p>
                       <p className="font-playfair font-bold text-3xl text-[#FF6B6B]">
-                        {room.price} PHP<span className="text-lg text-[#718096]">/night</span>
+                        {room.price} PHP<span className="text-lg text-[#718096]">{t('accommodations:roomsSection.price.perNight')}</span>
                       </p>
                     </div>
                     <Link to="/contact">
-                      <NeumorphicButton variant="primary" size="md">Book Room</NeumorphicButton>
+                      <NeumorphicButton variant="primary" size="md">{t('accommodations:roomsSection.bookRoom')}</NeumorphicButton>
                     </Link>
                   </div>
                 </NeumorphicCard>
@@ -115,9 +119,9 @@ const AccommodationsPage: React.FC = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-playfair font-bold text-3xl md:text-5xl text-[#1A2332] mb-4">Beyond Your Room</h2>
+            <h2 className="font-playfair font-bold text-3xl md:text-5xl text-[#1A2332] mb-4">{t('accommodations:amenitiesSection.title')}</h2>
             <p className="font-lato text-lg text-[#4A5568]">
-              World-class facilities designed for relaxation, adventure, and connection.
+              {t('accommodations:amenitiesSection.subtitle')}
             </p>
           </div>
 

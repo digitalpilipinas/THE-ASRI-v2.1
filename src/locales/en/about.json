@@ -1,0 +1,101 @@
+{
+  "hero": {
+    "titleLine1": "More Than a Resort",
+    "titleLine2": "It is a Feeling",
+    "subtitle": "Born from a love of the ocean and a dream to share Anilao underwater magic with the world."
+  },
+  "story": {
+    "title": "Our Story",
+    "imageAlt": "The Asri aerial view",
+    "paragraphs": [
+      "The Asri Dive & Leisure Resort began with a simple dream: to create an intimate seaside sanctuary where world-class diving and warm Filipino hospitality come together in one unforgettable experience. Nestled in Sitio Balagbag, Barangay Bagalangit in Mabini, Batangas, just a few hours from Manila, The Asri was designed for people who want more than a quick escape—they want a place that feels like a second home by the sea.",
+      "From the start, the vision was clear: keep it small, keep it personal, and keep the standards high. With only around 14 waterfront rooms, The Asri was intentionally built to stay boutique. This intimacy allows the team to know guests by name, understand their goals—whether it is completing a first PADI course, chasing rare macro critters, or simply unwinding by the infinity pool—and tailor each stay around them.",
+      "Earning PADI 5-Star Dive Resort accreditation became a natural extension of that commitment. It formalized what guests were already experiencing: safe, professional, and thoughtfully guided diving in one of the richest marine biodiversity areas in the world. Today, our instructors and dive professionals welcome everyone—from nervous beginners to seasoned photographers—to explore over 30 nearby dive sites with confidence and curiosity.",
+      "Wrapped in a Thai-inspired aesthetic, surrounded by Balayan Bay sunsets, and supported by a team that genuinely cares, The Asri continues to grow not by becoming bigger, but by becoming better—one guest, one dive, and one shared story at a time."
+    ]
+  },
+  "padi": {
+    "badgeAlt": "PADI 5-Star Dive Resort Accreditation",
+    "kicker": "Internationally Certified",
+    "title": "PADI 5-Star Dive Resort",
+    "intro": "The Asri proudly holds PADI 5-Star Dive Resort status—the highest recognition in recreational diving. This certification means you are diving with a team that meets the most rigorous international standards for safety, professionalism, and training excellence.",
+    "features": [
+      {
+        "title": "IDC Center Status",
+        "description": "Authorized to train divers from beginner to professional Instructor level. Our facility meets PADI's highest operational and educational standards."
+      },
+      {
+        "title": "Expert Instructors",
+        "description": "All instructors hold advanced PADI certifications with thousands of logged dives in Anilao's unique underwater environment."
+      },
+      {
+        "title": "15+ Years Safety Record",
+        "description": "Maintained 100% safety record since inception. Small group ratios (1:4 certified, 1:3 training) ensure personalized attention on every dive."
+      }
+    ],
+    "badges": [
+      "Full Equipment Facility",
+      "Emergency Oxygen",
+      "Insurance Covered"
+    ]
+  },
+  "values": {
+    "title": "Our Values",
+    "subtitle": "These three principles guide everything we do, from dive briefings to spa treatments to your morning coffee.",
+    "items": [
+      {
+        "title": "Mastery",
+        "description": "Excellence in diving instruction, safety protocols, and guest service. Our team holds the highest certifications and never stops learning."
+      },
+      {
+        "title": "Stewardship",
+        "description": "We protect the underwater world we love through sustainable practices, reef conservation, and educating every guest about marine preservation."
+      },
+      {
+        "title": "Intimacy",
+        "description": "Small groups, personalized service, and genuine connections. You are not a number here - you are family from the moment you arrive."
+      }
+    ]
+  },
+  "team": {
+    "title": "Meet the Team",
+    "subtitle": "The heart and soul of The Asri. Passionate experts dedicated to making your experience unforgettable.",
+    "items": [
+      { "role": "Resort Owner", "specialty": "PADI Scuba Instructor" },
+      { "role": "Resort Manager", "specialty": "Guest Relations" },
+      { "role": "Executive Chef", "specialty": "Mediterranean Fusion" },
+      { "role": "Spa Director", "specialty": "Thai Massage" }
+    ]
+  },
+  "sustainability": {
+    "title": "Sustainability",
+    "subtitle": "We believe that protecting the underwater world we showcase is not optional - it is essential. Our commitment to sustainability extends from our dive practices to our daily resort operations.",
+    "practices": [
+      "Zero single-use plastics throughout resort",
+      "Reef-safe sunscreen policy",
+      "Monthly beach and reef cleanup",
+      "Solar panels power 60% of energy",
+      "Organic waste composting",
+      "Partnership with marine conservation",
+      "Staff marine biology training",
+      "Guest education programs"
+    ],
+    "images": {
+      "coralReef": "Coral reef",
+      "seaTurtle": "Sea turtle",
+      "yoga": "Yoga",
+      "nature": "Nature"
+    }
+  },
+  "certifications": {
+    "title": "Certifications and Awards",
+    "subtitle": "Recognized for excellence in diving, hospitality, and sustainability.",
+    "items": [
+      { "name": "PADI 5-Star Dive Resort", "year": "Since 2025" },
+      { "name": "TripAdvisor Excellence", "year": "2018-2024" },
+      { "name": "Green Fins Member", "year": "Since 2015" },
+      { "name": "Philippine Tourism Award", "year": "2022" },
+      { "name": "100% Safety Record", "year": "15+ Years" }
+    ]
+  }
+}

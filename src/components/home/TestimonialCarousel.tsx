@@ -4,6 +4,8 @@ import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules'
 import { motion } from 'framer-motion'
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react'
 import NeumorphicCard from '@/components/NeumorphicCard'
+import { useTranslation } from 'react-i18next'
+import { useNamespace } from '@/i18n/useNamespace'
 
 // Import Swiper styles
 import 'swiper/css'
@@ -27,6 +29,8 @@ interface TestimonialCarouselProps {
 }
 
 const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ testimonials }) => {
+  useNamespace('home')
+  const { t } = useTranslation(['home', 'common'])
   return (
     <section className="relative bg-[#F5F1E8] py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,11 +43,11 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ testimonials 
           className="mb-16 text-center"
         >
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-[#1A2332] mb-4">
-            Stories from Our Guests
+            {t('home:testimonials.title')}
           </h2>
           <div className="w-16 h-1 bg-[#FF6B6B] mx-auto mb-6 rounded-full"></div>
           <p className="font-lato text-lg text-[#4A5568] max-w-2xl mx-auto">
-            Real experiences from divers, families, and first-timers who found their underwater home.
+            {t('home:testimonials.subtitle')}
           </p>
         </motion.div>
 
@@ -145,16 +149,16 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ testimonials 
 
           {/* Custom Navigation Arrows */}
           <button
-            className="testimonial-prev absolute left-0 md:-left-20 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm md:bg-white shadow-lg flex items-center justify-center text-[#0D7070] hover:scale-110 hover:shadow-xl transition-all duration-200 group"
-            aria-label="Previous testimonial"
+            className="testimonial-prev absolute left-0 md:-left-20 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm md:bg-white shadow-lg flex items-center justify-center text-[#0D7070] hover:scale-110 hover:shadow-xl transition-all duration-200 group [[dir=rtl]_&]:left-auto [[dir=rtl]_&]:right-0 [[dir=rtl]_&]:md:right-[-80px]"
+            aria-label={t('common:carousel.previous')}
           >
-            <ChevronLeft className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            <ChevronLeft className="w-6 h-6 group-hover:scale-110 transition-transform [[dir=rtl]_&]:rotate-180" />
           </button>
           <button
-            className="testimonial-next absolute right-0 md:-right-20 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm md:bg-white shadow-lg flex items-center justify-center text-[#0D7070] hover:scale-110 hover:shadow-xl transition-all duration-200 group"
-            aria-label="Next testimonial"
+            className="testimonial-next absolute right-0 md:-right-20 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm md:bg-white shadow-lg flex items-center justify-center text-[#0D7070] hover:scale-110 hover:shadow-xl transition-all duration-200 group [[dir=rtl]_&]:right-auto [[dir=rtl]_&]:left-0 [[dir=rtl]_&]:md:left-[-80px]"
+            aria-label={t('common:carousel.next')}
           >
-            <ChevronRight className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            <ChevronRight className="w-6 h-6 group-hover:scale-110 transition-transform [[dir=rtl]_&]:rotate-180" />
           </button>
 
           {/* Custom Pagination Dots */}
@@ -170,7 +174,7 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ testimonials 
           className="mt-16 text-center"
         >
           <p className="font-lato text-xs uppercase tracking-wider text-[#718096] mb-6">
-            Also Featured On
+            {t('home:testimonials.featuredOn')}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
             {['PADI', 'TripAdvisor', 'Google', 'Facebook'].map((brand) => (

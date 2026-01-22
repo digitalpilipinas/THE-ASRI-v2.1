@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { MessageCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface WhatsAppButtonProps {
   phoneNumber?: string;
@@ -9,12 +10,14 @@ interface WhatsAppButtonProps {
 
 const WhatsAppButton = ({ 
   phoneNumber = '+639189003644', 
-  message = "Hi! I'd like to learn more about The Asri.",
+  message,
   position = 'fixed'
 }: WhatsAppButtonProps) => {
+  const { t } = useTranslation('common');
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [showTooltip, setShowTooltip] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
+  const isRtl = document.documentElement.dir === 'rtl';
 
   useEffect(() => {
     const checkMobile = (): void => {
@@ -53,7 +56,7 @@ const WhatsAppButton = ({
   }, []);
 
   const handleClick = (): void => {
-    const encodedMessage = encodeURIComponent(message);
+    const encodedMessage = encodeURIComponent(message ?? t('whatsapp.defaultMessage'));
     const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     
@@ -70,7 +73,7 @@ const WhatsAppButton = ({
       }
       style={position === 'fixed' ? {
         bottom: isMobile ? '96px' : '24px',
-        right: '24px'
+        ...(isRtl ? { left: '24px' } : { right: '24px' })
       } : {}}
     >
       <div className="absolute inset-0 -z-10">
@@ -82,7 +85,7 @@ const WhatsAppButton = ({
         onClick={handleClick}
         className="relative w-14 h-14 bg-gradient-to-br from-[#25D366] to-[#20BA5A] text-white rounded-full flex items-center justify-center transition-all duration-300 group hover:scale-110 active:scale-95"
         style={{ boxShadow: '0 12px 32px rgba(37, 211, 102, 0.3), 0 4px 8px rgba(0, 0, 0, 0.1)' }}
-        aria-label="Chat on WhatsApp"
+        aria-label={t('whatsapp.aria')}
       >
         <MessageCircle className="w-7 h-7 flex-shrink-0" strokeWidth={2.5} />
 
@@ -94,14 +97,14 @@ const WhatsAppButton = ({
       </button>
 
       {showTooltip && (
-        <div className="lg:hidden absolute bottom-full right-0 mb-2 bg-[#1A2332] text-white px-3 py-2 rounded-lg font-lato text-xs whitespace-nowrap animate-in fade-in slide-in-from-bottom-2 duration-300">
-          Need help? Chat now! 💬
-          <div className="absolute -bottom-1 right-4 w-2 h-2 bg-[#1A2332] transform rotate-45" />
+        <div className="lg:hidden absolute bottom-full right-0 mb-2 bg-[#1A2332] text-white px-3 py-2 rounded-lg font-lato text-xs whitespace-nowrap animate-in fade-in slide-in-from-bottom-2 duration-300 [[dir=rtl]_&]:right-auto [[dir=rtl]_&]:left-0">
+          {t('whatsapp.tooltipMobile')}
+          <div className="absolute -bottom-1 right-4 w-2 h-2 bg-[#1A2332] transform rotate-45 [[dir=rtl]_&]:right-auto [[dir=rtl]_&]:left-4" />
         </div>
       )}
 
-      <span className="hidden lg:block absolute right-16 top-1/2 -translate-y-1/2 bg-[#1A2332] text-white px-3 py-2 rounded-lg text-sm font-lato whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-        Chat with us!
+      <span className="hidden lg:block absolute right-16 top-1/2 -translate-y-1/2 bg-[#1A2332] text-white px-3 py-2 rounded-lg text-sm font-lato whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none [[dir=rtl]_&]:right-auto [[dir=rtl]_&]:left-16">
+        {t('whatsapp.tooltipDesktop')}
       </span>
     </div>
   );
